@@ -1,3 +1,11 @@
+# Blaze Sanders
+# 2019-06-16
+# Development
+# 
+# https://www.parallax.com/product/28041
+
+
+
 # Used to control GPIO pins and control motors, servos, and relays 
 import gpiozero
 
@@ -17,6 +25,8 @@ SPEED_OF_LIGHT = 299,792,458 # Units are m/s
 
 class LaserPING:
 
+def __init__():
+    self.speedOfLightForCalculations = SPEED_OF_LIGHT
 ###
 # Get the distance to closet object in line with LASER pointer. 
 # 
@@ -34,7 +44,13 @@ def getDistance(units):
 
     return distance
 
-def adjustSpeedOfLigth():
+###
+# Adjust internal distance calculation if LASER is going through water or other weird environment
+#
+#
+# return NOTHING
+###
+def adjustSpeedOfLigth(ratio):
 
 def debugPrint(stringToPrint):
 
