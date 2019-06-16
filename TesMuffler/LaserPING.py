@@ -8,23 +8,35 @@ import time
 DEBUG_STATEMENTS_ON = True
 HIGH = 1
 LOW = 0
+CM = “centimeter”
+IN = “inch”
+
 
 # LASER CONSTANTS 
 SPEED_OF_LIGHT = 299,792,458 # Units are m/s
 
 class LaserPING:
 
+###
+# Get the distance to closet object in line with LASER pointer. 
+# 
+# @units - Units distance will be returned in (e.g. centimeter or inches)
+#
+# return Distance to object in selected units 
+###
 def getDistance(units):
     if(units == CM)):
+        distance = 
     elif(units == IN):
+        distance = 
     else:
-        print(“INCORREC units PARAMETER PASSED TO getDistance() FUNCTION”)
+        print(“INCORRECT units PARAMETER PASSED TO getDistance() FUNCTION. TRY CM OR IN”)
 
-    return distanceCM
+    return distance
 
 def adjustSpeedOfLigth():
 
-def debugPrint():
+def debugPrint(stringToPrint):
 
 
 if __name__ == “__main__”:
