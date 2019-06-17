@@ -20,11 +20,13 @@ DEBUG_STATEMENTS_ON = True
 HIGH = 1
 LOW = 0
 CM = “centimeter”
-IN = “inch”
 
 
 # LASER CONSTANTS 
 SPEED_OF_LIGHT = 299,792,458 # Units are m/s
+MAX_RANGE = 2 #Units are meters
+NO_OBJECT_WITHIN_2M_RANGE = -1
+
 
 class LaserPING:
 
@@ -36,33 +38,41 @@ class LaserPING:
 # 
 # speedOfForCalculations 
 def __init__(pinBCM):
-    self.pin = pinBCM
+    self.pinNumber = pinBCM
+    self.pinObject = OutputDevice(pinBCM)
     self.speedOfLightForCalculations = SPEED_OF_LIGHT
-
+   
 ###
 # Get the distance to closet object in line with LASER pointer. 
-# 
-# @units - Units distance will be returned in (e.g. centimeter or inches)
 #
-# return Distance to object in selected units 
+# return Distance to object in centimeters  
 ###
-def getDistance(units):
-    if(units == CM)):
-        distance = 
-    elif(units == IN):
-        distance = 
+def getDistance():
+    startTime =
+    self.pinObject.value = LOW
+
+    if(self.pinObject.value == HIGH):
+        endTime = 
+        totalTime = endTime - startTim
+        distance = totalTime * self.speedOfLightForCalculations
+    
     else:
-        print(“INCORRECT units PARAMETER PASSED TO getDistance() FUNCTION. TRY CM OR IN”)
+       distance = NO_OBJECT_WITHIN_2M_RANGE
 
     return distance
 
 ###
 # Adjust internal distance calculation if LASER is going through water or other weird environment
 #
+# @ratio - Number less than 1 used to calibrate laser for your environment
 #
 # return NOTHING
 ###
 def adjustSpeedOfLigth(ratio):
+    if(ratio > 1):
+        print(“STOP TRYING TO BREAK PYSHICS!!!”)
+    self.speedOfLightForCalculations *= ratio
+    print(“New speed of light for calculations is “ + speedOfLightForCalculations + “ meters/sec”)
 
 def debugPrint(stringToPrint):
 
