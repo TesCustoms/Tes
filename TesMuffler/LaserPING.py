@@ -1,10 +1,13 @@
-# Blaze Sanders
-# 2019-06-16
-# Development
-# 
+#!/usr/bin/env python
+
+__author__ =  "Blaze Sanders"
+__email__ =   "blaze.d.a.sanders@gmail.com"
+__company__ = "Humanity"
+__status__ =  "Development"
+__date__ =    "Late Updated: 2019-06-17"
+__doc__ =     "Control the Parallax LASER rangefinder sensor”
+
 # https://www.parallax.com/product/28041
-
-
 
 # Used to control GPIO pins and control motors, servos, and relays 
 import gpiozero
@@ -12,7 +15,7 @@ import gpiozero
 # Used to control the space-time fabric :)
 import time      
 
-# Useful CONSTANSTS 
+# Useful CONSTANTS 
 DEBUG_STATEMENTS_ON = True
 HIGH = 1
 LOW = 0
@@ -25,8 +28,17 @@ SPEED_OF_LIGHT = 299,792,458 # Units are m/s
 
 class LaserPING:
 
-def __init__():
+
+###
+# Constructor for LaserPING object
+#
+# @pinBCM - BCM PIN number LaserPING ?input? pin is connected to 
+# 
+# speedOfForCalculations 
+def __init__(pinBCM):
+    self.pin = pinBCM
     self.speedOfLightForCalculations = SPEED_OF_LIGHT
+
 ###
 # Get the distance to closet object in line with LASER pointer. 
 # 
