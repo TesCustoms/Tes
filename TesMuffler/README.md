@@ -1,7 +1,7 @@
 Hardware Required:
 1) Raspberry Pi Pico or Pi 4
-2) OBD Connector
-3) LASER rangefinder to measure a persons foot position and bluetooth stream 1 of 10 different muffler sounds into the [Model 3's premium sound system]( www.youtube.com/watch?v=LWKiNA-KT6Y)
+2) OBD Connector (optional)
+3) LASER rangefinder to measure a persons foot position and bluetooth stream muffler sounds into the [Model 3's premium sound system]( www.youtube.com/watch?v=LWKiNA-KT6Y)
 
 Next steps:
 Download the following sounds using "youtube-dl --extract-audio --audio-format mp3 <video URL>" command
