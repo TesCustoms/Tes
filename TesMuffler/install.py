@@ -28,6 +28,10 @@ if __name__ == "__main__":
 	# Flask requires Python 3 to work
 	check_call("sudo apt install python3-pip", shell=True)
 
+    # https://www.w3schools.com/python/python_mysql_getstarted.asp
+    check_call("sudo apt install mysql-server -y", shell=True)
+    check_call("pip install mysql-connector-python", shell=True)
+
 	# evdev required to setup RFID Reader
 	check_call("pip install evdev", shell=True)
 
