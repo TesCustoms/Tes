@@ -1,4 +1,7 @@
-Raspberry Pi Pico with a LASER rangefinder to measure a persons foot position, and then bluetooth stream 1 of 10 different muffler sounds into the Model 3's premium sound system (www.youtube.com/watch?v=LWKiNA-KT6Y).
+Hardware Required:
+1) Raspberry Pi Pico or Pi 4
+2) OBD Connector
+3) LASER rangefinder to measure a persons foot position and bluetooth stream 1 of 10 different muffler sounds into the [Model 3's premium sound system]( www.youtube.com/watch?v=LWKiNA-KT6Y)
 
 Next steps:
 Download the following sounds using "youtube-dl --extract-audio --audio-format mp3 <video URL>" command
@@ -9,3 +12,6 @@ Download the following sounds using "youtube-dl --extract-audio --audio-format m
 5) Jaguar E Type Series 1 - www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.html
 6) Ford Model T - www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.ht
 7) OTHER SUGGESTIONS???
+
+
+Competition: https://madnessautoworks.com/tesla-model-3-active-exhaust-sound-controller-milltek-single-sound-generator-115036
