@@ -1,15 +1,16 @@
 #!/usr/bin/env python
-
+"""
 __author__ =  "Blaze Sanders"
 __email__ =   "blaze.d.a.sanders@gmail.com"
 __company__ = "Humanity"
 __status__ =  "Development"
-__date__ =    "Late Updated: 2019-06-17"
-__doc__ =     "Instsall script to setup run and dev enviroment"
+__date__ =    "Late Updated: 2021-04-27"
+__doc__ =     "Install script to setup TesMuffler dev enviroment"
+"""
 
 CONFIG = "Pi3B+" # or "UnbuntuOnWindows" of "UbuntuMate" or "Alpine"
 
-# Allow BASH command to be run inside Python3 code like this file
+# Allow BASH commands to be run inside python code like this file
 import subprocess
 from subprocess import Popen, PIPE
 from subprocess import check_call
@@ -21,16 +22,25 @@ if __name__ == "__main__":
 	check_call("sudo apt update", shell=True)
 	check_call("sudo apt upgrade", shell=True)
 
-	# Allow other computers to SSH into Pi (SSH not always installed on Pi distros)
+	# Allow other computers to SSH into Pi running this code
+	# Needed since SSH is not always installed on Pi distros
 	check_call("sudo apt install openssh-server", shell=True)
 	check_call("sudo apt install sshguard", shell=True)
+
+    # https://www.w3schools.com/python/python_mysql_getstarted.asp
+    # https://itsfoss.com/install-mysql-ubuntu/
+    check_call("sudo apt install mysql-server -y", shell=True)
+    check_call("pip install mysql-connector-python", shell=True)
+
+    # Start running mySQL server as root with sudo password
+    check_call("mysql -u root -p", shell=True)
+
+
+
 
 	# Flask requires Python 3 to work
 	check_call("sudo apt install python3-pip", shell=True)
 
-    # https://www.w3schools.com/python/python_mysql_getstarted.asp
-    check_call("sudo apt install mysql-server -y", shell=True)
-    check_call("pip install mysql-connector-python", shell=True)
 
 	# evdev required to setup RFID Reader
 	check_call("pip install evdev", shell=True)
