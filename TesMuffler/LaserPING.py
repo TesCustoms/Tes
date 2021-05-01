@@ -1,47 +1,46 @@
-#!/usr/bin/env python
-
+#!/usr/bin/env python3
+"""
 __author__ =  "Blaze Sanders"
 __email__ =   "blaze.d.a.sanders@gmail.com"
-__company__ = "Humanity"
 __status__ =  "Development"
-__date__ =    "Late Updated: 2019-06-17"
-__doc__ =     "Control the Parallax LASER rangefinder sensor”
+__date__ =    "Late Updated: 2021-05-01"
+__doc__ =     "Control the Parallax LASER rangefinder SKU #28041”
+"""
 
 # https://www.parallax.com/product/28041
 
-# Used to control GPIO pins and control motors, servos, and relays 
+# Used to control GPIO pins and control motors, servos, and relays
+# https://gpiozero.readthedocs.io/en/stable/
 import gpiozero
 
-# Used to control the space-time fabric :)
-import time      
+# Allow the control of the space-time fabric :)
+# https://docs.python.org/3/library/time.html
+import time
 
-# Useful CONSTANTS 
+# Useful CONSTANTS
 DEBUG_STATEMENTS_ON = True
 HIGH = 1
 LOW = 0
-CM = “centimeter”
+CM = 'centimeter'
 
-
-# LASER CONSTANTS 
-SPEED_OF_LIGHT = 299,792,458 # Units are m/s
-MAX_RANGE = 2 #Units are meters
+# LASER CONSTANTS
+SPEED_OF_LIGHT = 299,792,458    # Units are meters per second
+MAX_RANGE = 2                   # Units are meters
 NO_OBJECT_WITHIN_2M_RANGE = -1
 
 
 class LaserPING:
+    ###
+    # Constructor for LaserPING object
+    #
+    # @pinBCM - BCM PIN number LaserPING ?input? pin is connected to
+    #
+    # speedOfForCalculations
+    def __init__(pinBCM):
+        self.pinNumber = pinBCM
+        self.pinObject = OutputDevice(pinBCM)
+        self.speedOfLightForCalculations = SPEED_OF_LIGHT
 
-
-###
-# Constructor for LaserPING object
-#
-# @pinBCM - BCM PIN number LaserPING ?input? pin is connected to 
-# 
-# speedOfForCalculations 
-def __init__(pinBCM):
-    self.pinNumber = pinBCM
-    self.pinObject = OutputDevice(pinBCM)
-    self.speedOfLightForCalculations = SPEED_OF_LIGHT
-   
 ###
 # Get the distance to closet object in line with LASER pointer. 
 #
