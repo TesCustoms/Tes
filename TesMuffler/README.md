@@ -1,8 +1,8 @@
 Hardware Required:
-1) Raspberry Pi Pico or Pi 4
-2) OBD Connector (optional)
-3) LASER rangefinder to measure a persons foot position and bluetooth stream muffler sounds into the [Model 3's premium sound system]( www.youtube.com/watch?v=LWKiNA-KT6Y)
-4) 3D printed muffler with magnets to connect to the bottom of a Tesla Model 3 or Model Y
+1)[Arduino RP2040](https://blog.arduino.cc/2021/01/20/welcome-raspberry-pi-to-the-world-of-microcontrollers/)
+2) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?)
+3) Parallax LASER rangefinder [SKU 28041](https://www.parallax.com/product/laserping-2m-rangefinder/)
+4) [TesMufflerV1.stl](Github link???) 3D printed muffler with magnets
 
 
 Next steps:
