@@ -25,10 +25,21 @@ import can
 #TODO from LaserPING import *
 
 # Interface CPU with Tesla Bluetooth to produce engine sound
+# http://www.mega-nerd.com/SRC/
 from EngineSoundGenerator import *
 
 
-def configureCurrentSetup():
+def calibrateSetup():
+    """
+    Runs a calibration process to ensure that hardware has not moved and that the zero and max throttle points are defined and within LASER's range.
+
+    Key arguments:
+    NONE
+
+    Return value:
+    [ZERO_THROTTLE, MAX_THROTTLE] a tuple defining the distance to the zero and max throttle pedal positions
+    """
+
     maxDistance = 0     # Units are centimeters
     minDistance = 300   # Units are centimeters
     timeDelay = 0       # Units are milliSeconds
@@ -47,7 +58,7 @@ def configureCurrentSetup():
 if __name__ == "_main_":
 
     print("Press & release acclerator multiple times for the  next 5 seconds")
-    [ZERO_THROTTLE, MAX_THROTTLE] = configureCurrentSetup()
+    [ZERO_THROTTLE, MAX_THROTTLE] = calibrateSetup()
 
     currentProgramFilename = os.path.basename(__file__)
     self.DebugObject = Debug(True, currentProgramFilename)
