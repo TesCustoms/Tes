@@ -41,20 +41,21 @@ class LaserPING:
         self.pinObject = OutputDevice(pinBCM)
         self.speedOfLightForCalculations = SPEED_OF_LIGHT
 
-###
-# Get the distance to closet object in line with LASER pointer. 
-#
-# return Distance to object in centimeters  
-###
 def getDistance():
-    startTime =
+    """
+    Get the distance to closet object in line with LASER pointer.
+
+    return Distance to object in centimeters
+    """
+
+    startTime = time.TODO
     self.pinObject.value = LOW
 
     if(self.pinObject.value == HIGH):
-        endTime = 
-        totalTime = endTime - startTim
+        endTime = time.TODO
+        totalTime = endTime - startTime
         distance = totalTime * self.speedOfLightForCalculations
-    
+
     else:
        distance = NO_OBJECT_WITHIN_2M_RANGE
 

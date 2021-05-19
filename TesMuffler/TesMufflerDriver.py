@@ -22,7 +22,7 @@ import os
 import can
 
 # Interface with Parallax LASER rangefinder SKU #2801
-from LaserPING import *
+#TODO from LaserPING import *
 
 # Interface CPU with Tesla Bluetooth to produce engine sound
 from EngineSoundGenerator import *

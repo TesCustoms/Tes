@@ -50,6 +50,8 @@ if __name__ == "__main__":
 	# https://aryaboudaie.com/python/technical/educational/web/flask/2018/10/17/flask.html
 	check_call("pip3 install flask", shell=True)
 
+    #TODO pip3 install samplerate
+
 	# Low level control on GPIO pins to drive RFID Readers, Servos, Motors, Relays, LEDs, etc
 	# Python 3 install of GPIO and servo to match Flask
 	# https://gpiozero.readthedocs.io/en/stable/installing.html
