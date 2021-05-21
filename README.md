@@ -4,6 +4,8 @@ Car modifications projects for varying [Tesla Motor](http://www.tesla.com) vehic
 
 Author: Blaze Sanders - Twitter @BlazeDSanders
 
-TesMuffler: Determine a persons foot position & velocity and bluetooth stream custom muffler sounds into the [premium sound system of a Model 3 or Model Y]( www.youtube.com/watch?v=LWKiNA-KT6Y)
+TesMuffler: Bluetooth stream custom muffler sounds into the [premium sound system of a Model 3 or Model Y](www.youtube.com/watch?v=LWKiNA-KT6Y)
 
-TesWeight: TODO
+TesWeight: Steering wheel weight for long highway road trips with [Autopilot](www.tesla.com/autopilot)
+
+TesHouse: Quick disconnect tiny home add-on for the [Tesla CyberTruck](www.tesla.com/cybertruck)
