@@ -1,0 +1,1303 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <!-- Optimize anti-flicker code https://developers.google.com/optimize -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',4000,
+        {'GTM-KMG5DM':true});</script>
+    <!-- (end code) -->
+
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://www.tesla.com/cybertruck" />
+<meta name="description" content="Cybertruck is designed to have the utility of a truck with sports car performance. Built to be durable, versatile, capable and high-performance both on-road and off-road." />
+<meta name="keywords" content="Tesla, Cybertruck, Truck, Utility, Storage" />
+<meta property="og:site_name" content="Tesla" />
+<meta property="og:url" content="https://www.tesla.com/cybertruck" />
+<meta property="og:title" content="Cybertruck" />
+<meta property="og:description" content="Cybertruck is designed to have the utility of a truck with sports car performance. Built to be durable, versatile, capable and high-performance both on-road and off-road." />
+<meta property="og:image" content="https://www.tesla.com/ns_videos/p-social-card.jpg" />
+<meta property="og:image:url" content="https://www.tesla.com/ns_videos/p-social-card.jpg" />
+<meta property="og:image:secure_url" content="https://www.tesla.com/ns_videos/p-social-card.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Cybertruck is designed to have the utility of a truck with sports car performance. Built to be durable, versatile, capable and high-performance both on-road and off-road." />
+<meta name="twitter:site" content="@tesla" />
+<meta name="twitter:title" content="Cybertruck | Tesla" />
+<meta name="twitter:creator" content="@tesla" />
+<meta name="twitter:creator:id" content="Tesla" />
+<meta name="twitter:url" content="https://www.tesla.com/cybertruck" />
+<meta name="twitter:image" content="https://www.tesla.com/ns_videos/p-social-card.jpg" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="x-default" href="/cybertruck" />
+<link rel="alternate" hreflang="en-au" href="/en_au/cybertruck" />
+<link rel="alternate" hreflang="de-at" href="/de_at/cybertruck" />
+<link rel="alternate" hreflang="nl-be" href="/nl_be/cybertruck" />
+<link rel="alternate" hreflang="fr-be" href="/fr_be/cybertruck" />
+<link rel="alternate" hreflang="en-ca" href="/en_ca/cybertruck" />
+<link rel="alternate" hreflang="fr-ca" href="/fr_ca/cybertruck" />
+<link rel="alternate" hreflang="zh-cn" href="https://www.tesla.cn/cybertruck" />
+<link rel="alternate" hreflang="cs-cz" href="/cs_cz/cybertruck" />
+<link rel="alternate" hreflang="da-dk" href="/da_dk/cybertruck" />
+<link rel="alternate" hreflang="en" href="/cybertruck" />
+<link rel="alternate" hreflang="fi-fi" href="/fi_fi/cybertruck" />
+<link rel="alternate" hreflang="fr-fr" href="/fr_fr/cybertruck" />
+<link rel="alternate" hreflang="de-de" href="/de_de/cybertruck" />
+<link rel="alternate" hreflang="el-gr" href="/el_gr/cybertruck" />
+<link rel="alternate" hreflang="zh-hk" href="/zh_hk/cybertruck" />
+<link rel="alternate" hreflang="en-hk" href="/en_hk/cybertruck" />
+<link rel="alternate" hreflang="is-is" href="/is_is/cybertruck" />
+<link rel="alternate" hreflang="en-ie" href="/en_ie/cybertruck" />
+<link rel="alternate" hreflang="it-it" href="/it_it/cybertruck" />
+<link rel="alternate" hreflang="ja-jp" href="/ja_jp/cybertruck" />
+<link rel="alternate" hreflang="fr-lu" href="/fr_lu/cybertruck" />
+<link rel="alternate" hreflang="de-lu" href="/de_lu/cybertruck" />
+<link rel="alternate" hreflang="zh-mo" href="/zh_mo/cybertruck" />
+<link rel="alternate" hreflang="en-mo" href="/en_mo/cybertruck" />
+<link rel="alternate" hreflang="es-mx" href="/es_mx/cybertruck" />
+<link rel="alternate" hreflang="nl-nl" href="/nl_nl/cybertruck" />
+<link rel="alternate" hreflang="en-nz" href="/en_nz/cybertruck" />
+<link rel="alternate" hreflang="no-no" href="/no_no/cybertruck" />
+<link rel="alternate" hreflang="en-eu" href="/en_eu/cybertruck" />
+<link rel="alternate" hreflang="pl-pl" href="/pl_pl/cybertruck" />
+<link rel="alternate" hreflang="pt-pt" href="/pt_pt/cybertruck" />
+<link rel="alternate" hreflang="sl-si" href="/sl_si/cybertruck" />
+<link rel="alternate" hreflang="ko-kr" href="/ko_kr/cybertruck" />
+<link rel="alternate" hreflang="es-es" href="/es_es/cybertruck" />
+<link rel="alternate" hreflang="sv-se" href="/sv_se/cybertruck" />
+<link rel="alternate" hreflang="fr-ch" href="/fr_ch/cybertruck" />
+<link rel="alternate" hreflang="de-ch" href="/de_ch/cybertruck" />
+<link rel="alternate" hreflang="it-ch" href="/it_ch/cybertruck" />
+<link rel="alternate" hreflang="zh-tw" href="/zh_tw/cybertruck" />
+<link rel="alternate" hreflang="en-ae" href="/en_ae/cybertruck" />
+<link rel="alternate" hreflang="en-gb" href="/en_gb/cybertruck" />
+<link rel="alternate" hreflang="he-il" href="/he_il/cybertruck" />
+<link rel="shortcut icon" href="/themes/custom/tesla_frontend/assets/favicons/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.tesla.com/cybertruck" />
+
+    <title>Cybertruck | Tesla</title>
+    <link rel="stylesheet" media="all" href="/_flysystem/s3/css/css_IgBwrh6yW1wjVGkwSp6cWckcl5u1O6AqtuXjc44BNU0.css" />
+<link rel="stylesheet" media="all" href="/_flysystem/s3/css/css_Omy-prM49Qg1L61I1JLJQcuM-9ym5B9IQYIqsQfqW2g.css" />
+<link rel="stylesheet" media="all" href="/_flysystem/s3/css/css_K43ShnFxmEReSxgS4_wzZyecpIKVJMuO91aqDS0-2rA.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/_flysystem/s3/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Lets get mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="True" name="HandheldFriendly"/>
+    <meta id="viewport-tag" name="viewport"
+          content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+
+    <!-- Favicons and Apple Touch Icons -->
+    <meta name="theme-color" content="#000000"/>
+    <link rel="manifest" href="/themes/custom/tesla_frontend/assets/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="/themes/custom/tesla_frontend/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="196x196"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon-196x196.png">
+    <link rel="icon" type="image/png" sizes="160x160"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon-160x160.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon"
+          href="/themes/custom/tesla_frontend/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#cc0000">
+    <meta name="msapplication-TileImage" content="/themes/custom/tesla_frontend/assets/favicons/mstile-144x144.png">
+  
+  <script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"","rua.texp":""}]);</script>
+                          <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CZ5PJ-C3ULH-UWR94-5N9HG-JMT9V",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"CZ5PJ-C3ULH-UWR94-5N9HG-JMT9V",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="itqajnyxeh5xuyfjdmzq-f-67d1bcc88-clientnsv4-s.akamaihd.net",i={"ak.v":"31","ak.cp":"878901","ak.ai":parseInt("224388",10),"ak.ol":"0","ak.cr":14,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"48f8cb4","ak.r":40753,"ak.a2":e,"ak.m":"dscx","ak.n":"essl","ak.bpcip":"68.224.4.0","ak.cport":34110,"ak.gh":"23.196.229.37","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1621695283","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==whkP/ZCowvAWVQtHODO9JwNsuK0A9e2Ziwu1T9JgusSXwyOwD/1AFKmUMumkgVhYuZB4wfbVMUKsCaAyYB/397tHKttRCX/3/+1t4EWjWtUs5GMCG818ClGs2vPziD2yTOKinfix5EtJYN5O/JKMoiq7IYiDip8eIFt+g6MwCmAj88P8MFcaQeWUXrXzezbl7bGcMAQ/G2IZmHSkgp5/7TpXuYHguBdWPaDRY4kzZqIY7uMmrGukr4tGu4i1Y/1DafVKxeB0V8Hg4btW17MfR2HKFZYa1gM6OCXggMKayUJ9dq5nCAsbVwHMNJMjSkT88f/fMOknKlOx3kA+CPJDvvcOb+anOvXOu8vIVtmHFkqkiT2ImwHbYKBU6tuDmg2GZQhW5dBd1cdKV5DGCwbZscAroPuv7nc+ZRPRLpG8SXQ=","ak.pv":"811","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body class="page-cybertruck template-product-page tds-theme--cyberpunk tds-menu-header-alternate tds-site-header--light tds-menu-header-transparent--dark tcl-parallax-effect--off site-body animate-onscroll i18n-en_us" id="page-cybertruck">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMG5DM"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+    <script type="text/javascript">
+      var i18n = {
+        language: 'en',
+        region: 'US',
+        locale: 'en_US',
+      };
+    </script>
+
+    
+      <div class="tds-shell dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      
+  
+
+  <div class="tds-menu-header tds-menu-header-legacy">
+    <input type="checkbox" id="tds-menu-header-nav--secondary_show" class="tds-menu-header-checkbox" aria-label="Toggle Side Menu">
+    <header id="tds-menu-header-main" class="tds-shell-masthead tds-menu-header-main tds-menu-header--transparent_on_mobile tds-o-header-main" aria-label="Site header">
+      <div class="tds-menu-header-main--container">
+        <div class="tds-container">
+          <h1 id="tesla-logo" class="tds-menu-header-main--logo_container" aria-label="Tesla">
+                                    <a href="https://www.tesla.com/" class="tds-menu-header-main--logo" title="Tesla, Inc.">
+              <svg class="tds-icon tds-icon-wordmark--inverted" aria-labelledby="tds-menu-header-main--logo_title"></svg>
+              <span id="tds-menu-header-main--logo_title" class="tds--is_visually_hidden">Tesla, Inc</span>
+            </a>
+          </h1>
+          <input type="checkbox" id="tds-menu-header-main--trigger" class="tds-menu-header-checkbox">
+          <label class="tds-menu-header-main--trigger_icon--placeholder" for="tds-menu-header-main--trigger" data-gtm-event="navigation" data-gtm-location="hamburger nav">
+            <span class="tds-menu-header-main--trigger_icon">
+              <i class="tds-menu-header-main--cross_hatch" aria-label="Toggle Side Menu">×</i>
+            </span>
+          </label>
+          <nav id="tesla-legacy-menu" class="tds-menu-header-nav tds-o-header-nav" data-gtm-event="navigation" data-gtm-location="top nav"></nav>
+          <span id="tds-menu-header-mask"></span>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main role="main" class="tds-shell-content site-content site-content-legacy tds-theme--replicant">
+    <a id="main-content" tabindex="-1"></a>
+    <div class="layout-content">
+        <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-tesla-frontend-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-content_container tcl-container" id="tdsgrid--SKgnfDZo2GI">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-tesla-blocks block-inline-blockhero-showcase">
+  
+    
+       
+
+  
+
+
+  
+
+
+
+  
+  
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <section  data-gtm-key="tesla-hero-showcase-991" class="hero tcl-objectfit-position-- hero--default hero--with-disclaimer" id="tesla-hero-showcase-991" style="--media-height: 100vh;">
+            
+  
+              
+		
+
+
+	
+
+
+		<picture data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Desktop.jpg" data-alt="Cybertruck" class="hero-picture lozad" data-class="tds-asset-fallback hero__asset">
+									<source srcset="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Mobile.jpg" media="(max-width: 639px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape)">
+										<source srcset="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Desktop.jpg" media="(min-width: 640px) and (orientation:portrait)">
+							<source srcset="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Desktop.jpg" media="(min-width: 840px) and (orientation:landscape)">
+					<noscript>
+				<img src="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/01_Main_Hero_Desktop.jpg" alt="Cybertruck"/>
+			</noscript>
+			</picture>
+  
+
+
+  
+        
+      <div class="hero-regions--wrapper">
+      <div class="hero-regions">
+                <div
+          class="hero-region--center hero-region--with-callouts">
+                                          <div class="hero-region--center-top header-copy-position--default">
+            
+                          <header>
+                                                  <h1 class="">
+                                        
+                    
+                                                            
+                                          <span
+                        class="header-upper s1 tds-animate_small--to_reveal"></span>
+                    
+                    
+                                          <span
+                        class="header-lower tds-animate_small--to_reveal">Cybertruck</span>
+                    
+                                      </h1>
+                
+                              </header>
+                                              </div>
+          <div class="hero-region--center-bottom">
+                          <p
+                class="hero-copy hero-copy--desktop hero-copy--white tds-animate_large--to_reveal">
+                BETTER UTILITY THAN A TRUCK WITH MORE PERFORMANCE THAN A SPORTS CAR
+              </p>
+                                      <p
+                class="hero-copy hero-copy--mobile hero-copy--white tds-animate_large--to_reveal">
+                BETTER UTILITY THAN A TRUCK WITH MORE PERFORMANCE THAN A SPORTS CAR
+              </p>
+                                  </div>
+        </div>
+              </div>
+              <div class="hero--disclaimer-and-arrow">
+                    
+          
+                      <section
+              class="tcl-button-group tcl-button-group--side-by-side tcl-button-group--center disclaimer-buttons">
+              
+
+
+
+
+  
+
+      <a data-gtm-event="" data-gtm-drawer="" data-gtm-interaction="" href="/cybertruck/design" title="Order Now" data-button-text-desktop="Order Now" data-button-text-mobile="Order Now" class="tds-btn tcl-button tds-btn--outline tds-btn--white tds-animate_large--to_reveal">Order Now</a>
+  
+            </section>
+          
+          
+          
+          
+          
+          
+          
+          
+                            </div>
+          </div>
+  
+      </section>
+
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-scrim--black mktg-content_container tds-content_container tcl-container" id="tdsgrid--R6HqlmqUNPQ">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-tesla-blocks block-inline-blockimage">
+  
+    
+      
+<section data-gtm-key="tesla-image-102" class="tcl-spacing--small cybertruck-hero tcl-image" id="tesla-image-102">
+    	
+		
+	
+
+	
+
+
+		<picture data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" data-alt="Utility Hero" class="lozad tds-animate_large--to_reveal" data-class="tds-asset-fallback ">
+									<source srcset="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" media="(max-width: 639px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape)">
+										<source srcset="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" media="(min-width: 640px) and (orientation:portrait)">
+							<source srcset="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" media="(min-width: 840px) and (orientation:landscape)">
+					<noscript>
+				<img src="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/02_Desktop.jpg" alt="Utility Hero"/>
+			</noscript>
+			</picture>
+  
+
+
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockrich-text">
+  
+    
+      
+<section data-gtm-key="tesla-rich-text-3511" class="tcl-spacing--extra-large drawer-container--840 tds-animate_large--to_reveal tcl-rich-text tds-animate_large--to_reveal" id="tesla-rich-text-3511">
+    <h3>EXOSKELETON</h3>
+
+<p>Cybertruck is built with an exterior shell made for ultimate durability and passenger protection. Starting with a nearly impenetrable exoskeleton, every component is designed for superior strength and endurance, from Ultra-Hard 30X Cold-Rolled stainless-steel structural skin to Tesla armor glass.</p>
+
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockimage">
+  
+    
+      
+<section data-gtm-key="tesla-image-109" class="tcl-spacing--small cybertruck-hero tcl-image" id="tesla-image-109">
+    	
+		
+	
+
+	
+
+
+		<picture data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" data-alt="Armor Glass" class="lozad tds-animate_large--to_reveal" data-class="tds-asset-fallback ">
+									<source srcset="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" media="(max-width: 639px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape)">
+										<source srcset="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" media="(min-width: 640px) and (orientation:portrait)">
+							<source srcset="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" media="(min-width: 840px) and (orientation:landscape)">
+					<noscript>
+				<img src="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/03_Desktop.jpg" alt="Armor Glass"/>
+			</noscript>
+			</picture>
+  
+
+
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockpaired-rich-text">
+  
+    
+      
+<section data-gtm-key="tesla-paired-rich-text-228" class="tcl-spacing--extra-large tds-animate_large--to_reveal cybertruck-copy tcl-paired-rich-text tds-flex" id="tesla-paired-rich-text-228">
+      <div class="tds-flex-item tds-animate_large--to_reveal tds-flex--col_1of4 tds-flex-item--top tds-text--start">
+      <p class="tds-text--700">ULTRA-HARD 30X COLD-ROLLED STAINLESS STEEL</p>
+
+    </div>
+    <div class="tds-flex-item tds-animate_large--to_reveal tds-flex-item--top tds-text--start">
+      <p>If there was something better, we’d use it. Help eliminate dents, damage and long-term corrosion with a smooth monochrome exoskeleton that puts the shell on the outside of the car and provides you and your passengers maximum protection.</p>
+
+    </div>
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockimage">
+  
+    
+      
+<section data-gtm-key="tesla-image-116" class="tcl-spacing--small cybertruck-hero tcl-image" id="tesla-image-116">
+    	
+		
+	
+
+	
+
+
+		<picture data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" data-alt="Stainless Steel" class="lozad tds-animate_large--to_reveal" data-class="tds-asset-fallback ">
+									<source srcset="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" media="(max-width: 639px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape)">
+										<source srcset="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" media="(min-width: 640px) and (orientation:portrait)">
+							<source srcset="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" media="(min-width: 840px) and (orientation:landscape)">
+					<noscript>
+				<img src="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/04_Desktop.jpg" alt="Stainless Steel"/>
+			</noscript>
+			</picture>
+  
+
+
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockpaired-rich-text">
+  
+    
+      
+<section data-gtm-key="tesla-paired-rich-text-235" class="tcl-spacing--extra-large tds-animate_large--to_reveal cybertruck-copy tcl-paired-rich-text tds-flex" id="tesla-paired-rich-text-235">
+      <div class="tds-flex-item tds-animate_large--to_reveal tds-flex--col_1of4 tds-flex-item--top tds-text--start">
+      <p class="tds-text--700">TESLA ARMOR GLASS</p>
+
+    </div>
+    <div class="tds-flex-item tds-animate_large--to_reveal tds-flex-item--top tds-text--start">
+      <p>Ultra-strong glass and polymer-layered composite can absorb and redirect impact force for improved performance and damage tolerance.</p>
+
+    </div>
+</section>
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-scrim--black tds-content_container tcl-container" id="tdsgrid--zeUHP6THTuU">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-layout-builder block-inline-blockcarousel">
+  
+    
+      
+
+    
+
+                    
+
+<section       data-gtm-key="tesla-carousel-361" class="tcl-spacing--extra-large  tcl-dotted-carousel--navigation-bottom tcl-carousel tcl-carousel--animate_on_scroll tds-content_container animate_on_scroll" id="tesla-carousel-361"
+  >
+                <div class="tds-content_container tds-content_container--max_width tcl-carousel-header">
+          
+        </div>
+    
+    <div id="tesla-carousel-361--carousel" data-auto-transition="1" class="tds-tabs--dots tcl-carousel-tabs--dots tds-tabs--carousel tds-tabs tcl-carousel-tabs tds-tabs--animated">
+        
+        <div class="tcl-slides-wrapper">
+            
+            <div class="tds-tab-panel-list tcl-carousel-slides">
+                    
+<section id="tcl-carousel-slide--tesla-carousel-361-0-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-0">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" data-alt="Versatile Utility" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/05_Desktop.jpg" alt="Versatile Utility"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-0" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+    
+<section id="tcl-carousel-slide--tesla-carousel-361-1-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-1">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" data-alt="Vault-like storage" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/06_Desktop.jpg" alt="Vault-like storage"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-1" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+    
+<section id="tcl-carousel-slide--tesla-carousel-361-2-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-2">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" data-alt="Rugged Strength" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/07_Desktop.jpg" alt="Rugged Strength"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-2" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+    
+<section id="tcl-carousel-slide--tesla-carousel-361-3-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-3">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" data-alt="Adaptive Air Suspension" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/08_Desktop.jpg" alt="Adaptive Air Suspension"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-3" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+    
+<section id="tcl-carousel-slide--tesla-carousel-361-4-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-4">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" data-alt="Flexible Interior" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/09_Desktop.jpg" alt="Flexible Interior"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-4" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+    
+<section id="tcl-carousel-slide--tesla-carousel-361-5-panel" class="tds-tab-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-5">
+    
+            
+  
+  
+        
+  
+    
+
+      <section class="tcl-image ">
+        
+  <picture           data-iesrc="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" data-alt="Awesome Adaptability" class="lozad"
+      
+    data-class="tds-asset-fallback tcl-slide__asset">
+                  <source srcset="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" media="(max-width: 599px) and (orientation: portrait), (max-width: 899px) and (orientation: landscape)">
+                    <source srcset="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" media="(min-width: 600px) and (orientation:portrait)">
+              <source srcset="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" media="(min-width: 900px) and (orientation:landscape)">
+          <noscript>
+        <img src="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" srcset="https://www.tesla.com/xNVh4yUEc3B9/10_Desktop.jpg" alt="Awesome Adaptability"/>
+      </noscript>
+      </picture>
+
+    </section>
+  
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-5" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+
+
+            </div>
+
+                            
+<div class="tcl-carousel-controls tcl-carousel-controls--hide_on_small_screens">
+    <button type="button" class="tcl-carousel-arrow tcl-carousel-arrow--previous tds-tab--prev tcl-carousel-navigation--arrow_color--default">
+        <svg class="tds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M57.1 75.4l7.1-7.1L45.9 50l18.3-18.3-7.1-7.1L31.8 50"></path>
+        </svg>
+        <span class="tds--is_visually_hidden">Previous slide</span>
+    </button>
+    <button type="button" class="tcl-carousel-arrow tcl-carousel-arrow--next tds-tab--next tcl-carousel-navigation--arrow_color--default">
+        <svg class="tds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polyline points="42.9 24.6 35.8 31.7 54.1 50 35.8 68.3 42.9 75.4 68.2 50"></polyline>
+        </svg>
+        <span class="tds--is_visually_hidden">Next slide</span>
+    </button>
+</div>                    </div>
+
+        
+                    <section class="tcl-dotted-nav-container tcl-additional-slide-container tcl-dotted-nav--additional-slide-container tds-flex tcl-nav-additional-slide-container--before  tcl-carousel-dotted-nav-list--inline">
+    
+                                    
+<section id="tcl-carousel-slide--tesla-carousel-361-0-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-0">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content">With up to 3,500 pounds of payload capacity and adjustable air suspension, Cybertruck is the most powerful tool we have ever built, engineered with 100 cubic feet of exterior, lockable storage — including a magic tonneau cover that is strong enough to stand on.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-0--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+            
+<section id="tcl-carousel-slide--tesla-carousel-361-1-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-1">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content"><strong>VAULT-LIKE STORAGE</strong><br /><br />
+Space for your toolbox, tire and Cyberquad, with room to spare. Utilize 100 cubic feet of exterior, lockable storage — including the under-bed, frunk and sail pillars.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-1--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+            
+<section id="tcl-carousel-slide--tesla-carousel-361-2-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-2">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content"><strong>RUGGED STRENGTH</strong><br /><br />
+With the ability to pull near infinite mass and a towing capability of over 14,000 pounds, Cybertruck can perform in almost any extreme situation with ease.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-2--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+            
+<section id="tcl-carousel-slide--tesla-carousel-361-3-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-3">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content"><strong>ADAPTIVE AIR SUSPENSION</strong><br /><br />
+Raise and lower suspension four inches in either direction for easy access to Cybertruck or the vault, while self-leveling capabilities adapt to any occasion and assist with every job.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-3--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+            
+<section id="tcl-carousel-slide--tesla-carousel-361-4-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-4">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content"><strong>FLEXIBLE INTERIOR</strong><br /><br />
+Seat six comfortably with additional storage under the second-row seats. Complete with an advanced 17” touchscreen with an all-new customized user interface.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-4--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+            
+<section id="tcl-carousel-slide--tesla-carousel-361-5-panel--additional" class="tcl-additional-slide-panel" aria-labelledby="tcl-carousel-slide--tesla-carousel-361-5">
+  <div class="tcl-slide--copy tcl-carousel-navigation-item">            <h3 class="tds-text--h3 tcl-slide--copy--heading">VERSATILE UTILITY</h3>
+                <p class="tcl-slide--copy--content"><strong>Awesome Adaptability</strong><br /><br />
+From rugged to refined, Cybertruck is completely adaptable for your needs. Prepare for every experience with a versatile utilitarian design — including on-board power and compressed air.</p>
+    </div>
+
+  <button type="button" aria-label="tcl-carousel-slide--tesla-carousel-361-5--additional" class="tds-tab--activate" tabindex="-1"> </button>
+</section>
+    
+    
+    
+                                <section class="tcl-carousel--dotted--nav-wrapper">
+                <nav class="tcl-carousel-dotted-nav-list tcl-carousel-list tds-tab-list tcl-dotted-nav--after" role="tablist" aria-label=" Navigation">
+                <div class="tds-tab-list-animated-backdrop tcl-highlight-backdrop tcl-dotted-carousel-backdrop"></div>
+                            
+<div id="tcl-carousel-slide--tesla-carousel-361-0" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-0-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-0-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>                    
+<div id="tcl-carousel-slide--tesla-carousel-361-1" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-1-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-1-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>                    
+<div id="tcl-carousel-slide--tesla-carousel-361-2" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-2-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-2-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>                    
+<div id="tcl-carousel-slide--tesla-carousel-361-3" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-3-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-3-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>                    
+<div id="tcl-carousel-slide--tesla-carousel-361-4" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-4-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-4-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>                    
+<div id="tcl-carousel-slide--tesla-carousel-361-5" class="tcl-dotted-carousel-tab tds-tab tds-flex-item tcl-carousel-tab" data-target="#tcl-carousel-slide--tesla-carousel-361-5-panel" role="tab" aria-controls="tcl-carousel-slide--tesla-carousel-361-5-panel" data-gtm-event="widget-interaction" data-gtm-widget-name="" data-gtm-interaction="">
+    
+</div>            </nav>
+
+        </section>
+    
+    </section>
+            </div>
+</section>
+    
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-scrim--black mktg-content_container tds-content_container tcl-container" id="tdsgrid--qtxm3DmCmkA">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-tesla-blocks block-inline-blockvideo">
+  
+    
+      
+<section data-gtm-key="tesla-video-18" class="tcl-spacing--small cybertruck-hero tcl-video" id="tesla-video-18">
+      
+
+
+					
+	
+	
+	
+	<video class=" " preload="auto" playsinline data-autoplay-desktop="true" data-autoplay-portrait="true" data-autoplay-mobile="true" muted loop controls           poster="https://www.tesla.com/xNVh4yUEc3B9/performance_desktop_still.png" data-poster-desktop="https://www.tesla.com/xNVh4yUEc3B9/performance_desktop_still.png"
+    	           data-poster-portrait="https://www.tesla.com/xNVh4yUEc3B9/performance_desktop_still.png"
+    	           data-poster-mobile="https://www.tesla.com/xNVh4yUEc3B9/performance_mobile_still.png"
+    	 data-src-desktop="https://www.tesla.com/xNVh4yUEc3B9/performance_video_desktop.mp4" data-src-mobile="https://www.tesla.com/xNVh4yUEc3B9/peformance_video_mobile.mp4" data-src-portrait="https://www.tesla.com/xNVh4yUEc3B9/performance_video_desktop.mp4" data-object-fit="true"></video>
+	<noscript>
+		<video class=" " preload="auto" playsinline data-autoplay-desktop="true" data-autoplay-portrait="true" data-autoplay-mobile="true" muted loop controls poster="https://www.tesla.com/xNVh4yUEc3B9/performance_desktop_still.png" src="https://www.tesla.com/xNVh4yUEc3B9/performance_video_desktop.mp4"></video>
+  </noscript>
+
+			
+
+
+</section>
+
+  </div>
+<div class="block block-tesla-blocks block-inline-blockpaired-rich-text">
+  
+    
+      
+<section data-gtm-key="tesla-paired-rich-text-242" class="tcl-spacing--extra-large tds-animate_large--to_reveal cybertruck-copy tcl-paired-rich-text tds-flex" id="tesla-paired-rich-text-242">
+      <div class="tds-flex-item tds-animate_large--to_reveal tds-flex--col_1of4 tds-flex-item--top tds-text--start">
+      <h3>PERFORMANCE AND EFFICIENCY</h3>
+
+    </div>
+    <div class="tds-flex-item tds-animate_large--to_reveal tds-flex-item--top tds-text--start">
+      <p>Now entering a new class of strength, speed and versatility—only possible with an all-electric design. The powerful drivetrain and low center of gravity provides extraordinary traction control and torque—enabling acceleration from 0-60 mph in as little as 2.9 seconds and up to 500 miles of range.</p>
+
+    </div>
+</section>
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+  
+
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--fixed-1240 tds-content_container tcl-container" id="specifications-with-image">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex--col_1of2 tds-flex-item--top">
+            <div class="block block-layout-builder block-inline-blockspecifications-simple">
+  
+    
+      
+<section data-gtm-key="tesla-spec-simple-25" class="tcl-specifications-simple" id="tesla-spec-simple-25">
+        <h3 class="tcl-specifications-simple__heading">Specs</h3>
+        <div class="tds-radio_buttons tcl-specifications-simple__radio-buttons">
+          <div class="tds-radio tcl-specifications-simple__radio">
+        <input checked class="tds-radio-input tcl-specifications-simple__radio-input"
+          id="tcl-specifications-simple__radio-group--1" name="tcl-specifications-simple__radio-group" type="radio" />
+        <label class="tds-label tds-label--radio" for="tcl-specifications-simple__radio-group--1">
+          <span class="tds-label-title">Single Motor RWD</span>
+        </label>
+      </div>
+          <div class="tds-radio tcl-specifications-simple__radio">
+        <input  class="tds-radio-input tcl-specifications-simple__radio-input"
+          id="tcl-specifications-simple__radio-group--2" name="tcl-specifications-simple__radio-group" type="radio" />
+        <label class="tds-label tds-label--radio" for="tcl-specifications-simple__radio-group--2">
+          <span class="tds-label-title">Dual Motor AWD</span>
+        </label>
+      </div>
+          <div class="tds-radio tcl-specifications-simple__radio">
+        <input  class="tds-radio-input tcl-specifications-simple__radio-input"
+          id="tcl-specifications-simple__radio-group--3" name="tcl-specifications-simple__radio-group" type="radio" />
+        <label class="tds-label tds-label--radio" for="tcl-specifications-simple__radio-group--3">
+          <span class="tds-label-title">Tri Motor AWD</span>
+        </label>
+      </div>
+        </div>
+        <ul class="tds-list tds-list--bordered tcl-specifications-simple__list">
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">0-60 MPH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">&lt;6.5 SECONDS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">RANGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">250+ MILES (EPA EST.)</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DRIVETRAIN</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">REAR-WHEEL DRIVE</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">STORAGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">100 CU FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">VAULT LENGTH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">6.5 FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">TOWING CAPACITY</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">7,500+ LBS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">AUTOPILOT</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">ADAPTIVE AIR SUSPENSION</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">GROUND CLEARANCE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">UP TO 16&quot;</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">APPROACH ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">35 DEGREES</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DEPARTURE ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">28 DEGREES</span>
+          </div>
+        </li>
+          </ul>
+      <ul class="tds-list tds-list--bordered tcl-specifications-simple__list">
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">0-60 MPH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">&lt;4.5 SECONDS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">RANGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">300+ MILES (EPA EST.)</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DRIVETRAIN</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">DUAL MOTOR ALL-WHEEL DRIVE</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">STORAGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">100 CU FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">VAULT LENGTH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">6.5 FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">TOWING CAPACITY</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">10,000+ LBS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">AUTOPILOT</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">ADAPTIVE AIR SUSPENSION</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">GROUND CLEARANCE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">UP TO 16&quot;</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">APPROACH ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">35 DEGREES</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DEPARTURE ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">28 DEGREES</span>
+          </div>
+        </li>
+          </ul>
+      <ul class="tds-list tds-list--bordered tcl-specifications-simple__list">
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">0-60 MPH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">&lt;2.9 SECONDS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">RANGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">500+ MILES (EPA EST.)</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DRIVETRAIN</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">TRI MOTOR ALL-WHEEL DRIVE</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">STORAGE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">100 CU FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">VAULT LENGTH</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">6.5 FT</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">TOWING CAPACITY</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">14,000+ LBS</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">AUTOPILOT</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">ADAPTIVE AIR SUSPENSION</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">STANDARD</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">GROUND CLEARANCE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">UP TO 16&quot;</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">APPROACH ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">35 DEGREES</span>
+          </div>
+        </li>
+              <li class="tds-list-item tcl-specifications-simple__list-item">
+          <div class="tcl-specifications-simple__content">
+            <span class="tds-list-item_title tcl-specifications-simple__content-item">DEPARTURE ANGLE</span>
+            <span class="tds-list-item_value tcl-specifications-simple__content-item tcl-specifications-simple__content-value">28 DEGREES</span>
+          </div>
+        </li>
+          </ul>
+        <p>*All configurations are US specification only. Global specifications will be developed at a later date based on demand.</p>
+  </section>
+
+  </div>
+
+          </div>
+                                                                                                      <div  class="tds-flex-item tds-flex--col_1of2 tds-flex-item--top">
+            <div class="block block-layout-builder block-inline-blockimage">
+  
+    
+      
+<section data-gtm-key="tesla-image-2167" class="tcl-image" id="tesla-image-2167">
+    	
+		
+	
+
+	
+
+
+		<picture data-iesrc="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" data-alt="Cybertruck" class="lozad tds-animate_large--to_reveal" data-class="tds-asset-fallback ">
+									<source srcset="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" media="(max-width: 639px) and (orientation: portrait), (max-width: 839px) and (orientation: landscape)">
+										<source srcset="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" media="(min-width: 640px) and (orientation:portrait)">
+							<source srcset="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" media="(min-width: 840px) and (orientation:landscape)">
+					<noscript>
+				<img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" srcset="https://tesla-cdn.thron.com/delivery/public/image/tesla/cybertruck_top/bvlatuR/std/0x0/cybertruck_top" alt="Cybertruck"/>
+			</noscript>
+			</picture>
+  
+
+
+</section>
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-scrim--black tds-content_container tcl-container" id="tdsgrid--MAONTTl7Uzw">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-tesla-blocks block-inline-blockorder-showcase">
+  
+    
+      
+<section data-gtm-key="tesla-order-showcase-158" class="order tds-scrim--black order--image" style="--media-height: 100vh" id="tesla-order-showcase-158">
+      <div class="tds-flex tds-flex-gutters">
+    <div class="tds-flex-item order--content">
+      <h2 class="cmp-heading">CYBERTRUCK</h2>
+      
+              <div class="order--buttons">
+          
+
+
+
+
+  
+
+      <a data-gtm-event="" data-gtm-drawer="" data-gtm-interaction="" href="/cybertruck/design" title="Order Now" data-button-text-desktop="Order Now" data-button-text-mobile="Order Now" class="tds-btn tcl-button tds-btn--outline tds-btn--white tds-animate_large--to_reveal">Order Now</a>
+  
+        </div>
+            
+    </div>
+        <div class="tds-flex-item order--vehicle-image">
+      <img class="lozad" data-src="https://www.tesla.com/xNVh4yUEc3B9/13_Desktop_Order.png" alt="Cybertruck">
+      <noscript><img src="https://www.tesla.com/xNVh4yUEc3B9/13_Desktop_Order.png" alt="Cybertruck"></noscript>
+    </div>
+      </div>
+
+</section>
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+
+
+  <div class="tds-scrim--black">
+        <section  class="tcl-container--no-inline-padding tds-content_container tcl-container" id="tdsgrid--xsuXfDlleeE">
+      <div  class="tds-flex">
+              
+                                                                                                      <div  class="tds-flex-item tds-flex-item--top">
+            <div class="block block-tesla-blocks block-inline-blocksticky-navigation">
+  
+    
+      
+<section data-gtm-key="tesla-sticky-navigation-172" class="tcl-sticky-navigation" id="tesla-sticky-navigation-172">
+    <nav
+  class="tcl-sticky-navigation__nav tcl-sticky-navigation__nav--mobile tcl-sticky-navigation__nav--no-arrow animate_scrolltop--to_reveal">
+    <div class="tcl-sticky-navigation__logo" aria-label="Tesla sticky navigation logo">
+    <h1 id="tcl-sticky-navigation__logo-title" class="tds-text--h1 tds--is_visually_hidden">Tesla Inc.</h1>
+    <a aria-label="Tesla Logo" class="tcl-sticky-navigation__link" href="/">
+      <span class="tds--is_visually_hidden">Tesla logo</span>
+      <svg class="tds-icon tds-icon--wordmark tds-site-logo-icon tcl-sticky-navigation__icon" viewBox="0 0 342 35"
+           xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 .1a9.7 9.7 0 007 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 007-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 006-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 00-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 13.8h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 14.1h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zM308.5 7h26a9.6 9.6 0 007-7h-40a9.6 9.6 0 007 7z"
+          fill="var(--tcl-sticky-navigation--logo-fill)"></path>
+      </svg>
+    </a>
+  </div>
+
+        <div class="tcl-sticky-navigation__buttons">
+      
+
+
+
+
+
+
+      <a data-gtm-event="" data-gtm-drawer="" data-gtm-interaction="" href="/cybertruck/design" title="Order Now" data-button-text-desktop="Order Now" data-button-text-mobile="Order Now" class="tds-btn tcl-button tds-btn--outline tds-btn--white">Order Now</a>
+  
+    </div>
+  </nav>
+  <nav class="tcl-sticky-navigation__nav tcl-sticky-navigation__nav--desktop">
+    <div class="tcl-sticky-navigation__logo" aria-label="Tesla sticky navigation logo">
+    <h1 id="tcl-sticky-navigation__logo-title" class="tds-text--h1 tds--is_visually_hidden">Tesla Inc.</h1>
+    <a aria-label="Tesla Logo" class="tcl-sticky-navigation__link" href="/">
+      <span class="tds--is_visually_hidden">Tesla logo</span>
+      <svg class="tds-icon tds-icon--wordmark tds-site-logo-icon tcl-sticky-navigation__icon" viewBox="0 0 342 35"
+           xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 .1a9.7 9.7 0 007 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 007-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 006-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 00-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 13.8h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 14.1h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zM308.5 7h26a9.6 9.6 0 007-7h-40a9.6 9.6 0 007 7z"
+          fill="var(--tcl-sticky-navigation--logo-fill)"></path>
+      </svg>
+    </a>
+  </div>
+
+      <div class="tcl-sticky-navigation__buttons">
+      
+
+
+
+
+
+
+      <a data-gtm-event="" data-gtm-drawer="" data-gtm-interaction="" href="/cybertruck/design" title="Order Now" data-button-text-desktop="Order Now" data-button-text-mobile="Order Now" class="tds-btn tcl-button tds-btn--outline tds-btn--white">Order Now</a>
+  
+          </div>
+  </nav>
+</section>
+
+  </div>
+
+          </div>
+                    </div>
+    </section>
+  </div>
+
+
+  <ul class="side_nav-container tds-list">
+  </ul>
+
+  </div>
+
+
+    </div>
+  </main>
+
+  <footer id="tesla-footer" class="tds-shell-footer tds-site-footer tds-footer tds-scrim--black tds-theme--replicant" aria-label="Site footer">
+
+  </footer>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/255637","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"tesla_locale_existing":{"locale":["en_au","de_at","nl_be","fr_be","en_ca","fr_ca","zh_cn","cs_cz","da_dk","fi_fi","fr_fr","de_de","el_gr","zh_hk","en_hk","is_is","en_ie","it_it","ja_jp","en_jo","fr_lu","de_lu","zh_mo","en_mo","es_mx","nl_nl","en_nz","no_no","en_eu","pl_pl","pt_pt","sl_si","ko_kr","es_es","sv_se","fr_ch","de_ch","it_ch","zh_tw","en_ae","en_gb","he_il","en","en_us"]},"tesla_mega_menu":{"is_site_template_enabled":true,"is_china_domain":false,"is_d8":true},"user":{"uid":0,"permissionsHash":"233257b7076c6aa824ac0fa7abdd775c42bdb2ebf0cb4a37d3eaeedfd222a7d7"}}</script>
+<script src="/_flysystem/s3/js/js_sCeR-kmEAoTmWfADDeArCrNj7h83PYiAYeGdh0pVC6I.js"></script>
+
+      </body>
+</html>
