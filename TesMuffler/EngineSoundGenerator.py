@@ -3,19 +3,30 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-05-19"
+__date__    = "Late Updated: 2021-05-22"
 __doc__     = "Class to create pitch varying audio in real-time on a low processing power CPUs"
 """
 
 # http://www.mega-nerd.com/SRC/
+# https://github.com/jiaaro/pydub
+# https://people.csail.mit.edu/hubert/pyaudio/
+# https://simpleaudio.readthedocs.io/en/latest/
+# https://realpython.com/playing-and-recording-sound-python/
 
 # Allow for high-quality sample rate conversion
 # https://pypi.org/project/samplerate/
 import samplerate
 
+# Allow for playback of .mp3 audio on Linux, MacOS, & Windows
+#TODO import  pyaudio
+
 # Allow the control of the space-time fabric :)
 # https://docs.python.org/3/library/time.html
 import time
+
+# Allow program to extract filename of the current file
+# https://docs.python.org/3/library/os.html
+import os
 
 try:
     # Generate .txt data logging and custom terminal debugging output
@@ -25,12 +36,12 @@ try:
 
 except ImportError:
     currentProgramFilename = os.path.basename(__file__)
-    TODO
+    #TODO
 
 class EngineSoundGenerator:
 
     # ICE car engine sound CONSTANTS
-    MC_LAREN_F1 = "McLarenF1.mp3"
+    MC_LAREN_F1 = 'McLarenF1.mp3'
     FERRARI_LA_FERRARI = 2
     PORCSHE_911 = 3
     BMW_M4 = 4
@@ -50,7 +61,7 @@ class EngineSoundGenerator:
 
 
         TestObject3 = EngineSoundGenerator(10)
-        TestObject3 = EngineSoundGenerator("Ford_F_150.mp3")
+        TestObject3 = EngineSoundGenerator('Ford_F_150.mp3')
 
         #TODO
         assert()
@@ -78,6 +89,7 @@ class EngineSoundGenerator:
             self.DebugObject.Dprint("OBJECT CREATION WARNING: You select an invalid base engine sound, we are defaulting to McLaren F1 engine sound")
             self.selectedEngineSound = os.path.basename("/Sounds/ " + MC_LAREN_F1)
 
+
     def __enter__(self):
         """
         TODO - See CocoDrink.py
@@ -88,17 +100,38 @@ class EngineSoundGenerator:
         return self
 
     def __exit__(self):
+        """
+        """
 
-
+        print("TODO")
 
 
     def adjustPitch():
+        """
+        """
+
+        print("TODO")
+
 
     def adjustVolume():
+        """
+        """
 
-    def setBaseAudio():
+        print("TODO")
+
+
+    def setBaseAudio(newSound):
+        """
+        """
+
+        self.baseAudio = newSound
+
 
     def getBaseAudio():
+        """
+        """
+
+        return self.baseAudio
 
 
 if __name__ == "__main__":
@@ -108,4 +141,4 @@ if __name__ == "__main__":
     except NameError:
         print("Engine Sound Generator Unit Test failed :(")
 
-    print("END of EngineSoundGenerator.py MAIN")
+    print("END of EngineSoundGenerator.py MAIN method")
