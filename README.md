@@ -4,7 +4,7 @@ Car modifications projects for varying [Tesla Motor](http://www.tesla.com) vehic
 
 Author: Blaze Sanders - Twitter @BlazeDSanders
 
-TesMuffler: Bluetooth stream custom muffler sounds into the [premium sound system of a Model 3 or Model Y](www.youtube.com/watch?v=LWKiNA-KT6Y)
+TesMuffler: Bluetooth stream custom muffler sounds into the [premium sound system of a Model 3 or Model Y](http://www.youtube.com/watch?v=LWKiNA-KT6Y)
 
 TesWeight: Steering wheel weight for long highway road trips with [Autopilot](http://www.tesla.com/autopilot)
 
