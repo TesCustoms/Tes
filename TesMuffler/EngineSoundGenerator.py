@@ -30,7 +30,7 @@ import os
 
 try:
     # Generate .txt data logging and custom terminal debugging output
-    from DEBUG import *
+    from Debug import *
 
     #TODO
 
@@ -38,33 +38,40 @@ except ImportError:
     currentProgramFilename = os.path.basename(__file__)
     #TODO
 
+
 class EngineSoundGenerator:
 
+    # Acronymn list: ESG = EngineSoundGenerator
+
     # ICE car engine sound CONSTANTS
-    MC_LAREN_F1 = 'McLarenF1.mp3'
-    FERRARI_LA_FERRARI = 2
-    PORCSHE_911 = 3
-    BMW_M4 = 4
-    JAGUAR_E_TYPE_SERIES_1 = 5
-    FORD_MODEL_T = 6
-    MAX_SOUND_FILES = 6         # !!!UPDATE as more CONSTANTS are added
+    MC_LAREN_F1 = "McLarenF1.mp3"
+    LA_FERRARI = "LaFerrari.mp3"
+    PORCSHE_911 = "Porcshe911.mp3"
+    BMW_M4 = "BMW_M4.mp3"
+    JAGUAR_E_TYPE_SERIES_1 = "JaguarEtypeSeries1.mp3"
+    FORD_MODEL_T = "FordModelT"
+    FORD_MUSTANG_GT350 = "FordMustangGT350.mp3"
+
 
     def unitTest():
         print("STARTING EngineSoundGenerator.py Unit Test")
 
-        # ESG = EngineSoundGenerator
         TestObject1 = EngineSoundGenerator(EngineSoundGenerator.BMW_M4)
+        #TODO assert()
+
         TestObject2 = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)
-
-        #TODO
-        assert()
-
+        #TODO assert()
 
         TestObject3 = EngineSoundGenerator(10)
-        TestObject3 = EngineSoundGenerator('Ford_F_150.mp3')
+        #TODO assert()
 
-        #TODO
-        assert()
+        TestObject4 = EngineSoundGenerator(6.9)
+        #TODO assert()
+
+        TestObject5 = EngineSoundGenerator('Ford_F_150.mp3')
+        #TODO assert()
+
+        print("EngineSoundGenerator.py Unit Test COMPLETE")
 
 
     def __init__(self, baseAudio):
@@ -76,6 +83,12 @@ class EngineSoundGenerator:
         self -- Newly created EngineSoundGenerator object
         baseAudio -- Starting audio .mp3 file to be modulated
 
+        Object instance variables:
+        engineSoundsDict -- DICTIONARY: A Collection of valid sounds and their IDs
+        engineSoundID -- INT: Unique ID for TODO
+        selectedEngineSound -- STRING: Full filepath and filename to sound
+        DebugObject -- Debug.py OBJECT: Useful for debugging & data logging
+
         Return:
         New EngineSoundGenerator() object
         """
@@ -83,27 +96,27 @@ class EngineSoundGenerator:
         thisCodesFilename = os.path.basename(__file__)
         self.DebugObject = Debug(True, thisCodesFilename)
 
-        if(baseAudio <= MAX_SOUND_FILES):
+        # UPDATE this dictionary, EngineSoundGenerator.py global CONSTANTS,
+        # and the Tes/TesMuffler/Sounds folder to add new sounds
+        self.EngineSoundsDict = {
+            "McLarenF1.mp3": 0,
+            "LaFerrari.mp3": 1,
+            "Porcshe911.mp3": 2,
+            "BMW_M4.mp3": 3,
+            "Jaguar_E_Type_Series_1.mp3": 4,
+            "FordModel_T.mp3": 5,
+            "FordMustangGT350R.mp3": 6
+        }
+
+        # Check for valid constructor parameters
+        try:
+            self.engineSoundID = self.EngineSoundsDict[baseAudio]
             self.selectedEngineSound = os.path.basename("/Sounds/ " + baseAudio)
-        else:
-            self.DebugObject.Dprint("OBJECT CREATION WARNING: You select an invalid base engine sound, we are defaulting to McLaren F1 engine sound")
-            self.selectedEngineSound = os.path.basename("/Sounds/ " + MC_LAREN_F1)
-
-
-    def __enter__(self):
-        """
-        TODO - See CocoDrink.py
-        """
-
-        print("in __enter")
-
-        return self
-
-    def __exit__(self):
-        """
-        """
-
-        print("TODO")
+            self.DebugObject.Dprint(self.selectedEngineSound)
+        except KeyError:
+            message = "CONSTRUCTOR WARNING: You select an invalid engine sound, defaulting to the McLaren F1"
+            self.DebugObject.Lprint(message)
+            self.selectedEngineSound = os.path.basename("/Sounds/ " + EngineSoundGenerator.MC_LAREN_F1)
 
 
     def adjustPitch():
@@ -138,7 +151,7 @@ if __name__ == "__main__":
 
     try:
         EngineSoundGenerator.unitTest()
-    except NameError:
+    except AssertionError as error: #NameError:
         print("Engine Sound Generator Unit Test failed :(")
 
     print("END of EngineSoundGenerator.py MAIN method")
