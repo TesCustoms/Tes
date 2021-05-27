@@ -41,10 +41,11 @@ if __name__ == "__main__":
 
 	# Clear terminal and prompt user of next steps
 	check_call("clear",shell=True)
-	print("Starting TesMuffler install and performing system update CTRL-Z now to cancel install and system updates")
+	print("Starting TesMuffler install inside a virtual enviroment and performing system update!")
+	print("Press CTRL-Z now to cancel install and system updates")
 	for countdown in range(10, 0, -1):
-		time.sleep(1)
 		print(countdown)
+		time.sleep(1)
 	print("LIFTOFF!")
 
 	# Check and update your system
@@ -67,9 +68,17 @@ if __name__ == "__main__":
 	check_call("virtualenv -p /usr/bin/python3 TesMufflerDevEnv", shell=True)
 	# Start / activate the virtual enviroment setup above
 	# Important to do this before any "pip3 install" commands
-	check_call("source TesMufflerDevEnv/bin/activate", shell=True)
+	try:
+		check_call("source TesMufflerDevEnv/bin/activate", shell=True)
+	except subprocess.CalledProcessError as e:
+		print()
+		print()
+		print("Beginner: TesMufflerDevEnv was configured correctly using the 'source' command")
+		print("Expert: source returned a non-zero exit status as expected")
+		print()
+		print()
 	print("If you would like to TURN OFF the TesMuffler Virtual Enviroment (BAD IDEA) run the 'deactivate' command")
-	time.sleep(5)
+	time.sleep(7)
 
 	# Flask is the GUI frontend to that runs in parallel with python backend controling pumps
 	# Remember to run flask with "python3" NOT "python" command, or you will get weird errors :)
@@ -77,7 +86,7 @@ if __name__ == "__main__":
 	check_call("pip3 install flask", shell=True)
 
 	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SLECT 1 OF 3
-	check_call("pip3 install simpleaudio", shell=True)
+	check_call("pip install simpleaudio", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install samplerate", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install pyaudio", shell=True)
 
