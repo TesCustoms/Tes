@@ -9,10 +9,12 @@ __doc__ =     "Setup a TesMuffler dev enviroment using VirtualEnv"
 """
 
 
-# Hardware that code can run on CONSTANTS
-PI_4    = "Raspberry Pi 4"
-RP_2040 = "Arduino Microcontroller"
-PI_PICO = "Raspbery Pi Microntroller"
+# Hardware that code can run on CONSTANTS (WINDOWS IS NOT SUPPORTED!)
+PI_4     = "Pi4"     # Raspberry Pi 4
+RP_2040  = "RP2040"  # Arduino Microcontroller
+PI_PICO  = "PiPico"  # Raspbery Pi Microntroller
+LINUX_PC = "LinuxPC" # Intel CPU Personal Computer
+MAC_OS   = "M1Mac"   # M1 Mac Personal Computer
 
 
 # Allow for easy command-line install of all TesMuffler dependencies
@@ -32,8 +34,8 @@ from subprocess import check_call
 
 if __name__ == "__main__":
 
-	parser = argparse.ArgumentParser(prog = "TesMuffler install script", description = __doc__, add_help=True)
-	parser.add_argument("-d", "--device", type=str, default= PI_4, choices=[PI_4, RP_2040, PI_PICO], help="Select the hardware code is running on")
+	parser = argparse.ArgumentParser(prog = "Trying to install TesMuffler app", description = __doc__, add_help=True)
+	parser.add_argument("-d", "--device", type=str, default= PI_4, choices=[PI_4, RP_2040, PI_PICO, LINUX_PC, MAC_OS], help="Select the hardware code is running on")
 	#TODO Add to TesMufflerDriver.py - parser.add_argument("-t", "--trace", type=int, default=0, help="Program trace level.")
 	args = parser.parse_args()
 
@@ -69,15 +71,17 @@ if __name__ == "__main__":
 	# Start / activate the virtual enviroment setup above
 	# Important to do this before any "pip3 install" commands
 	try:
-		check_call("source TesMufflerDevEnv/bin/activate", shell=True)
+		#TODO https://www.reddit.com/r/Python/comments/5lift9/how_to_activatedeactivate_virtualenv_on_linux/
+		check_call(". TesMufflerDevEnv/bin/activate", shell=True)
+		#TODO https://stackoverflow.com/questions/8052926/running-subprocess-within-different-virtualenv-with-python
+		#check_call("source TesMufflerDevEnv/bin/activate", shell=True)
 	except subprocess.CalledProcessError as e:
 		print()
 		print()
 		print("Beginner: TesMufflerDevEnv was configured correctly using the 'source' command")
-		print("Expert: source returned a non-zero exit status as expected")
-		print()
-		print()
-	print("If you would like to TURN OFF the TesMuffler Virtual Enviroment (BAD IDEA) run the 'deactivate' command")
+		print("Expert: source returned a non-zero exit status as expected \n\n")
+
+	print("\n\nIf you would like to TURN OFF the TesMuffler Virtual Enviroment (BAD IDEA) run the 'deactivate' command\n\n")
 	time.sleep(7)
 
 	# Flask is the GUI frontend to that runs in parallel with python backend controling pumps
@@ -86,6 +90,8 @@ if __name__ == "__main__":
 	check_call("pip3 install flask", shell=True)
 
 	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SLECT 1 OF 3
+	check_call("sudo apt-get install -y python3-dev libasound2-dev", shell=True)
+	# simpleaudio was suppose to NOT have dependencies; however, I needed this got pip3 install simpleaudio to work
 	check_call("pip install simpleaudio", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install samplerate", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install pyaudio", shell=True)
@@ -118,7 +124,7 @@ if __name__ == "__main__":
 		check_call("pip install mysql-connector-python", shell=True)
 
 		# Start running mySQL server as root with sudo password
-		check_call("mysql -u root -p", shell=True)
+		#TODO FIGURE OUT PASSOWRD check_call("mysql -u root -p", shell=True)
 
 	else:
 		print("INVALID CLI ARGUMENTS: 'install -d PI_4' is valid for example")
