@@ -13,12 +13,18 @@ __doc__     = "Class to create pitch varying audio in real-time on a low process
 # https://simpleaudio.readthedocs.io/en/latest/
 # https://realpython.com/playing-and-recording-sound-python/
 
+# Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
+# https://simpleaudio.readthedocs.io/en/latest/
+import simpleaudio
+
+#TODO IF simpleaudio DONOT WORK
 # Allow for high-quality sample rate conversion
 # https://pypi.org/project/samplerate/
-import samplerate
+#import samplerate
 
+#TODO IF BOTH simpleaudio and samplerate DONT WORK
 # Allow for playback of .mp3 audio on Linux, MacOS, & Windows
-#TODO import  pyaudio
+# import  pyaudio
 
 # Allow the control of the space-time fabric :)
 # https://docs.python.org/3/library/time.html
@@ -44,13 +50,13 @@ class EngineSoundGenerator:
     # Acronymn list: ESG = EngineSoundGenerator
 
     # ICE car engine sound CONSTANTS
-    MC_LAREN_F1 = "McLarenF1.mp3"
-    LA_FERRARI = "LaFerrari.mp3"
-    PORCSHE_911 = "Porcshe911.mp3"
-    BMW_M4 = "BMW_M4.mp3"
-    JAGUAR_E_TYPE_SERIES_1 = "JaguarEtypeSeries1.mp3"
-    FORD_MODEL_T = "FordModelT"
-    FORD_MUSTANG_GT350 = "FordMustangGT350.mp3"
+    MC_LAREN_F1 = "McLarenF1.wav"
+    LA_FERRARI = "LaFerrari.wav"
+    PORCSHE_911 = "Porcshe911.wav"
+    BMW_M4 = "BMW_M4.wav"
+    JAGUAR_E_TYPE_SERIES_1 = "JaguarEtypeSeries1.wav"
+    FORD_MODEL_T = "FordModelT.wav"
+    FORD_MUSTANG_GT350 = "FordMustangGT350.wav"
 
 
     def unitTest():
@@ -99,13 +105,13 @@ class EngineSoundGenerator:
         # UPDATE this dictionary, EngineSoundGenerator.py global CONSTANTS,
         # and the Tes/TesMuffler/Sounds folder to add new sounds
         self.EngineSoundsDict = {
-            "McLarenF1.mp3": 0,
-            "LaFerrari.mp3": 1,
-            "Porcshe911.mp3": 2,
-            "BMW_M4.mp3": 3,
-            "Jaguar_E_Type_Series_1.mp3": 4,
-            "FordModel_T.mp3": 5,
-            "FordMustangGT350R.mp3": 6
+            EngineSoundGenerator.MC_LAREN_F1: 0,
+            EngineSoundGenerator.LA_FERRARI: 1,
+            EngineSoundGenerator.PORCSHE_911: 2,
+            EngineSoundGenerator.BMW_M4: 3,
+            EngineSoundGenerator.JAGUAR_E_TYPE_SERIES_1: 4,
+            EngineSoundGenerator.FORD_MODEL_T: 5,
+            EngineSoundGenerator.FORD_MUSTANG_GT350: 6
         }
 
         # Check for valid constructor parameters

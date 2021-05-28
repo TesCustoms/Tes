@@ -72,7 +72,7 @@ if __name__ == "__main__":
 	# Important to do this before any "pip3 install" commands
 	try:
 		#TODO https://www.reddit.com/r/Python/comments/5lift9/how_to_activatedeactivate_virtualenv_on_linux/
-		check_call(". TesMufflerDevEnv/bin/activate", shell=True)
+		check_call("sudo . TesMufflerDevEnv/bin/activate", shell=True)
 		#TODO https://stackoverflow.com/questions/8052926/running-subprocess-within-different-virtualenv-with-python
 		#check_call("source TesMufflerDevEnv/bin/activate", shell=True)
 	except subprocess.CalledProcessError as e:
@@ -128,6 +128,8 @@ if __name__ == "__main__":
 
 	else:
 		print("INVALID CLI ARGUMENTS: 'install -d PI_4' is valid for example")
+
+	print("\n\nRUN 'source TesMufflerDevEnv/bin/activate' command please...")
 
 	#TODO COOL EXTRAS
 	#https://pypi.org/project/energyusage/
