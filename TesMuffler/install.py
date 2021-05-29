@@ -4,8 +4,8 @@ __author__ =  "Blaze Sanders"
 __email__ =   "blaze.d.a.sanders@gmail.com"
 __company__ = "Humanity"
 __status__ =  "Development"
-__date__ =    "Late Updated: 2021-05-27"
-__doc__ =     "Setup a TesMuffler dev enviroment using VirtualEnv"
+__date__ =    "Late Updated: 2021-05-29"
+__doc__ =     "Setup a new TesMuffler dev enviroment using VirtualEnv"
 """
 
 
@@ -55,9 +55,10 @@ if __name__ == "__main__":
 	check_call("sudo apt upgrade", shell=True)
 
 
-	# Install PIP3 to stay away from all things Python 2!
-	# Also Flask GUI's (TODO FUTURE WORK) require Python 3 or above
+	# Install PIP3 and update setuptools
+	# Flask GUI's (TODO FUTURE WORK) require Python 3 or above
 	check_call("sudo apt install python3-pip", shell=True)
+	check_call("pip install --upgrade pip setuptools", shell=True)
 
 
 	# Start autoconfiguring a virtual enviroment like a good programmer should :)
@@ -68,6 +69,8 @@ if __name__ == "__main__":
 	check_call("virtualenv TesMufflerDevEnv", shell=True)
 	# Specifiy Python 3 interpreter to stay away from all things Python 2!
 	check_call("virtualenv -p /usr/bin/python3 TesMufflerDevEnv", shell=True)
+
+	#TODO REMOVE ALL CODE DOWN AND INCLUDING time.sleep(7)?
 	# Start / activate the virtual enviroment setup above
 	# Important to do this before any "pip3 install" commands
 	try:
@@ -89,10 +92,11 @@ if __name__ == "__main__":
 	# https://aryaboudaie.com/python/technical/educational/web/flask/2018/10/17/flask.html
 	check_call("pip3 install flask", shell=True)
 
-	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SLECT 1 OF 3
-	check_call("sudo apt-get install -y python3-dev libasound2-dev", shell=True)
-	# simpleaudio was suppose to NOT have dependencies; however, I needed this got pip3 install simpleaudio to work
+	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SELECT 1 OF 3
+	check_call("sudo apt-get install -y python3-dev libasound2-dev", shell=True) 	# Only simpleaudio dependency
 	check_call("pip install simpleaudio", shell=True)
+	#TODO TEST https://simpleaudio.readthedocs.io/en/latest/capabilities.html
+	# This also means that real-time audio applications (such as a synthesizer) are not possible since the entire audio clip to be played must be ready before playback.
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install samplerate", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install pyaudio", shell=True)
 
@@ -117,9 +121,15 @@ if __name__ == "__main__":
 		print("TODO")
 
 	elif(hardware == LINUX_PC):
+		# Allow developer to download and convert to .WAV any car sound
+		# Works on sites other then YouTube (with valid URL scheme)
+		# https://youtube-dl.org/
+		# https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+		check_call("sudo apt install youtube-dl", shell=True)
+
 		# https://github.com/scottrogowski/mongita
-	    	# https://www.w3schools.com/python/python_mysql_getstarted.asp
-    		# https://itsfoss.com/install-mysql-ubuntu/
+	    # https://www.w3schools.com/python/python_mysql_getstarted.asp
+    	# https://itsfoss.com/install-mysql-ubuntu/
 		check_call("sudo apt install mysql-server -y", shell=True)
 		check_call("pip install mysql-connector-python", shell=True)
 
@@ -141,13 +151,3 @@ if __name__ == "__main__":
 	#check_call("", shell=True)
 	#check_call("", shell=True)
 	#check_call("", shell=True)
-
-
-
-
-
-
-
-
-
-

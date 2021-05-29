@@ -15,7 +15,7 @@ __doc__     = "Class to create pitch varying audio in real-time on a low process
 
 # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
 # https://simpleaudio.readthedocs.io/en/latest/
-import simpleaudio
+import simpleaudio as sa
 
 #TODO IF simpleaudio DONOT WORK
 # Allow for high-quality sample rate conversion
@@ -92,7 +92,7 @@ class EngineSoundGenerator:
         Object instance variables:
         engineSoundsDict -- DICTIONARY: A Collection of valid sounds and their IDs
         engineSoundID -- INT: Unique ID for TODO
-        selectedEngineSound -- STRING: Full filepath and filename to sound
+        selectedEngineSoundObject -- OBJECT: Audio ojbect defined a filepath to a audio clip
         DebugObject -- Debug.py OBJECT: Useful for debugging & data logging
 
         Return:
@@ -117,13 +117,23 @@ class EngineSoundGenerator:
         # Check for valid constructor parameters
         try:
             self.engineSoundID = self.EngineSoundsDict[baseAudio]
-            self.selectedEngineSound = os.path.basename("/Sounds/ " + baseAudio)
-            self.DebugObject.Dprint(self.selectedEngineSound)
+            self.filePath = os.path.basename("/Sounds/ " + baseAudio)
+            self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(self.filePath)
+            self.DebugObject.Dprint("Engine sound found in dictionary")
         except KeyError:
             message = "CONSTRUCTOR WARNING: You select an invalid engine sound, defaulting to the McLaren F1"
             self.DebugObject.Lprint(message)
-            self.selectedEngineSound = os.path.basename("/Sounds/ " + EngineSoundGenerator.MC_LAREN_F1)
+			#TODO COPY ABOVE BUT WITH MC LAREN F1
 
+    def startAudioLoop():
+        """
+        """
+        self.EngineSoundObject.wait_done()
+
+    def stopAudioLoop():
+        """
+        """
+        self.EngineSoundObject.stop()
 
     def adjustPitch():
         """
@@ -149,6 +159,7 @@ class EngineSoundGenerator:
     def getBaseAudio():
         """
         """
+        self.engineSoundID = self.EngineSoundsDict[baseAudio]
 
         return self.baseAudio
 
