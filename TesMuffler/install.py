@@ -99,16 +99,20 @@ if __name__ == "__main__":
 	# This also means that real-time audio applications (such as a synthesizer) are not possible since the entire audio clip to be played must be ready before playback.
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install samplerate", shell=True)
 	#TODO REMOVE IF NOT NEEDED check_call("pip3 install pyaudio", shell=True)
-# Allow developer to download and convert to .WAV any car sound
-		# Works on sites other then YouTube (with valid URL scheme)
-		# https://youtube-dl.org/
-		# https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
-		check_call("sudo apt install youtube-dl", shell=True)
-		# Download the default engine sound 
-		print("DOWNLOADING: Default 0.75 GB McLaren F1 engine sound")
-		time.sleep(5)
-		check_call("youtube-dl -ci -f "bestaudio[ext=wav]" www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
-		check_call("rename and mv *.wav /Sound", shell=True)
+
+	# Allow developer to download and convert to .WAV any car sound
+	# Works on sites other then YouTube (with valid URL scheme)
+	# https://youtube-dl.org/
+	# https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+	check_call("pip3 install youtube-dl", shell=True)
+	# Download the default engine sound
+	print("DOWNLOADING: Default ??30?? MB McLaren F1 engine sound\n\n")
+	time.sleep(5)
+	#TODO check_call("youtube-dl -ci -f 'bestaudio[ext=wav]' http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
+	check_call("youtube-dl --extract-audio --audio-format wav http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
+	check_call("cp *.wav McLarenF1.wav", shell=True)
+	check_call("mv McLarenF1.wav ~/Tes/TesMuffler/Sounds", shell=True)
+	check_call("rm *.wav", shell=True)
 
 	if(hardware == PI_4):
 		# Allow other computers to SSH into Pi running this code
