@@ -109,9 +109,12 @@ if __name__ == "__main__":
 	print("DOWNLOADING: Default ??30?? MB McLaren F1 engine sound\n\n")
 	time.sleep(5)
 	#TODO check_call("youtube-dl -ci -f 'bestaudio[ext=wav]' http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
-	check_call("youtube-dl --extract-audio --audio-format wav http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
+	check_call("youtube-dl --extract-audio --audio-format wav https://youtu.be/MmtdhnXsMqE", shell=True)
 	check_call("cp *.wav McLarenF1.wav", shell=True)
 	check_call("mv McLarenF1.wav ~/Tes/TesMuffler/Sounds", shell=True)
+	check_call("youtube-dl --extract-audio --audio-format wav https://youtu.be/RjzC3-7H9NU", shell=True)
+	check_call("cp *.wav McLarenF1StartUp.wav", shell=True)
+	check_call("mv McLarenF1StartUp.wav ~/Tes/TesMuffler/Sounds", shell=True)
 	check_call("rm *.wav", shell=True)
 
 	if(hardware == PI_4):
@@ -129,12 +132,17 @@ if __name__ == "__main__":
 
 	elif(hardware == RP_2040):
 		print("TODO")
+		#https://pypi.org/project/energyusage/
+		check_call("pip3 install energyusage", shell=True)
 
 	elif(hardware == PI_PICO):
 		print("TODO")
 
 	elif(hardware == LINUX_PC): 
 
+		# Install simple command line WAV audio player
+		# Run 'play McLarenF1.wav' command to play sound
+		# check_call("sudo apt install sox", shell=True)
 		# https://github.com/scottrogowski/mongita
 	    # https://www.w3schools.com/python/python_mysql_getstarted.asp
     	# https://itsfoss.com/install-mysql-ubuntu/
@@ -145,12 +153,11 @@ if __name__ == "__main__":
 		#TODO FIGURE OUT PASSOWRD check_call("mysql -u root -p", shell=True)
 
 	else:
-		print("INVALID CLI ARGUMENTS: 'install -d PI_4' is valid for example")
+		print("INVALID CLI ARGUMENTS: 'python3 install -d LinuxPC' is valid for example")
 
 	print("\n\nRUN 'source TesMufflerDevEnv/bin/activate' command please...")
 
 	#TODO COOL EXTRAS
-	#https://pypi.org/project/energyusage/
 	#https://www.builtinafrica.io/blog-post/vuyisile-ndlovu-pypi
 	#https://docs.python.org/3/library/pathlib.html
 
