@@ -105,13 +105,14 @@ if __name__ == "__main__":
 	# https://youtube-dl.org/
 	# https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
 	check_call("pip3 install youtube-dl", shell=True)
-	#TODO WHY DO I NEED TO INSTAL THIS ALSO??????	sudo apt install ffmpeg
+	#TODO WHY DO I NEED TO INSTALL THIS ALSO??
+	check_call("sudo apt install ffmpeg", shell=True)
 	# Download the default engine sound
 	print("DOWNLOADING: Two default ??6?? MB McLaren F1 engine sounds\n\n")
 	time.sleep(5)
 	#TODO check_call("youtube-dl -ci -f 'bestaudio[ext=wav]' http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
 	#check_call("youtube-dl --extract-audio --audio-format wav http://www.youtube.com/watch?v=mOI8GWoMF4M", shell=True)
-	check_call("youtube-dl --extract-audio --audio-format wav https://www.youtube.com/watch?v=MmtdhnXsMqE", shell=True)
+	check_call("youtube-dl --extract-audio --audio-format wav https://youtu.be/MmtdhnXsMqE", shell=True)
 	check_call("cp *.wav McLarenF1.wav", shell=True)
 	check_call("mv McLarenF1.wav ~/Tes/TesMuffler/Sounds", shell=True)
 	check_call("youtube-dl --extract-audio --audio-format wav https://youtu.be/RjzC3-7H9NU", shell=True)
