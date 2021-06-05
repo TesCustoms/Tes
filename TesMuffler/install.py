@@ -53,7 +53,9 @@ if __name__ == "__main__":
 	# Check and update your system
 	check_call("sudo apt update", shell=True)
 	check_call("sudo apt upgrade", shell=True)
-
+	# WARNING: If install fails here !BECAUSE OF STUPID SPOTIFY INTALL ON LINUX! read the manual page
+	# using the "man apt-secure" command
+	# and then try the "sudo apt-get --allow-unauthenticated upgrade" command
 
 	# Install PIP3 and update setuptools
 	# Flask GUI's (TODO FUTURE WORK) require Python 3 or above
