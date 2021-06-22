@@ -1,3 +1,7 @@
+Current useful Python APIs:
+1) https://teslaapi.dev/ & https://github.com/smartcar/python-sdk
+2) https://github.com/commaai/panda/tree/ad12330d506ca31fe16f99a5b5aca76aab8a1ec9
+
 Hardware Required:
 1)[Arduino RP2040](https://blog.arduino.cc/2021/01/20/welcome-raspberry-pi-to-the-world-of-microcontrollers/)
 2) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?)
