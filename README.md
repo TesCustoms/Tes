@@ -12,4 +12,6 @@ TesHouse: Quick disconnect tiny home add-on for the [Tesla CyberTruck](http://ww
 
 Purchase LOGO: https://www.shutterstock.com/image-vector/tc-initial-letters-looping-linked-circle-1724747953
 
+Official Tesla API: https://teslaapi.dev 
+
 Display for PiPico https://www.hackster.io/news/miroslav-nemecek-s-picovga-brings-high-res-video-to-the-raspberry-pi-pico-just-add-resistors-88dd144e7d1c
