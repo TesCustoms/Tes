@@ -1,6 +1,8 @@
 Current useful Python APIs:
-1) https://teslaapi.dev/ & https://github.com/smartcar/python-sdk
-2) https://github.com/commaai/panda/tree/ad12330d506ca31fe16f99a5b5aca76aab8a1ec9
+1) Tesla API is a community of developers who are reverse engineering Tesla's API: https://teslaapi.dev/ & 
+2) Smartcar API lets you read vehicle data (location, odometer) and send commands to vehicles (lock, unlock) to connected vehicles using HTTP requests: https://github.com/smartcar/python-sdk
+3) The Comma Pedal is a gas pedal interceptor. It is a device that is inserted between a car's electronic gas pedal and the ECU (Engine Control Unit): https://github.com/commaai/openpilot/wiki/comma-pedal
+4) All Comma Software: https://github.com/commaai/panda/tree/ad12330d506ca31fe16f99a5b5aca76aab8a1ec9
 
 Hardware Required:
 1)[Arduino RP2040](https://blog.arduino.cc/2021/01/20/welcome-raspberry-pi-to-the-world-of-microcontrollers/)
