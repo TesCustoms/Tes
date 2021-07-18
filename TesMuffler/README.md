@@ -20,7 +20,8 @@ Download the following sounds using "youtube-dl --extract-audio --audio-format m
 4) [BWM M4](https://www.youtube.com/watch?v=0RFoYCG4_TE) <br>
 5) [Jaguar E Type Series 1](https://www.youtube.com/watch?v=44sNpPYw5Bo) <br>
 6) [Ford Model T](https://www.dailymotion.com/video/x35n5if) <br>
-7) OTHER SUGGESTIONS? Tweet me @BlazeDSanders <br>
+7) Subaru WRX STI
+8) OTHER SUGGESTIONS? Tweet me @BlazeDSanders <br>
 
 
 Competition: https://madnessautoworks.com/tesla-model-3-active-exhaust-sound-controller-milltek-single-sound-generator-115036 <br>
