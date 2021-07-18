@@ -1,4 +1,4 @@
-# Tes
+# TesCustoms
 
 Car modifications projects for varying [Tesla Motor](http://www.tesla.com) vehicles 
 
