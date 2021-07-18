@@ -15,3 +15,7 @@ Purchase LOGO: https://www.shutterstock.com/image-vector/tc-initial-letters-loop
 Official Tesla API: https://teslaapi.dev 
 
 Display for PiPico https://www.hackster.io/news/miroslav-nemecek-s-picovga-brings-high-res-video-to-the-raspberry-pi-pico-just-add-resistors-88dd144e7d1c
+
+
+FIND URLS I DELETED FROM TOP OF EngineSoundGenerator.py FILE
+https://whimsical.com/tesmuffler-64NBDWF5cd3stpZDvkubzw
