@@ -30,3 +30,7 @@ Competition: <br>
 <br>
 
 Why?: www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.html <br>
+
+
+Feature requests: TODO Make Github Issue
+1) https://twitter.com/u110110/status/1414227401521967104?s=21 <br>

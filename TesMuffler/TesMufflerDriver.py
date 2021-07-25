@@ -21,6 +21,12 @@ import os
 # https://python-can.readthedocs.io/en/2.1.0/index.html#
 import can
 
+# Allow data from iOS and Android Firebase database to be accessed via API
+# https://docs.python.org/3/library/json.html
+import json
+# https://github.com/thisbejim/Pyrebase
+import pyrebase
+
 # Interface with Parallax LASER rangefinder SKU #2801
 #TODO from LaserPING import *
 
@@ -29,7 +35,7 @@ import can
 from EngineSoundGenerator import *
 
 
-def calibrateSetup():
+def calibrateLaserSetup():
     """
     Runs a calibration process to ensure that hardware has not moved and that the zero and max throttle points are defined and within LASER's range.
 
@@ -55,10 +61,40 @@ def calibrateSetup():
 
     return [minDistance, maxDistance]
 
+
+
 if __name__ == "_main_":
 
+    #QR code on box links mobile app to your hardware with SMS 2FA 
+
+config = {
+  "apiKey": "apiKey",
+  "authDomain": "projectId.firebaseapp.com",
+  "databaseURL": "https://databaseName.firebaseio.com",
+  "storageBucket": "projectId.appspot.com",
+  "serviceAccount": "path/to/serviceAccountCredentials.json"
+}
+
+firebase = pyrebase.initialize_app(config)
+    
+    
+    from io import StringIO
+    io = StringIO()
+    json.dump(['streaming API'], io)
+    io.getvalue()
+'["streaming API"]'
+    
+    usersCarModel = json.get()
+    
+    try:
+        BluetoothObject = BluetoothSetup(usersCarModel)
+    except InvalidModelException:
+        BluetoothObject = BluetoothSetup(BluetoothSetup.ALL) 
+    
+    
+    
     print("Press & release acclerator multiple times for the  next 5 seconds")
-    [ZERO_THROTTLE, MAX_THROTTLE] = calibrateSetup()
+    [ZERO_THROTTLE, MAX_THROTTLE] = calibrateLaserSetup()
 
     currentProgramFilename = os.path.basename(__file__)
     self.DebugObject = Debug(True, currentProgramFilename)
