@@ -74,7 +74,8 @@ class BluetoothSetup:
 
 		#Strongest bluetooth signal afte search for 42 seconds
 		for j in range(0,numOfDevices):
-			if(bluetoothDevices.lookup_name(TODO, 42) == "Tesla")
+			if(bluetoothDevices.lookup_name(TODO, 42) == "Tesla"):
+				print("TODO")
 
 			if(bluetoothDevices[listIndex][tupleIndex] == BluetoothSetup.TESLA_BLUETOOTH_CLASS):
 				# pairWithVehicle()
