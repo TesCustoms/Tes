@@ -93,9 +93,13 @@ if __name__ == "__main__":
 	# https://aryaboudaie.com/python/technical/educational/web/flask/2018/10/17/flask.html
 	check_call("pip3 install flask", shell=True)
 
-	# Tool For Style Guide Enforcement 
+	# Tool For Style Guide Enforcement
 	# https://flake8.pycqa.org/en/latest/
 	check_call("pip3 install flake8", shell=True)
+
+	# A simple Python Bluetooth interface to the BlueZ stack
+	# https://github.com/ukBaz/python-bluezero
+	check_call("sudo pip3 install bluezero", shell=True)
 
 	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SELECT 1 OF 3
 	#TODO TEST https://simpleaudio.readthedocs.io/en/latest/capabilities.html
