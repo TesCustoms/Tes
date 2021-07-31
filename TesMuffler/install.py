@@ -4,7 +4,7 @@ __author__ =  "Blaze Sanders"
 __email__ =   "blaze.d.a.sanders@gmail.com"
 __company__ = "Humanity"
 __status__ =  "Development"
-__date__ =    "Late Updated: 2021-05-29"
+__date__ =    "Late Updated: 2021-07-31"
 __doc__ =     "Setup a new TesMuffler dev enviroment using VirtualEnv"
 """
 
@@ -13,6 +13,7 @@ __doc__ =     "Setup a new TesMuffler dev enviroment using VirtualEnv"
 PI_4     = "Pi4"     # Raspberry Pi 4
 RP_2040  = "RP2040"  # Arduino Microcontroller
 PI_PICO  = "PiPico"  # Raspbery Pi Microntroller
+ESP_32   = "ESP32"   # EspressIf IOT Microcontoller
 LINUX_PC = "LinuxPC" # Intel CPU Personal Computer
 MAC_OS   = "M1Mac"   # M1 Mac Personal Computer
 
@@ -73,19 +74,16 @@ if __name__ == "__main__":
 	# Specifiy Python 3 interpreter to stay away from all things Python 2!
 	check_call("virtualenv -p /usr/bin/python3 TesMufflerDevEnv", shell=True)
 
-	#TODO REMOVE ALL CODE DOWN AND INCLUDING time.sleep(7)?
 	# Start / activate the virtual enviroment setup above
 	# Important to do this before any "pip3 install" commands
 	try:
 		#TODO https://www.reddit.com/r/Python/comments/5lift9/how_to_activatedeactivate_virtualenv_on_linux/
-		check_call("sudo . TesMufflerDevEnv/bin/activate", shell=True)
-		#TODO https://stackoverflow.com/questions/8052926/running-subprocess-within-different-virtualenv-with-python
-		#check_call("source TesMufflerDevEnv/bin/activate", shell=True)
+		check_call("sudo source TesMufflerDevEnv/bin/activate", shell=True)
 	except subprocess.CalledProcessError as e:
 		print()
 		print()
-		print("Beginner: TesMufflerDevEnv was configured correctly using the 'source' command")
-		print("Expert: source returned a non-zero exit status as expected \n\n")
+		print("Beginner Note: TesMufflerDevEnv was configured correctly using the 'source' command")
+		print("Expert Note: source returned a non-zero exit status as expected \n\n")
 
 	print("\n\nIf you would like to TURN OFF the TesMuffler Virtual Enviroment (BAD IDEA) run the 'deactivate' command\n\n")
 	time.sleep(7)
@@ -100,12 +98,11 @@ if __name__ == "__main__":
 	check_call("pip3 install flake8", shell=True)
 
 	# Allow the playing of .WAV or .MP3 files with pitch variance TODO SELECT 1 OF 3
+	#TODO TEST https://simpleaudio.readthedocs.io/en/latest/capabilities.html
 	check_call("sudo apt-get install -y python3-dev libasound2-dev", shell=True) 	# Only simpleaudio dependency
 	check_call("pip install simpleaudio", shell=True)
-	#TODO TEST https://simpleaudio.readthedocs.io/en/latest/capabilities.html
-	# This also means that real-time audio applications (such as a synthesizer) are not possible since the entire audio clip to be played must be ready before playback.
-	#TODO REMOVE IF NOT NEEDED check_call("pip3 install samplerate", shell=True)
-	#TODO REMOVE IF NOT NEEDED check_call("pip3 install pyaudio", shell=True)
+	#TODO REMOVE IF SIMPLEAUDIO IS GOOD ENOUGH check_call("pip3 install samplerate", shell=True)
+	#TODO REMOVE IF SAMPLERATE IS GOOD ENOUGH check_call("pip3 install pyaudio", shell=True)
 
 	# Allow developer to download and convert to .WAV any car sound
 	# Works on sites other then YouTube (with valid URL scheme)
