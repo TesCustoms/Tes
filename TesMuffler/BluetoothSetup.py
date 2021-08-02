@@ -4,13 +4,16 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-07-18"
+__date__    = "Late Updated: 2021-07-31"
 __doc__     = "Class to automate bluetooth pairing of hardware & mobile app to any Tesla vehicle"  # NOQA: E501
 """
+TODO = -1  #REMOVE ONCE IN PRODUCTION AND NOQA: E402 WILL GO AWAY :)
 
-# Allow Linux,MacOS, ESP-32 CPUs to access host machine Bluetooth resources
+# Allow Linux, MacOS, ESP-32 CPUs to access host machine Bluetooth resources
 # https://pypi.org/project/PyBluez/
-import bluetooth
+#import bluetooth
+# https://ukbaz.github.io/howto/ubit_workshop.html
+from bluezero import * #TODO WHAT TPYE OF DEVICES SHOULD I IMPORT
 
 # Create unique random ID for each vehicle for user privacy
 # https://docs.python.org/3/library/uuid.html
@@ -22,7 +25,7 @@ import os
 
 try:
     # Generate .txt debug logs and custom terminal debugging print statement
-    from Debug import Dprint, Lprint
+    from Debug import Debug, Dprint, Lprint
     #TODO
 
 except ImportError:
@@ -32,8 +35,6 @@ except ImportError:
 
 
 class BluetoothSetup:
-
-    TODO = -1
 
     # Model model name CONTSTANTS
     MODEL_S = 'S'
@@ -66,7 +67,7 @@ class BluetoothSetup:
         """
 
         thisCodesFilename = os.path.basename(__file__)
-        self.DebugObject = Debug(BlueboothSetup.DEBUG_STATEMENTS_ON,
+        self.DebugObject = Debug(BluetoothSetup.DEBUG_STATEMENTS_ON,
                                  thisCodesFilename)
 
         # https://www.w3schools.com/python/python_lists_methods.asp
@@ -82,13 +83,16 @@ class BluetoothSetup:
         # Connect to the strongest bluetooth signal after 42 second search
         for j in range(0, numOfDevices):
             if(bluetoothDevices.lookup_name(TODO, 42) == "Tesla"):
-                print("TODO")
+                self.DebugObject.Dprint("TODO")
 
         for listIndex in range(0, numOfDevices):
             for tupleIndex in range(0, 3):
                 if(bluetoothDevices[listIndex][tupleIndex] == BluetoothSetup.TESLA_BLUETOOTH_CLASS):  # NOQA: E501
                     # pairWithVehicle()
                     self.connectedCar = TODO #connectToVehicle(bluetoothDevice[listIndex][tupleIndex])
+                    self.carToConnected = Car.Tesla(adapter_addr='xx:xx:xx:xx:xx:xx',
+                                                    device_addr='yy:yy:yy:yy:yy:yy')
+                    self.carToConnected.connect()
 
         def unitTest():
             """Test connecting ESP-32 to a Tesla Cybertruck
@@ -101,6 +105,7 @@ class BluetoothSetup:
             """
 
             TestObject1 = BluetoothSetup('C')
+            TestObject1.DebugObject.Dprint("TesMuffler OBD Module connected to Cybertruck")  # NOQA: E501
             TestObject1.disconnectFromVehicle()
 
         def findDevices(self):
@@ -119,30 +124,32 @@ class BluetoothSetup:
 
             return nearbyDevices
 
-       def pairWithVehicle():
-           """TODO
-	   """
+        def pairWithVehicle():
+            """TODO
+            """
 
-           print("TODO")
+            print("TODO")
 
-       def connectToVehicle():
-           """TODO
-           """
+        def connectToVehicle():
+            """TODO
+            """
 
-           print("TODO")
+            print("TODO")
 
-       def disconnectFromVehicle():
-           """TODO
-           """
+        def disconnectFromVehicle():
+            """TODO
+            """
 
-           print("TODO")
+            print("TODO")
 
 
 if __name__ == "__main__":
 
-	try:
-		Bluetoothsetup.unitTest()
-	except AssertionError as error: #TODO Switch to NameError?
-		print("BluetoothSetup Unit Test failed :(")
+    try:
+        BluetoothSetup.unitTest()
+    except AssertionError as error:
+        print("BluetoothSetup Unit Test failed: {0} ".format(error))
+    except NameError as error:
+        print("BluetoothSetup Unit Test failed: {0} ".format(error))
 
-	print("END of BluetoothSetup.py MAIN method")
+    print("END of BluetoothSetup.py MAIN method")
