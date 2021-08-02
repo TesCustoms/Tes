@@ -28,10 +28,13 @@ import time
 # https://docs.python.org/3/library/os.html
 import os
 
+
 try:
     # Generate .txt data logging and custom terminal debugging output
     from Debug import *
-
+    # Custom mp3 editting library base off Marco Arments Smart Speed
+    # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
+	from mp3edit import *
     #TODO
 
 except ImportError:
