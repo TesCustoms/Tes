@@ -10,10 +10,8 @@ __doc__     = "Class to automate bluetooth pairing of hardware & mobile app to a
 TODO = -1  #REMOVE ONCE IN PRODUCTION AND NOQA: E402 WILL GO AWAY :)
 
 # Allow Linux, MacOS, ESP-32 CPUs to access host machine Bluetooth resources
-# https://pypi.org/project/PyBluez/
-#import bluetooth
 # https://ukbaz.github.io/howto/ubit_workshop.html
-from bluezero import * #TODO WHAT TPYE OF DEVICES SHOULD I IMPORT
+from bluezero import * #TODO WHAT TYPE OF DEVICES SHOULD I IMPORT
 
 # Create unique random ID for each vehicle for user privacy
 # https://docs.python.org/3/library/uuid.html
@@ -94,6 +92,7 @@ class BluetoothSetup:
                                                     device_addr='yy:yy:yy:yy:yy:yy')
                     self.carToConnected.connect()
 
+
         def unitTest():
             """Test connecting ESP-32 to a Tesla Cybertruck
 
@@ -107,6 +106,7 @@ class BluetoothSetup:
             TestObject1 = BluetoothSetup('C')
             TestObject1.DebugObject.Dprint("TesMuffler OBD Module connected to Cybertruck")  # NOQA: E501
             TestObject1.disconnectFromVehicle()
+
 
         def findDevices(self):
             """Search for ANY nearby device with a strong Bluetooth signal
