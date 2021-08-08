@@ -35,6 +35,9 @@ import pyrebase
 from EngineSoundGenerator import *
 
 
+LASER_PIN = 0 #GPIO_0
+
+
 def calibrateLaserSetup():
     """
     Runs a calibration process to ensure that hardware has not moved and that the zero and max throttle points are defined and within LASER's range.
