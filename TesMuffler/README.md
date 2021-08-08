@@ -44,3 +44,14 @@ Why?: <br>
 Feature requests: TODO Make Github Issue
 1) https://twitter.com/u110110/status/1414227401521967104?s=21 <br>
 <br>
+
+Setting up and building a ESP example
+
+Make sure USB cable works by running lsusb
+Something like "Bus 002 Device 001: ID 10c4:ea60 Silicon Laboratories, Inc. CP2104 USB to UART Bridge Controller  Serial: 020911PT" should display in terminal
+
+Run "cd esp-rainmaker/examples/switch/" to navigate to project code
+Run "idf.py monitor" or click computer monitor button inside VS Code to get serial debugging interface
+Run "idf.py menuconfig" to provision ESP and connect to internet https://rainmaker.espressif.com/docs/claiming.html
+Run "idf.py build" in termial
+Run "idf.py -p /dev/cu.usbserial-020911PT flash"
