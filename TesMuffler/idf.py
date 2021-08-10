@@ -6,29 +6,23 @@ __status__  = "Development"
 __date__    = "Late Updated: 2021-08-07"
 __doc__     = "Class to ??"
 """
-TODO = -1  
-
-# Allow micropython to run on ESP-32
-# https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
-# https://micropython.org/download/esp32
-
 # Allow configuration of ???
 # https://docs.micropython.org/en/latest/library/machine.html
-import machine 
+from machine import Pin
 
-# Allow communication via serial intetfaces
-# 
-from machine import Pin, SoftI2C, I2C, onewire
+# Interact with software I2C, hardware I2C, and OneWire serial intetfaces
+# TODO
+from machine import SoftI2C, I2C, onewire
 
 # Allow interaction with capacitive touch pads
-# 
-from machine import Pin, TouchPad
+# TODO
+from machine import TouchPad
 
 # Small and fast JSON encoder and decoder for RESTful API communication
 # https://pypi.org/project/ujson/
 import ujson
 
-# Allow interaction with O/S debugging and flash storage  
+# Allow interaction with O/S debugging and flash storage
 # TODO
 import esp
 import uos
@@ -36,26 +30,35 @@ import uos
 # Allow interaction with subsystem within ESP-32 module (e.g. Temp sensor)
 # TODO
 import esp32
-from esp32 import NVS # Non-volatile memory storage
+from esp32 import NVS  # Non-volatile memory storage
 
 import network
 import ubluetooth
 
-import time 
+# Allow
+# TODO
+import time
 
-
-from TesMufflerDriver import *
 
 MAX_CPU_FREQ = 240000000
 HIGH = 1
 LOW = 0
+LASER_PIN = 0
+TIME_HIGH_PULSE = 1
+TIME_LOW_PULSE = 0
 
+LASER_TIMEOUT = 0.001 # 1 ms = ?? meters in light Time Of Flight
 
 def getDistance():
 
     # https://docs.micropython.org/en/latest/library/machine.html#machine.time_pulse_us
-    machine.time_pulse_us(TesMufflerDrice.LASER_PIN, )
+    machine.time_pulse_us(TesMufflerDrice.LASER_PIN, TIME_HIGH_PULSE, LASER_TIMEOUT)
 
+TODO = -1
+
+# Allow micropython to run on ESP-32
+# https://docs.micropython.org/en/latest/esp32/tutorial/intro.html
+# https://micropython.org/download/esp32
 
 if __name__ == "__main__":
     machine.freq(MAX_CPU_FREQ)
