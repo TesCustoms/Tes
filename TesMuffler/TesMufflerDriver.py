@@ -17,9 +17,7 @@ import argparse
 # https://docs.python.org/3/library/os.html
 import os
 
-# Interface with Tesla ODB via CAN Bus
-# https://python-can.readthedocs.io/en/2.1.0/index.html#
-import can
+
 
 # Allow data from iOS and Android Firebase database to be accessed via API
 # https://docs.python.org/3/library/json.html
