@@ -64,7 +64,7 @@ def calibrateLaserSetup():
 
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
 
     #QR code on box links mobile app to your hardware with SMS 2FA 
 
