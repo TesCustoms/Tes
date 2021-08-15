@@ -5,7 +5,7 @@ __email__   = "blaze.d.a.sanders@gmail.com"
 __company__ = "Robotic Beverage Technologies, Inc"
 __status__  = "Development"
 __date__    = "Late Updated: 2021-05-23"
-__doc__     = "Make print() debuggging and data logging easier"
+__doc__     = "Generate a timestamped .txt data logging file and custom terminal debugging output"
 """
 
 # Allow program to create GMT and local timestamps

@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-07"
+__date__    = "Late Updated: 2021-08-14"
 __doc__     = "Class to ??"
 """
 # Allow configuration of ???
@@ -39,6 +39,14 @@ import ubluetooth
 # TODO
 import time
 
+# Access internally developed libraries
+try:
+    # Generate a timestamped .txt data logging file and custom terminal debugging output
+    from Debug import *
+    
+    # Useful global constants used across all TesMuffler code
+    import GlobalConstant as GC
+    #TODO
 
 MAX_CPU_FREQ = 240000000
 HIGH = 1

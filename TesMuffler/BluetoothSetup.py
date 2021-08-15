@@ -24,6 +24,9 @@ import os
 try:
     # Generate .txt debug logs and custom terminal debugging print statement
     from Debug import Debug, Dprint, Lprint
+    
+    # Useful global constants used across all TesMuffler code
+    import GlobalConstant as GC
     #TODO
 
 except ImportError:
@@ -34,16 +37,6 @@ except ImportError:
 
 class BluetoothSetup:
 
-    # Model model name CONTSTANTS
-    MODEL_S = 'S'
-    MODEL_3 = '3'
-    MODEL_X = 'X'
-    MODEL_Y = 'Y'
-    CYBER_TRUCK = 'C'
-    ATV = 'A'
-    ROADSTER_V2 = 'R'
-    SEMI_TRUCK = 'S'
-    ALL = 'S3XY CARS'
 
     # Bluetooth class type CONSTANTS
     TELSA_BLUETOOTH_CLASS = TODO
@@ -103,7 +96,7 @@ class BluetoothSetup:
                 NOTHING
             """
 
-            TestObject1 = BluetoothSetup('C')
+            TestObject1 = BluetoothSetup(GC.CYBERTRUCK)
             TestObject1.DebugObject.Dprint("TesMuffler OBD Module connected to Cybertruck")  # NOQA: E501
             TestObject1.disconnectFromVehicle()
 
