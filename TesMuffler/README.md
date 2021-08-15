@@ -7,14 +7,15 @@ Hardware Required: <br>
 6) Custom 3D CAD file [TesMufflerCADv1.stl](https://github.com/OpenSourceIronman/Tes/blob/master/TesMuffler/TesMufflerCADv1.stl) 3D printed muffler with magnets <br>
 <br>
 
-Setting up and building a ESP example: <br>
-Make sure your USB cable works by running lsusb: (I did waste 1.5 hours on this...) <br>
+Setting up and building the TesMuffler ESP-32 project: <br>
+Make sure your USB cable works by running “lsusb” command in terminal: (I didnt waste 1 hour on this...) <br>
 Something like "Bus 002 Device 001: ID 10c4:ea60 Silicon Laboratories, Inc. CP2104 USB to UART Bridge Controller  Serial: 020911PT" should display in terminal <br>
+<br>
 
 Commands: <br>
-1) Run TODO "cd esp-rainmaker/examples/switch/" to navigate to project code
-2) Run "idf.py monitor" on a 2nd terminal tab or click computer monitor button inside VS Code to get serial debugging interface
-3) Run "idf.py menuconfig" on your 1st terminal tab to provision ESP and connect to internet https://rainmaker.espressif.com/docs/claiming.html
+1) Run TODO "cd esp-rainmaker/TesMuffler/" to navigate to project code directory <br>
+2) Run "idf.py monitor" on a 2nd terminal tab or click the computer monitor button along bottom of window inside VS Code to get serial debugging interface <br>
+3) Run "idf.py menuconfig" on your 1st terminal tab to provision ESP and connect to internet https://rainmaker.espressif.com/docs/claiming.html <br>
 4) Run "idf.py build" on your 1st terminal tab to complie the binary on your local PC / Mac
 5) Run "idf.py -p /dev/cu.usbserial-020911PT flash" to push firmware to ESP-32 EEPROM <br>
 
@@ -49,7 +50,7 @@ Competition: <br>
 
 Why?: <br>
 1) https://www.nhtsa.gov/sites/nhtsa.gov/files/documents/812347-minimumsoundrequirements.pdf <br>
-2) www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.html <br>
+2) https://www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.html <br>
 <br>
 
 Feature requests: TODO Make Github Issue
