@@ -34,11 +34,11 @@ try:
     from Debug import *
     # Custom mp3 editting library base off Marco Arments Smart Speed
     # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
-	from mp3edit import *
+    from mp3edit import *
     #TODO
 
 except ImportError:
-	print("Debug didn't import correctly, please verify that Debug.py is in TODO")
+    print("Debug didn't import correctly, please verify that Debug.py is in TODO")
 	#TODO
 
 
