@@ -4,7 +4,7 @@ __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
 __date__    = "Late Updated: 2021-08-14"
-__doc__     = "Calibrate hardware and sensors that MIGHT change over time from wear & tear"
+__doc__     = "Recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear"
 """
 
 # Allow program to extract filename of the current file
@@ -44,11 +44,11 @@ class TeslaCalibration:
     def __init__(self, gasPedalMax=69, gasPedalMin=0, 
                  brakePedalMax=69, brakePedalMin=0,
                  speakerVolume=42):
-        """[summary]
+        """Constructor to initialize a TeslaCalibration object, to recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear
 
         Args:
-            gasPedalMax (int, optional): [description]. Defaults to 69.
-            gasPedalMin (int, optional): [description]. Defaults to 0.
+            gasPedalMax (int, optional): Physical location of the gas pedal when a driver pushes the gas pedal to absolute BOTTOM as reported by Tesla internal software over the CAN bus. Defaults to 69.
+            gasPedalMin (int, optional): Physical location of the gas pedal when a driver does NOTHING to the gas pedal as reported by Tesla internal software over the CAN bus. Defaults to 69.
             brakePedalMax (int, optional): [description]. Defaults to 69.
             brakePedalMin (int, optional): [description]. Defaults to 0.
             speakerVolume (int, optional): [description]. Defaults to 42.
