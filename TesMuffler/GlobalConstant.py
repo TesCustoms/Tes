@@ -23,11 +23,13 @@ class GlobalConstant:
 
     # Moving hardware CONTSTANTS
     GAS_PEDAL = 0                           # Pedal closest to center of the car
+    GAS_PEDAL_POSITION = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
     DEFAULT_MAX_GAS_PEDAL_TRAVEL = 420      # Units are in millimeters
     MAX_GAS_PEDAL_VALUE = 0x69              # Units are TODO
     BRAKE_PEDAL = 1                         # 2nd pedal from center of thr car
     DEFAULT_MAX_BRAKE_PEDAL_TRAVEL = 69     # Units are in millimeters
     MAX_BRAKE_PEDAL_VALUE = 0xFF            # Units are TODO
+    MIN_CAN_BUS_TIMESTEP = 0.001            # Units are seconds
     
     # User Interface CONSTANTS
     UI_TERMINAL_DELAY = 0.1                 # Units are seconds
