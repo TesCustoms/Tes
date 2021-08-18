@@ -10,6 +10,13 @@ __doc__     = "Useful global constants used across all TesMuffler code"
 
 class GlobalConstant:
 
+    # Vehicle make name CONTSTANTS - Yes these are sorted best to worst :)
+    TESLA = 0
+    RIVIAN = 1
+    FORD = 2
+    LUCID = 3
+    GMC = 4
+    
     # Vehicle model name CONTSTANTS
     MODEL_S = 'S'
     MODEL_3 = '3'
@@ -21,6 +28,15 @@ class GlobalConstant:
     SEMI_TRUCK = 'S'
     ALL = 'S3XY CARS'
 
+    # Vehicle color CONTSTANTS - ROY G BIV + others
+    RED = 0
+    ORANGE  = 1
+    YELLOW = 2
+    GREEN = 3
+    BLUE = 4
+    INDIGO = 5
+    VIOLET = 6
+    
     # Moving hardware CONTSTANTS
     GAS_PEDAL = 0                           # Pedal closest to center of the car
     GAS_PEDAL_POSITION = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]

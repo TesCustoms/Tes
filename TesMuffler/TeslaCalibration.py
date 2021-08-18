@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-14"
+__date__    = "Late Updated: 2021-08-18"
 __doc__     = "Recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear"
 """
 
@@ -27,7 +27,7 @@ try:
     import TeslaCanBus
 
 except ImportError:
-    print("Debug.py or GlobalConstant.py didn't import correctly")
+    print("TeslaCanBus.py, Debug.py, or GlobalConstant.py didn't import correctly")
     print("Please verify that those files are in same directory as the TeslaCanBus.py")
     #TODO
 
@@ -38,8 +38,23 @@ class TeslaCalibration:
     DEBUG_STATEMENTS_ON = True
 
     def unitTest():
-        testObject1 = TeslaCalibration()
+        """ Run test using ALL publicly released Tesla model
+        
+        See __date__ at top of this file to determine valid models
+        
+        Args:
+            NONE
+        
+        Returns:
+            Assert ??? if any test faile, NOTHING otherwise
+        """
+        TeslaModelS = Car(GC.MODEL_S)
+        testObject1 = TeslaModelS.TeslaCalibration()
         testObject1.runCalibration()
+
+        testObject2 = TeslaCalibration()
+        testObject1.runCalibration()
+
 
     def __init__(self, gasPedalMax=69, gasPedalMin=0, 
                  brakePedalMax=69, brakePedalMin=0,
@@ -65,7 +80,21 @@ class TeslaCalibration:
         
         self.speakerVolume = speakerVolume
     
-    def setGasPedalMax(self):
+    # GETTERS
+    def getGasPedalMax(self):
+        return self.gasPedalMax
+
+    def getGasPedalMin(self):
+        return self.gasPedalMin
+
+    def getBrakePedalMax(self):
+        return self.brakePedalMax
+
+    def getBrakePedalMin(self):
+        return self.brakePedalMin
+    
+    # SETTERS
+    def setGasPedalMax(self, model=GC.MODEL_S):
         self.gasPedalMax = TeslaCanBus.readGasPedalPosition()
 
     def setGasPedalMin(self):
@@ -90,7 +119,7 @@ class TeslaCalibration:
 
         print("Please push BRAKE pedal all the way down and hold for AT LEAST ", GC.MAX_UI_DEALY, " seconds.")
         while(timeDelay < GC.MAX_UI_DEALY):
-            print("..")
+            print(".")
             time.sleep(GC.UI_TERMINAL_DELAY)  # Units are seconds
             timeDelay += GC.UI_TERMINAL_DELAY
             TeslaCalibration.setBrakePedalMax()
