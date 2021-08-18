@@ -56,7 +56,7 @@ class TeslaCalibration:
         testObject1.runCalibration()
 
 
-    def __init__(self, gasPedalMax=69, gasPedalMin=0, 
+    def __init__(self, car, gasPedalMax=69, gasPedalMin=0, 
                  brakePedalMax=69, brakePedalMin=0,
                  speakerVolume=42):
         """Constructor to initialize a TeslaCalibration object, to recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear
@@ -95,16 +95,16 @@ class TeslaCalibration:
     
     # SETTERS
     def setGasPedalMax(self, model=GC.MODEL_S):
-        self.gasPedalMax = TeslaCanBus.readGasPedalPosition()
+        self.gasPedalMax = self.Car.TeslaCanBus.readGasPedalPosition()
 
-    def setGasPedalMin(self):
-        print("TODO")
+    def setGasPedalMin(self, minValue):
+        self.gasPedalMin = minValue
 
     def setBrakePedalMax(self):
         print("TODO")
 
-    def setBrakePedalMin(self):
-        print("TODO")
+    def setBrakePedalMin(self, minValue):
+        self.brakePedalMin = minValue
 
     def runCalibration():
         timeDelay = 0

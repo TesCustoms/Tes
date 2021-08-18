@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-17"
+__date__    = "Late Updated: 2021-08-18"
 __doc__     = "Useful global constants used across all TesMuffler code"
 """
 
