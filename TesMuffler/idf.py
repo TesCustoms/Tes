@@ -18,6 +18,9 @@ from machine import SoftI2C, I2C, onewire
 # TODO
 from machine import TouchPad
 
+# Interface with Parallax LASER rangefinder SKU #2801
+from LaserPING import *
+
 # Small and fast JSON encoder and decoder for RESTful API communication
 # https://pypi.org/project/ujson/
 import ujson
@@ -47,6 +50,12 @@ try:
     # Useful global constants used across all TesMuffler code
     import GlobalConstant as GC
     #TODO
+    
+except ImportError:
+    print("Debug.py, GlobalConstant.py, or TODO.py didn't import correctly")
+    print("Please verify that those files are in same directory as the TeslaCanBus.py")
+    #TODO
+
 
 MAX_CPU_FREQ = 240000000
 HIGH = 1

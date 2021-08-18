@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-15"
+__date__    = "Late Updated: 2021-08-17"
 __doc__     = "Useful global constants used across all TesMuffler code"
 """
 
@@ -22,9 +22,14 @@ class GlobalConstant:
     ALL = 'S3XY CARS'
 
     # Moving hardware CONTSTANTS
-    DEFAULT_MAX_GAS_PEDAL_TRAVEL = 42       # Units are in millimeters
+    GAS_PEDAL = 0                           # Pedal closest to center of the car
+    DEFAULT_MAX_GAS_PEDAL_TRAVEL = 420      # Units are in millimeters
+    MAX_GAS_PEDAL_VALUE = 0x69              # Units are TODO
+    BRAKE_PEDAL = 1                         # 2nd pedal from center of thr car
     DEFAULT_MAX_BRAKE_PEDAL_TRAVEL = 69     # Units are in millimeters
-
-    # User Interface COONSTANTS
-    UI_TERMINAL_DELAY = 0.1
-    MAX_UI_DEALY = 2.0
+    MAX_BRAKE_PEDAL_VALUE = 0xFF            # Units are TODO
+    
+    # User Interface CONSTANTS
+    UI_TERMINAL_DELAY = 0.1                 # Units are seconds
+    MAX_UI_DEALY = 2.0                      # Units are seconds
+    FUNCTION_DELAY = 5.0                    # Units are milliSeconds

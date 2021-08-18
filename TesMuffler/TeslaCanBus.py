@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-13"
+__date__    = "Late Updated: 2021-08-17"
 __doc__     = "Read only class for the OBD-II Tesla CAN Bus"
 """
 
@@ -36,7 +36,8 @@ except ImportError:
 
 
 class TeslaCanBus:
-
+    TODO = -1
+    
     # Debugging CONSTANTS
     DEBUG_STATEMENTS_ON = True
 
@@ -65,46 +66,80 @@ class TeslaCanBus:
         thisCodesFilename = os.path.basename(__file__)
         self.DebugObject = Debug(TeslaCanBus.DEBUG_STATEMENTS_ON, thisCodesFilename)
 
-        self.CalibratedMaxPedalTravel = calibrationObject.getMaxPedalTravel()
+        self.CalibratedMaxGasPedalTravel = calibrationObject.gasPedalMax()
+        self.CalibratedMaxBrakePedalTravel = calibrationObject.brakePedalMax()
 
+        # TODO Test if each model and year has a different interface
         if(carModel == GC.MODEL_S):
             self.bus = can.interface.Bus(bustype=)
         elif(carModel == GC.MODEL_3):
         elif(carModel == GC.MODEL_X):
         elif(carModel == GC.MODEL_Y):
-        else:
-
-    def readGasPedalPosition(units):
-        data = TODO
-        msg = can.Message(arbitration_id=0x7df, data=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
-        sendMessage(msg)
-
-        if(units == GS.PERCENTAGE):
-            value = percentOfMax
-        elif(units == GS.MILLIMETERS):
-            value = percentOfMax * self.CalibratedMaxPedalTravel       
-        elif(units == GS.CENTIMETERS):
-        else:
-               
-        return value
-
-    def readGasPedalVelocity():
-        #TODO COPY readGasPedalPosition()
         
+        
+        
+
+    def readGasPedalPosition(self, units):
+        # command to request CAN bus to return pedal position
+        command = TODO
+        
+        return canBusPedalSubroutine(GAS_PEDAL, command, units)
+
+    def readGasPedalVelocity(self, units):
+        # command to request CAN bus to return pedal position
+        command = TODO
+        
+        data = canBusPedalSubroutine(GAS_PEDAL, command, units)
+        
+        mmPerSec = data * TODO
         
         return mmPerSec
 
     def readGasPedalVAcceleration():
-        #TODO COPY readGasPedalPosition()
+        # command to request CAN bus to return pedal position
+        command = TODO
+        
+        data = canBusPedalSubroutine(GAS_PEDAL, command, units)
+        
+        mmPerSecPerSec = data * TODO
         
         return mmPerSecPerSec
 
+    
+    def canBusPedalSubroutine(pedalType, command, units=GC.PERCENTAGE):
+        msg = can.Message(arbitration_id=0x7df, command=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
+        rawValue = sendMessage(msg)
+
+        if(pedalType == GAS_PEDAL):
+            percentOfMax = rawValue/GC.MAX_GAS_PEDAL_VALUE
+            if(units == GS.PERCENTAGE):
+                value = percentOfMax
+            elif(units == GS.MILLIMETERS):
+                value = percentOfMax * self.CalibratedMaxGasPedalTravel       
+            elif(units == GS.CENTIMETERS):
+                value = percentOfMax * (self.CalibratedMaxGasPedalTravel/10)
+                
+        elif(pedalType == BRAKE_PEDAL):
+            percentOfMax = rawValue/GC.MAX_BRAKE_PEDAL_VALUE
+            if(units == GS.PERCENTAGE):
+                value = percentOfMax
+            elif(units == GS.MILLIMETERS):
+                value = percentOfMax * self.CalibratedMaxBrakePedalTravel       
+            elif(units == GS.CENTIMETERS):
+                value = percentOfMax * (self.CalibratedMaxBrakePedalTravel/10)
+        
+        else:
+            self.DebugObject.Lprint("ERROR: Invalid pedal type was passed to a TeslaCanBus.py function")
+        
+        return value
+    
+    
     def sendMessage(self, msg):
         try:
             bus.send(msg)
-            print("CAN Bus message sent on {}".format(bus.channel_info))
+            self.DebugObject.Dprint("CAN Bus message sent on {}".format(bus.channel_info))
         except can.CanError:
-            print("CAN Bus message was NOT sent")            
+            self.DebugObject.Dprint("CAN Bus message was NOT sent")            
 
 
 if __name__ == "__main__":

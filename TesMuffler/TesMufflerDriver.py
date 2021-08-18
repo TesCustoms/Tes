@@ -7,8 +7,6 @@ __date__    = "Late Updated: 2021-05-01"
 __doc__     = "TesMuffler project code starts running here"
 """
 
-FUNCTION_DELAY = 5 # Units are milliSeconds
-
 # Allow CLI to pass parameters into this driver for testing
 # https://docs.python.org/3/library/argparse.html
 import argparse
@@ -17,21 +15,17 @@ import argparse
 # https://docs.python.org/3/library/os.html
 import os
 
-
-
 # Allow data from iOS and Android Firebase database to be accessed via API
 # https://docs.python.org/3/library/json.html
 import json
 # https://github.com/thisbejim/Pyrebase
 import pyrebase
 
-# Interface with Parallax LASER rangefinder SKU #2801
-#TODO from LaserPING import *
-
 # Interface CPU with Tesla Bluetooth to produce engine sound
 # http://www.mega-nerd.com/SRC/
 from EngineSoundGenerator import *
 
+import GlobalConstant as GC
 
 LASER_PIN = 0 #GPIO_0
 
@@ -58,7 +52,7 @@ def calibrateLaserSetup():
         if(currentDistance < minDistance):
             minDistance = currentDistance
 
-        timeDelay = timeDelay + FUNCTION_DELAY
+        timeDelay = timeDelay + GC.FUNCTION_DELAY
 
     return [minDistance, maxDistance]
 
