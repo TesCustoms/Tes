@@ -19,13 +19,17 @@ import os
 # https://docs.python.org/3/library/json.html
 import json
 # https://github.com/thisbejim/Pyrebase
-import pyrebase
+# TODO UNCOMMENT import pyrebase
 
 # Interface CPU with Tesla Bluetooth to produce engine sound
 # http://www.mega-nerd.com/SRC/
 from EngineSoundGenerator import *
 
+# 
 import GlobalConstant as GC
+
+# JSON stuff???
+from io import StringIO
 
 LASER_PIN = 0 #GPIO_0
 
@@ -62,22 +66,21 @@ if __name__ == "__main__":
 
     #QR code on box links mobile app to your hardware with SMS 2FA 
 
-config = {
-  "apiKey": "apiKey",
-  "authDomain": "projectId.firebaseapp.com",
-  "databaseURL": "https://databaseName.firebaseio.com",
-  "storageBucket": "projectId.appspot.com",
-  "serviceAccount": "path/to/serviceAccountCredentials.json"
-}
+    config = { "apiKey": "apiKey",
+               "authDomain": "projectId.firebaseapp.com",
+               "databaseURL": "https://databaseName.firebaseio.com",
+               "storageBucket": "projectId.appspot.com",
+               "serviceAccount": "path/to/serviceAccountCredentials.json"
+             }
 
-firebase = pyrebase.initialize_app(config)
+    firebase = pyrebase.initialize_app(config)
     
     
-    from io import StringIO
     io = StringIO()
     json.dump(['streaming API'], io)
     io.getvalue()
-'["streaming API"]'
+
+    '["streaming API"]'
     
     usersCarModel = json.get()
     

@@ -78,7 +78,7 @@ if __name__ == "__main__":
 	# Important to do this before any "pip3 install" commands
 	try:
 		#TODO https://www.reddit.com/r/Python/comments/5lift9/how_to_activatedeactivate_virtualenv_on_linux/
-		check_call("sudo source TesMufflerDevEnv/bin/activate", shell=True)
+		check_call("source TesMufflerDevEnv/bin/activate", shell=True)
 	except subprocess.CalledProcessError as e:
 		print()
 		print()
@@ -96,6 +96,9 @@ if __name__ == "__main__":
 	# Tool For Style Guide Enforcement
 	# https://flake8.pycqa.org/en/latest/
 	check_call("pip3 install flake8", shell=True)
+
+
+	check_call("pip3 install pyrebase", shell=True)
 
 	# A simple Python Bluetooth interface to the BlueZ stack
 	# https://github.com/ukBaz/python-bluezero
@@ -148,6 +151,10 @@ if __name__ == "__main__":
 
 	elif(hardware == PI_PICO):
 		print("TODO")
+        elif(hardware == ISH_ALPINE_IPAD_OS):
+               check_call("apk add py-pip")
+               check_call("apk add git")
+               check_call("apk add nano")
 
 	elif(hardware == LINUX_PC): 
 

@@ -61,8 +61,7 @@ class TeslaCanBus:
         #TODO 
         
         model_3_BAD = TeslaCanBus()
-        assert model_3_BAD.readGasPedalPosition(),
-               "Failed successfully! Unit Test tried to initialize a Model 3 as a Tesla Model S"
+        assert model_3_BAD.readGasPedalPosition(), "Failed successfully! Unit Test tried to initialize a Model 3 as a Tesla Model S"
         
         model_3_Default = TeslaCanBus(0, GC.MODEL_3)
         #TODO
@@ -92,10 +91,13 @@ class TeslaCanBus:
 
         # TODO Test if each model and year has a different interface. Starting with pcan
         if(carModel == GC.MODEL_S):
-            self.bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', TeslaCanBus.SLOW)
+            self.bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', bitrate=TeslaCanBus.SLOW)
         elif(carModel == GC.MODEL_3):
+            print("TODO")
         elif(carModel == GC.MODEL_X):
+            print("TODO")
         elif(carModel == GC.MODEL_Y):
+            print("TODO")
         
         
         
@@ -108,9 +110,9 @@ class TeslaCanBus:
 
     def readGasPedalVelocity(self):
         
-        position1 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS))
+        position1 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS)
         time.sleep(GC.MIN_CAN_BUS_TIMESTEP)
-        position2 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS))
+        position2 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS)
     
         velocity = abs(position2 - position1)/GC.MIN_CAN_BUS_TIMESTEP
         # Command to request from CAN bus the current pedal position

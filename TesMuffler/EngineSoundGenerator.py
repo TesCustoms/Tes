@@ -60,25 +60,26 @@ class EngineSoundGenerator:
 	DEBUG_STATEMENTS_ON = True
 
 
-    def unitTest():
-        print("STARTING EngineSoundGenerator.py Unit Test")
+	def unitTest():
+    
+        	print("STARTING EngineSoundGenerator.py Unit Test")
 
-        TestObject1 = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)
-        #TODO assert()
+        	TestObject1 = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)
+        	#TODO assert()
 
-        TestObject2 = EngineSoundGenerator(EngineSoundGenerator.BMW_M4)
-        #TODO assert()
+	        TestObject2 = EngineSoundGenerator(EngineSoundGenerator.BMW_M4)
+        	#TODO assert()
 
-        TestObject3 = EngineSoundGenerator(10)
-        #TODO assert()
+	        TestObject3 = EngineSoundGenerator(10)
+       		 #TODO assert()
 
-        TestObject4 = EngineSoundGenerator(6.9)
-        #TODO assert()
+	        TestObject4 = EngineSoundGenerator(6.9)
+	        #TODO assert()
 
-        TestObject5 = EngineSoundGenerator('Ford_F_150.mp3')
-        #TODO assert()
+        	TestObject5 = EngineSoundGenerator('Ford_F_150.mp3')
+	        #TODO assert()
 
-        print("EngineSoundGenerator.py Unit Test COMPLETE")
+        	print("EngineSoundGenerator.py Unit Test COMPLETE")
 
 
     def __init__(self, baseAudio):
