@@ -3,8 +3,8 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-07-17"
-__doc__     = "Class to create pitch varying audio in real-time on a low processing power CPUs"
+__date__    = "Late Updated: 2021-08-21"
+__doc__     = "Class to create pitch varying audio in real-time on low processing power CPUs"
 """
 
 # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
@@ -32,18 +32,19 @@ import os
 try:
     # Generate .txt data logging and custom terminal debugging output
     from Debug import *
+    
     # Custom mp3 editting library base off Marco Arments Smart Speed
     # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
     from mp3edit import *
     #TODO
 
 except ImportError:
-    print("Debug didn't import correctly, please verify that Debug.py is in TODO")
-	#TODO
-
+    print("Debug.py or mp3edit.py didn't import correctly")
+    print("Please verify that those files are in same directory as the EngineSoundGenerator.py")
+    #TODO
 
 class EngineSoundGenerator:
-	"""Audio playing class that calls into bluetooth stream class
+	"""Audio playing class that calls into thr bluetooth stream class
 	"""
 	# Acronymn list: ESG = EngineSoundGenerator
 
@@ -60,7 +61,7 @@ class EngineSoundGenerator:
 	DEBUG_STATEMENTS_ON = True
 
 
-	def unitTest():
+    def unitTest():
     
         	print("STARTING EngineSoundGenerator.py Unit Test")
 
