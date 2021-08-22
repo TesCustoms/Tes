@@ -23,6 +23,9 @@ try:
     # Useful global constants used across all TesMuffler code
     import GlobalConstant as GC
 
+    # TODO High
+    import Car
+
     # TODO CIRCULAR IMPORT????
     import TeslaCanBus
 
