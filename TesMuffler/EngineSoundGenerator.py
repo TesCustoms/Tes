@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-21"
+__date__    = "Late Updated: 2021-08-22"
 __doc__     = "Class to create pitch varying audio in real-time on low processing power CPUs"
 """
 
@@ -28,11 +28,10 @@ import time
 # https://docs.python.org/3/library/os.html
 import os
 
-
 try:
-    # Generate .txt data logging and custom terminal debugging output
+     # Generate a timestamped .txt data logging file and custom terminal debugging output
     from Debug import *
-    
+
     # Custom mp3 editting library base off Marco Arments Smart Speed
     # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
     from mp3edit import *
@@ -44,61 +43,62 @@ except ImportError:
     #TODO
 
 class EngineSoundGenerator:
-	"""Audio playing class that calls into thr bluetooth stream class
-	"""
-	# Acronymn list: ESG = EngineSoundGenerator
+    # Acronymn list: ESG = EngineSoundGenerator
 
-	# ICE car engine sound CONSTANTS
-	MC_LAREN_F1 = "McLarenF1.wav"
-	LA_FERRARI = "LaFerrari.wav"
-	PORCSHE_911 = "Porcshe911.wav"
-	BMW_M4 = "BMW_M4.wav"
-	JAGUAR_E_TYPE_SERIES_1 = "JaguarEtypeSeries1.wav"
-	FORD_MODEL_T = "FordModelT.wav"
-	FORD_MUSTANG_GT350 = "FordMustangGT350.wav"
+    # ICE car engine sound CONSTANTS
+    MC_LAREN_F1 = "McLarenF1.wav"
+    LA_FERRARI = "LaFerrari.wav"
+    PORCSHE_911 = "Porcshe911.wav"
+    BMW_M4 = "BMW_M4.wav"
+    JAGUAR_E_TYPE_SERIES_1 = "JaguarEtypeSeries1.wav"
+    FORD_MODEL_T = "FordModelT.wav"
+    FORD_MUSTANG_GT350 = "FordMustangGT350.wav"
 
-	#Debugging CONSTANTS
-	DEBUG_STATEMENTS_ON = True
-
+    #Debugging CONSTANTS
+    DEBUG_STATEMENTS_ON = True
 
     def unitTest():
-    
-        	print("STARTING EngineSoundGenerator.py Unit Test")
+        print("STARTING EngineSoundGenerator.py Unit Test")
 
-        	TestObject1 = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)
-        	#TODO assert()
+        TestObject1 = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)
+        assert TestObject1.getBaseAudio == EngineSoundGenerator.MC_LAREN_F1
+        assert TestObject1.startAudioLoop
 
-	        TestObject2 = EngineSoundGenerator(EngineSoundGenerator.BMW_M4)
-        	#TODO assert()
+        TestObject2 = EngineSoundGenerator(EngineSoundGenerator.BMW_M4)
+        assert TestObject2.startAudioLoop
+        assert TestObject2.stopAudioLoop
 
-	        TestObject3 = EngineSoundGenerator(10)
-       		 #TODO assert()
+        TestObject3 = EngineSoundGenerator(10)
+        assert TestObject3, "Invalid engine sound ID - Please use a global CONSTANT in EngineSoundGenerator.py"
 
-	        TestObject4 = EngineSoundGenerator(6.9)
-	        #TODO assert()
+        TestObject4 = EngineSoundGenerator(6.9)
+        assert TestObject4, "Invalid engine sound ID - Please use a global CONSTANT in EngineSoundGenerator.py"
 
-        	TestObject5 = EngineSoundGenerator('Ford_F_150.mp3')
-	        #TODO assert()
+        TestObject5 = EngineSoundGenerator("Ford_F_150.mp3")
+        assert TestObject5, "Invalid engine sound STRING - Please use a global CONSTANT in EngineSoundGenerator.py"
 
-        	print("EngineSoundGenerator.py Unit Test COMPLETE")
+        TestObject6 = EngineSoundGenerator("JaguarEtypeSeries1.wav")
+        assert TestObject6
+        
+        print("EngineSoundGenerator.py Unit Test COMPLETE")
 
 
     def __init__(self, baseAudio):
         """Constructor to initialize an EngineSoundGenerator object
-           Defaults to McLaren F1 if invalid baseAudio variable is passed
+            Defaults to McLaren F1 sound if invalid baseAudio variable is passed
 
         Args:
-        	self -- Newly created EngineSoundGenerator object
-        	baseAudio -- Starting audio .mp3 file to be modulated
+            self -- Newly created EngineSoundGenerator object
+            baseAudio -- Starting audio .mp3 file to be modulated
 
         Object instance variables:
-        	engineSoundsDict -- DICTIONARY: A Collection of valid sounds and their IDs
-        	engineSoundID -- INT: Unique ID for TODO
-        	selectedEngineSoundObject -- OBJECT: Audio ojbect defined a filepath to a audio clip
-        	DebugObject -- Debug.py OBJECT: Useful for debugging & data logging
+            engineSoundsDict -- DICTIONARY: A Collection of valid sounds and their IDs
+            engineSoundID -- INT: Unique ID for TODO
+            selectedEngineSoundObject -- OBJECT: Audio ojbect defined a filepath to a audio clip
+            DebugObject -- Debug.py OBJECT: Useful for debugging & data logging
 
         Returns:
-        	New EngineSoundGenerator() object
+            New EngineSoundGenerator() object
         """
 
         thisCodesFilename = os.path.basename(__file__)
@@ -119,23 +119,29 @@ class EngineSoundGenerator:
         # Check for valid constructor parameters
         try:
             self.engineSoundID = self.EngineSoundsDict[baseAudio]
-            self.filePath = os.path.basename("/Sounds/" + baseAudio)     				#TODO space after "/Sounds/ " ?
-            self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(self.filePath)
+            ##self.filePath = os.path.basename("/Sounds/" + baseAudio)     	#TODO space after "/Sounds/ " ?
+            ##self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(self.filePath)
+            pathEnding = "./Sounds/" + baseAudio
+            self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(pathEnding)
             self.DebugObject.Dprint("Engine sound found in dictionary")
         except KeyError:
             message = "CONSTRUCTOR WARNING: You select an invalid engine sound, defaulting to the McLaren F1"
             self.DebugObject.Lprint(message)
             self.engineSoundID =  EngineSoundGenerator.MC_LAREN_F1
-            self.filePath = os.path.basename("/Sounds/McLarenF1.wav")
-            self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(self.filePath)
+            ##self.filePath = os.path.basename("/Sounds/McLarenF1.wav")
+            ##self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(self.filePath)
+            pathEnding = "./Sounds/McLarenF1.wav"
+            self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(pathEnding)
+ 
 
-
-    def startAudioLoop():
+    def startAudioLoop(self):
         """Play sound in loop forever
         """
-        self.EngineSoundObject.wait_done()
+        playObj = self.EngineSoundWaveObject.play()
+        playObj.wait_done()
 
-    def stopAudioLoop():
+
+    def stopAudioLoop(self):
         """Stop sound playing in last wait_done() function
         """
         self.EngineSoundObject.stop()
@@ -154,7 +160,7 @@ class EngineSoundGenerator:
         print("TODO REMOVE SINCE CAR SHOULD CONTROL VOLUME LEVEL")
 
 
-    def setBaseAudio(newSound):
+    def setBaseAudio(self, newSound):
         """
         """
 
