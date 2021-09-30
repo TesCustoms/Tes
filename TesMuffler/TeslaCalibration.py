@@ -3,13 +3,8 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-<<<<<<< HEAD
 __date__    = "Late Updated: 2021-08-18"
 __doc__     = "Recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear"
-=======
-__date__    = "Late Updated: 2021-08-14"
-__doc__     = "Recalibrate the zero point of hardware and sensors that MIGHT change over time from wear & tear"
->>>>>>> d8e1a81 (iMac stuff)
 """
 
 # Allow program to extract filename of the current file
@@ -63,17 +58,12 @@ class TeslaCalibration:
         testObject2 = TeslaCalibration()
         testObject1.runCalibration()
 
-<<<<<<< HEAD
 
     def __init__(self, car, gasPedalMax=69, gasPedalMin=0, 
                  brakePedalMax=69, brakePedalMin=0,
                  speakerVolume=42):
-        """Constructor to initialize a TeslaCalibration object, to recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear
-=======
-    def __init__(self, gasPedalMax=69, gasPedalMin=0, brakePedalMax=69, brakePedalMin=0, speakerVolume=6):
         """Constructor to initialize a TeslaCalibration object, to recalibrate the zero point of 
            hardware and sensors that MIGHT change over time from wear & tear  # NOQA: 
->>>>>>> d8e1a81 (iMac stuff)
 
         Args:
             gasPedalMax (int, optional): Physical location of the GAS pedal when a driver pushes the pedal to the 
