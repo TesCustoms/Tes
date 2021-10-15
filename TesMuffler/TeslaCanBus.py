@@ -58,19 +58,13 @@ class TeslaCanBus:
         # TODO
         
         model_S_Slow2 = TeslaCanBus(2, TeslaCanBus.SLOW)
-<<<<<<< HEAD
         #TODO 
         
         model_3_BAD = TeslaCanBus()
         assert model_3_BAD.readGasPedalPosition(), "Failed successfully! Unit Test tried to initialize a Model 3 as a Tesla Model S"
         
-=======
-
         model_3_Default = TeslaCanBus()
         assert TeslaCanBus.readGasPedalPosition(), "Default software initalization of Model S CAN bus, failed on Model 3 hardware"   # NOQA: E501                                 # THIS SHOULD FAIL 3 != S
->>>>>>> d8e1a81 (iMac stuff)
-        model_3_Default = TeslaCanBus(0, GC.MODEL_3)
-        #TODO
         
         model_3_Fast1 = TeslaCanBus(1, GC.MODEL_3)
         #TODO
@@ -86,6 +80,7 @@ class TeslaCanBus:
         
         # TODO model_y, cyberTruck, ATV, Roadster (IN THAT ORDER)
 
+
     def __init__(self, year=2019, carModel=GC.MODEL_S, channel=0, bitrate=TeslaCanBus.FAST,
                  calibrationObject=GC.DEFAULT_MAX_GAS_PEDAL_TRAVEL):
 
@@ -95,36 +90,22 @@ class TeslaCanBus:
         self.CalibratedMaxGasPedalTravel = calibrationObject.gasPedalMax()
         self.CalibratedMaxBrakePedalTravel = calibrationObject.brakePedalMax()
 
-<<<<<<< HEAD
-        # TODO Test if each model and year has a different interface. Starting with pcan
-        if(carModel == GC.MODEL_S):
-            self.bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', bitrate=TeslaCanBus.SLOW)
-        elif(carModel == GC.MODEL_3):
-            print("TODO")
-        elif(carModel == GC.MODEL_X):
-            print("TODO")
-        elif(carModel == GC.MODEL_Y):
-            print("TODO")
-        
-        
-        
-=======
         if(carModel == GC.MODEL_S and year >= 2020):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.MODEL_3 and year >= 2019):
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.MODEL_X and year >= 2020):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.MODEL_Y and year >= 2020):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.CYBER_TURCK and year >= 2022):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.ATV and year >= 2022):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.ROADSTER_V2 and year >= 2022):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         elif(carModel == GC.SEMI_TRUCK and year >= 2023):  #TODO Check years supported
-            self.bus = can.interface.Bus(bustype=)
+            self.bus = can.interface.Bus(bustype=TODO)
         else:
             Debug.Lprint("ERROR: This EV's CAN bus is not support by this software. Please buy a Tesla :)")
 
@@ -132,7 +113,6 @@ class TeslaCanBus:
         data = TODO
         msg = can.Message(arbitration_id=0x7df, data=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
         sendMessage(msg)
->>>>>>> d8e1a81 (iMac stuff)
 
     def readGasPedalPosition(self, units):
         # Command to request from CAN bus the current pedal position

@@ -26,11 +26,11 @@ except ImportError:
 
 class Car:
 
-    def __init__(make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GS.RED):
+    def __init__(make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GC.RED):
         """Code has been tested for 2019 and newer but older Telsa will get support
         """ 
-        self.make = 
-        self.model = 
-        self.year = 
-        self.color = 
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
         
