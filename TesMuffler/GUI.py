@@ -84,7 +84,7 @@ class LayoutGrid(wx.grid.Grid):
         self.SetDefaultCellBackgroundColour(wx.WHITE)
         self.SetDefaultCellTextColour(wx.BLACK)
         self.SetDefaultCellFont(wx.Font(pointSize=12, family=wx.FONTFAMILY_DEFAULT, style=wx.FONTSTYLE_NORMAL, weight=wx.FONTWEIGHT_NORMAL))
-        self.SetDefaultCellOverflow(False)
+        self.SetDefaultCellOverflow(True)
         
 
 class LayoutGrid2(wx.GridSizer):
