@@ -1,1 +1,6 @@
-.DS_Store
+# MacOS Diretory Meta Data
+.DS_STORE
+
+#CPython compiled files
+.pyc
+__pycache__

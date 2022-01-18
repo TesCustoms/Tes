@@ -1,0 +1,7 @@
+wx
+flask
+flake8
+youtube-dl
+pyrebase
+
+

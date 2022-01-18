@@ -1,0 +1,10 @@
+Collecting simpleaudio
+  Using cached simpleaudio-1.0.4.tar.gz (2.0 MB)
+Building wheels for collected packages: simpleaudio
+  Building wheel for simpleaudio (setup.py): started
+  Building wheel for simpleaudio (setup.py): finished with status 'error'
+  Running setup.py clean for simpleaudio
+Failed to build simpleaudio
+Installing collected packages: simpleaudio
+    Running setup.py install for simpleaudio: started
+    Running setup.py install for simpleaudio: finished with status 'error'
