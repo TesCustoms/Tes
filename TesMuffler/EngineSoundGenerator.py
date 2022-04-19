@@ -8,6 +8,7 @@ __doc__     = "Class to create pitch varying audio in real-time on low processin
 """
 
 # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
+# Often apt install libasound2-dev == yum install alsa-lib-devel is still needed
 # https://simpleaudio.readthedocs.io/en/latest/
 import simpleaudio as sa
 
