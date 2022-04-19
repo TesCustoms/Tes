@@ -49,15 +49,15 @@ class TeslaCanBus:
     SLOW = 20000    # 20 kbits/sec (kbps)
 
     def unitTest():
-        calibrationObject = TeslaCalibration()
+        calibrationObject = TeslaCalibration(GC.MODEL_S)
         
-        model_S_Default = TeslaCanBus()
+        model_S_Default = TeslaCanBus(calibrationObject)
         assert model_S_Default.redGasPedalPosition()
         
-        model_S_Fast1 = TeslaCanBus(1, GC.MODEL_S, TeslaCanBus.FAST)
+        model_S_Fast1 = TeslaCanBus(1, GC.MODEL_S, TeslaCanBus.FAST, calibrationObject)
         # TODO
         
-        model_S_Slow2 = TeslaCanBus(2, TeslaCanBus.SLOW)
+        model_S_Slow2 = TeslaCanBus(2, TeslaCanBus.SLOW, calibrationObject)
         #TODO 
         
         model_3_BAD = TeslaCanBus()
@@ -81,7 +81,7 @@ class TeslaCanBus:
         # TODO model_y, cyberTruck, ATV, Roadster (IN THAT ORDER)
 
 
-    def __init__(self, year=2019, carModel=GC.MODEL_S, channel=0, bitrate=TeslaCanBus.FAST,
+    def __init__(self, year=2019, carModel=GC.MODEL_S, channel=0, bitrate=FAST,
                  calibrationObject=GC.DEFAULT_MAX_GAS_PEDAL_TRAVEL):
 
         thisCodesFilename = os.path.basename(__file__)
@@ -147,7 +147,7 @@ class TeslaCanBus:
         return mmPerSecPerSec
 
     
-    def canBusPedalSubroutine(pedalType, command=GC.GAS_PEDAL_POSITION, units=GC.PERCENTAGE):
+    def canBusPedalSubroutine(pedalType, command=GC.GAS_PEDAL_POSITION, units=GC.PERCENTAGE_UNITS):
         msg = can.Message(arbitration_id=0x7df, command=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
         rawValue = sendMessage(msg)
 
@@ -184,5 +184,4 @@ class TeslaCanBus:
 
 
 if __name__ == "__main__":
-
-    unitTest()
+    TeslaCanBus.unitTest()

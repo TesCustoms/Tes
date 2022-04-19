@@ -49,6 +49,11 @@ UI_TERMINAL_DELAY = 0.1                 # Units are seconds
 MAX_UI_DEALY = 2.0                      # Units are seconds
 FUNCTION_DELAY = 5.0                    # Units are milliSeconds
 
+# Unit CONSTANTS
+PERCENTAGE_UNITS = 100.0              	#  
+MPH = 1
+KMPH = 1.6 
+
 
 class GlobalConstant:
 
