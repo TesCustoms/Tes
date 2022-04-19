@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-18"
+__date__    = "Late Updated: 2022-04-19"
 __doc__     = "Useful global constants used across all TesMuffler code"
 """
 
@@ -19,20 +19,38 @@ MODEL_S = 'S'
 MODEL_3 = '3'
 MODEL_X = 'X'
 MODEL_Y = 'Y'
-CYBER_TRUCK = 'C'
-ATV = 'A'
+CYBER_TRUCK = 'CT'
+CYBER_ATV = 'CA'
 ROADSTER_V2 = 'R'
-SEMI_TRUCK = 'S'
-ALL = 'S3XY CARS'
+SEMI_TRUCK = 'ST'
+#ALL_TESLA = 'S3XY CARS'
+
+R1T = 'R1T'
+R1S = 'R1S'
+
+F150_LIGHTNING = 'FL'
+MACH_E = 'ME'
+E_TRANSIT = 'ET'
+
+PURE = 'P'
+TOURING = 'T'
+GRAND_TOURING = 'GT'
+DREAM_EDITION = 'DE'
+
+BOLT = 'BOLT'
+HUMMER_EV = 'HEV'
+VELITE = 'VEL'
 
 # Vehicle color CONTSTANTS - ROY G BIV + others
-RED = 0
-ORANGE  = 1
-YELLOW = 2
-GREEN = 3
-BLUE = 4
-INDIGO = 5
-VIOLET = 6
+RED = 0xFF0000
+ORANGE  = 0xFFA500
+YELLOW = 0xFFFF00
+GREEN = 0x00FF00
+BLUE = 0x0000FF
+INDIGO = 0x4B0082
+VIOLET = 0x8F00FF
+GREY = 0x808080
+BLACK = 0xFFFFFF
 
 # Moving hardware CONTSTANTS
 GAS_PEDAL = 0                           # Pedal closest to center of the car
