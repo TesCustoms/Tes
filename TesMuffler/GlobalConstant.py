@@ -3,54 +3,36 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-04-19"
-__doc__     = "Useful global constants used across all TesMuffler code"
+__date__    = "Late Updated: 2022-07-21"
+__doc__     = "Useful global constants used across all TesMuffler code base"
 """
 
 # Vehicle make name CONTSTANTS - Yes these are sorted best to worst :)
 TESLA = 0
 RIVIAN = 1
-FORD = 2
+APTERA = 2
 LUCID = 3
-GMC = 4
+FORD = 4
 
 # Vehicle model name CONTSTANTS
 MODEL_S = 'S'
 MODEL_3 = '3'
 MODEL_X = 'X'
 MODEL_Y = 'Y'
-CYBER_TRUCK = 'CT'
-CYBER_ATV = 'CA'
+CYBER_TRUCK = 'C'
+ATV = 'A'
 ROADSTER_V2 = 'R'
-SEMI_TRUCK = 'ST'
-#ALL_TESLA = 'S3XY CARS'
-
-R1T = 'R1T'
-R1S = 'R1S'
-
-F150_LIGHTNING = 'FL'
-MACH_E = 'ME'
-E_TRANSIT = 'ET'
-
-PURE = 'P'
-TOURING = 'T'
-GRAND_TOURING = 'GT'
-DREAM_EDITION = 'DE'
-
-BOLT = 'BOLT'
-HUMMER_EV = 'HEV'
-VELITE = 'VEL'
+SEMI_TRUCK = 'S'
+ALL_TESLAS = 'S3XY CARS'
 
 # Vehicle color CONTSTANTS - ROY G BIV + others
-RED = 0xFF0000
-ORANGE  = 0xFFA500
-YELLOW = 0xFFFF00
-GREEN = 0x00FF00
-BLUE = 0x0000FF
-INDIGO = 0x4B0082
-VIOLET = 0x8F00FF
-GREY = 0x808080
-BLACK = 0xFFFFFF
+RED = 0
+ORANGE  = 1
+YELLOW = 2
+GREEN = 3
+BLUE = 4
+INDIGO = 5
+VIOLET = 6
 
 # Moving hardware CONTSTANTS
 GAS_PEDAL = 0                           # Pedal closest to center of the car
@@ -66,11 +48,6 @@ MIN_CAN_BUS_TIMESTEP = 0.001            # Units are seconds
 UI_TERMINAL_DELAY = 0.1                 # Units are seconds
 MAX_UI_DEALY = 2.0                      # Units are seconds
 FUNCTION_DELAY = 5.0                    # Units are milliSeconds
-
-# Unit CONSTANTS
-PERCENTAGE_UNITS = 100.0              	#  
-MPH = 1
-KMPH = 1.6 
 
 
 class GlobalConstant:
