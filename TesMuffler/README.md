@@ -20,7 +20,7 @@ Commands: <br>
 5) Run "idf.py -p /dev/cu.usbserial-020911PT flash" to push firmware to ESP-32 EEPROM <br>
 
 Python APIs project is exploring: <br>
-1) Tesla API is a community of developers who are reverse engineering Tesla's API: https://teslaapi.dev/ <br>
+1) Tesla API is a community of developers who are reverse engineering Tesla's API: https://teslaapi.dev/ <br> 
 2) Smartcar API lets you read vehicle data (location, odometer) and send commands to vehicles (lock, unlock) to connected vehicles using HTTP requests: https://github.com/smartcar/python-sdk <br>
 3) The Comma Pedal is a gas pedal interceptor. It is a device that is inserted between a car's electronic gas pedal and the ECU (Engine Control Unit): https://github.com/commaai/openpilot/wiki/comma-pedal <br>
 4) All Comma Software: https://github.com/commaai/panda/tree/ad12330d506ca31fe16f99a5b5aca76aab8a1ec9 <br>
@@ -56,3 +56,12 @@ Why?: <br>
 Feature requests: TODO Make Github Issue
 1) https://twitter.com/u110110/status/1414227401521967104?s=21 <br>
 <br>
+
+TODO: 
+Purchase LOGO: https://www.shutterstock.com/image-vector/tc-initial-letters-looping-linked-circle-1724747953
+Display for PiPico https://www.hackster.io/news/miroslav-nemecek-s-picovga-brings-high-res-video-to-the-raspberry-pi-pico-just-add-resistors-88dd144e7d1c
+FIND URLS I DELETED FROM TOP OF EngineSoundGenerator.py FILE https://whimsical.com/tesmuffler-64NBDWF5cd3stpZDvkubzw
+
+
+
+
