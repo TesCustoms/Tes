@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 __author__  = "Blaze Sanders"
-__email__   = "blaze.d.a.sanders@gmail.com"
+__email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-05-01"
+__date__    = "Late Updated: 2022-09-30"
 __doc__     = "TesMuffler project code starts running here"
 """
 
@@ -11,97 +11,66 @@ __doc__     = "TesMuffler project code starts running here"
 # https://docs.python.org/3/library/argparse.html
 import argparse
 
-# Allow program to extract filename of current file
+# Allow program use enviroment variables and determine filename of current file
 # https://docs.python.org/3/library/os.html
 import os
 
-# Allow data from iOS and Android Firebase database to be accessed via API
+import sys
+
+# Allow data from iOS and Android Supabase database to be accessed via API
 # https://docs.python.org/3/library/json.html
 import json
-# https://github.com/thisbejim/Pyrebase
-# TODO UNCOMMENT import pyrebase
 
-# Interface CPU with Tesla Bluetooth to produce engine sound
+# Open source NoSQL databased
+# https://github.com/supabase-community/supabase-py
+from supabase import create_client
+
+# Play custom engine sounds
 # http://www.mega-nerd.com/SRC/
 from EngineSoundGenerator import *
 
-# 
-import GlobalConstant as GC
-
-# JSON stuff???
-from io import StringIO
-
-LASER_PIN = 0 #GPIO_0
+# Global constants of TesCustoms TesMuffler library
+import GlobalConstants as GC
 
 
-def calibrateLaserSetup():
-    """
-    Runs a calibration process to ensure that hardware has not moved and that the zero and max throttle points are defined and within LASER's range.
-
-    Key arguments:
-    NONE
-
-    Return value:
-    [ZERO_THROTTLE, MAX_THROTTLE] a tuple defining the distance to the zero and max throttle pedal positions
-    """
-
-    maxDistance = 0     # Units are centimeters
-    minDistance = 300   # Units are centimeters
-    timeDelay = 0       # Units are milliSeconds
-    while(timeDelay < 5000):
-        currentDistance == LaserPing.getDistance()
-        if(currentDistance >= minDistance):
-            maxDistance = currentDistance
-
-        if(currentDistance < minDistance):
-            minDistance = currentDistance
-
-        timeDelay = timeDelay + GC.FUNCTION_DELAY
-
-    return [minDistance, maxDistance]
-
+# Flexible event logging system for DEBUGGING, ERRORS, and INFO 
+# https://docs.python.org/3/library/logging.html
+import logging
 
 
 if __name__ == "__main__":
 
-    #QR code on box links mobile app to your hardware with SMS 2FA 
+    # Create Loggers for the 4 major subsystsems
+    CanBusLog = logging.Logger("CanBus.log")
+    WirelessLog = logging.Logger("Wireless.log")
+    EngineSoundLog = logging.Logger("EngineSound.log")
+    QRCodeLog = logging.Logger("QRCode.log")
 
-    config = { "apiKey": "apiKey",
-               "authDomain": "projectId.firebaseapp.com",
-               "databaseURL": "https://databaseName.firebaseio.com",
-               "storageBucket": "projectId.appspot.com",
-               "serviceAccount": "path/to/serviceAccountCredentials.json"
-             }
+    if(GC.DEBUG_STATEMENTS_ON):
+        print("Debugging print statments are on for CanBus, Bluetooth, EngineeSound, and QR Code Loggers")
+        CanBusLog.setLevel(logging.DEBUG)
+        WirelessLog.setLevel(logging.DEBUG)
+        EngineSoundLog.setLevel(logging.DEBUG)
+        QRCodeLog.setLevel(logging.DEBUG)
 
-    firebase = pyrebase.initialize_app(config)
-    
-    
-    io = StringIO()
-    json.dump(['streaming API'], io)
-    io.getvalue()
+    else:
+        print("Custom user info print statement Loggers have been configured for PRODUCTION code")
+        CanBusLog.setLevel(logging.INFO)
+        WirelessLog.setLevel(logging.INFO)
+        EngineSoundLog.setLevel(logging.ERROR)
+        QRCodeLog.setLevel(logging.CRITICAL)
 
-    '["streaming API"]'
-    
-    usersCarModel = json.get()
-    
-    try:
-        BluetoothObject = BluetoothSetup(usersCarModel)
-    except InvalidModelException:
-        BluetoothObject = BluetoothSetup(BluetoothSetup.ALL) 
-    
-    
-    
-    print("Press & release acclerator multiple times for the  next 5 seconds")
-    [ZERO_THROTTLE, MAX_THROTTLE] = calibrateLaserSetup()
+    TES_API_URL = os.environ.get('TES_API_URL')
+    TES_API_KEY = os.environ.get('TES_API_KEY')
+    supabase = create_client(TES_API_URL, TES_API_KEY)
 
-    currentProgramFilename = os.path.basename(__file__)
-    self.DebugObject = Debug(True, currentProgramFilename)
-
-    defaultSound = SoundGenerator.DEFAULT_SOUND
+    digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1, EngineSoundLog)
 
     while(True):
-        throttlePostion = LaserPing.getDistance()
-        if(throttlePosition == ZERO_THROTTLE):
-            EngineSoundGenerator.play()
-        else:
-            print("TODO")
+
+        try:
+            digitalEngine.startAudioLoop()
+
+        except KeyboardInterrupt:
+            print(f"\nEXITTING PROGRAM")
+            sys.exit(0)
