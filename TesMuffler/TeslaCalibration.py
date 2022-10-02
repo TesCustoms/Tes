@@ -21,7 +21,7 @@ try:
     from Debug import *
 
     # Useful global constants used across all TesMuffler code
-    import GlobalConstant as GC
+    import GlobalConstants as GC
 
     # TODO High
     import Car
@@ -83,8 +83,8 @@ class TeslaCalibration:
         self.DebugObject = Debug(TeslaCalibration.DEBUG_STATEMENTS_ON, thisCodesFilename)
         
         # TODO Determine these using Twitter and Barklee's and Joe's Tesla's
-        self.gasPedalMax = 69 #gasPedalMax
-        self.gasPedalMin = 69 #gasPedalMin
+        self.goPedalMax = 69 #gasPedalMax
+        self.goPedalMax = 69 #gasPedalMin
         self.brakePedalMax = 69 #brakePedalMax
         self.brakePedalMin = 69 #brakePedalMin
         
