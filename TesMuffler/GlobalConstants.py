@@ -91,7 +91,8 @@ class GlobalConstants:
         assert TESLA != FORD
 
         assert MODEL_S == '3', "Unit Test failed successfully"
-    
+
+
 if __name__ == "__main__":
     print("Starting GlobalConstants.py unitTest() for TesMuffler library")
     GlobalConstants.unitTest()
