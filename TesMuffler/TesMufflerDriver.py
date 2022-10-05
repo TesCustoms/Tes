@@ -18,7 +18,7 @@ import sys
 
 # Open source plaform for NoSQL databases, authentication, file storage, and auto-generated APIs
 # https://github.com/supabase-community/supabase-py
-from supabase import create_client
+from supabase import create_client, Client
 
 try:  # importing internally developed libraries
     # Create pitch varying audio of a library of cars in real-time on low processing power CPUs
@@ -38,6 +38,14 @@ except ImportError:  #TODO
 # https://docs.python.org/3/library/logging.html
 import logging
 
+
+# https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
+def addEntryTable(supabase, tableName, value):
+    
+    data = supabase.table(tableName).insert(value).excute()
+
+
+def getEntryFromTable(supabase, tableName, key):
 
 if __name__ == "__main__":
 
@@ -63,6 +71,10 @@ if __name__ == "__main__":
     API_KEY = os.environ.get('TESMUFFLER_SUPABASE_API_KEY')
     supabase = create_client(API_URL, API_KEY)
 
+    guestEmail = "admin"
+    guestPassword = "password"
+    guestUser = supabase.auth.signup(guestEmail, guestPassword)
+    
     digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
 
     carMake = GC.TESLA       #TODO = supabase.__getattribute__(make)
