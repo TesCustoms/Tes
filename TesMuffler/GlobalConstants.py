@@ -71,6 +71,8 @@ PERCENTAGE_UNITS = '%'
 MILLIMETER_UNITS = 'mm'
 CENTIMETER_UNITS = 'cm'
 
+# Datatbase Table Name CONSTANTS
+VALID_TABLE_NAMES = ["Users", "Cars", "EngineSounds", ]
 
 class GlobalConstants:
 

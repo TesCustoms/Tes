@@ -40,20 +40,73 @@ import logging
 
 
 # https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
-def addEntryTable(supabase, tableName, value):
+def insertEntryToTable(supabase, tableName, key, value):
+    """
+    Args:
+        tableName (string): 
+    """
     
-    data = supabase.table(tableName).insert(value).excute()
+    safeList = TesMufflerDriver.santizeDatabaseInput(tableName, key, value)
+    
+    safeValue = str(safeList[1]) + ":" + str(safeList[2]) #TODO Support data = [1, 2, 3, 4]?
+    
+    data = supabase.table(safeList[0]).insert(safeValue).excute()
 
-
+    dataJSON = json.loads(data.json())
+        
+    TesMufflerDriver.logStatusCode(dataJSON['status'])
+    data_entries = dataJSON['data']
+        
 def getEntryFromTable(supabase, tableName, key):
 
+    safeList = santizeDatabaseInput(tableName, "NULL", "NULL")
+    
+    data = supabase.table(safeList[0]).select("*").excute()
+    
+    dataJSON = json.loads(data.json())
+    
+    logStatusCode(dataJSON['status'])
+    data_entries = dataJSON['data']
+    
+    # TODO KEY SEARCH
+    
+    return ???
+    
+def santizeDatabaseInput(tableName, key, value):
+    # CHECK FOR SQL INJECTION, ACCEPT "NULL" INPUTS, VALID TABLE NAMES, VALID KEYS, & CONVERT VALUE (LIST or NON-LIST) INTO VALID STRING
+    # https://supabase.com/blog/loading-data-supabase-python
+    safeList = []
+    
+    for i in GC.VALID_TABLE_NAMES:
+    
+    if(tableName == tableName.trim()
+    key = key.trim()
+    value = value.trim() 
+    
+    if(key == "NULL"):
+    
+    value = {}    
+    safeList.append(value)
+    return safeList
+
+def logStatusCode(statusCode):
+
+    # Python 3.10 Switch case
+    if(int(statusCode) == 400):
+        NetworkLog.info("400: Database operation FAILED")
+    ifelse(int(statusCode == 418)):
+        NetworkLog.info("418: https://en.wikipedia.org/wiki/HTTP_418")  
+    else: 
+        NetworkLog.info("200: Database operation was SUCCESFULLY")
+
+    
 if __name__ == "__main__":
 
     # Create Loggers for the 4 major subsystsems
     CanBusLog = logging.getLogger("CanBus.log")
-    WirelessLog = logging.getLogger("Wireless.log")
+    NetworkLog = logging.getLogger("Network.log")
     EngineSoundLog = logging.getLogger("EngineSound.log")
-    QRCodeLog = logging.getLogger("QRCode.log")
+    QRCode Log = logging.getLogger("QRCode.log")
 
     if(GC.DEBUG_STATEMENTS_ON):
         print("Debugging print statments are on for ALL Loggers")
@@ -63,21 +116,21 @@ if __name__ == "__main__":
         print("IN PRODUCTION CODE MODE: Custom print statement Loggers have been configured")
         #TODO NON-BASIC CONFIG
         CanBusLog.setLevel(logging.INFO)
-        WirelessLog.setLevel(logging.INFO)
+        NetworkLog.setLevel(logging.INFO)
         EngineSoundLog.setLevel(logging.ERROR)
         QRCodeLog.setLevel(logging.CRITICAL)
 
     API_URL = os.environ.get('TESMUFFLER_SUPABASE_API_URL')
     API_KEY = os.environ.get('TESMUFFLER_SUPABASE_API_KEY')
-    supabase = create_client(API_URL, API_KEY)
+    supabase : Client = create_client(API_URL, API_KEY)
 
     guestEmail = "admin"
     guestPassword = "password"
-    guestUser = supabase.auth.signup(guestEmail, guestPassword)
+    guestUser = supabase.auth.signin(guestEmail, guestPassword)
     
     digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
 
-    carMake = GC.TESLA       #TODO = supabase.__getattribute__(make)
+    carMake = getEntryFromTable(supabase, "CarSpec")
     carModel = GC.MODEL_3    #TODO = supabase.__getattribute__(model)
     carYear = 2022           #TODO = supabase.__getattribute__(year)
     carColor = GC.WHITE      #TODO = supabase.__getattribute__(color)
