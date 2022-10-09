@@ -54,8 +54,10 @@ def insertEntryToTable(supabase, tableName, key, value):
 
     dataJSON = json.loads(data.json())
         
-    TesMufflerDriver.logStatusCode(dataJSON['status'])
+    statusCode = TesMufflerDriver.logStatusCode(dataJSON['status'])
     data_entries = dataJSON['data']
+
+    return statusCode
         
 def getEntryFromTable(supabase, tableName, key):
 
@@ -65,12 +67,12 @@ def getEntryFromTable(supabase, tableName, key):
     
     dataJSON = json.loads(data.json())
     
-    logStatusCode(dataJSON['status'])
+    statusCode = logStatusCode(dataJSON['status'])
     data_entries = dataJSON['data']
     
     # TODO KEY SEARCH
     
-    return ???
+    return statusCode
     
 def santizeDatabaseInput(tableName, key, value):
     # CHECK FOR SQL INJECTION, ACCEPT "NULL" INPUTS, VALID TABLE NAMES, VALID KEYS, & CONVERT VALUE (LIST or NON-LIST) INTO VALID STRING
@@ -90,16 +92,19 @@ def santizeDatabaseInput(tableName, key, value):
     return safeList
 
 def logStatusCode(statusCode):
+    #TODO GC.DATABASE_OPERATION_FAILED = 400, GC.DATABASE_OPERATION_SUCCESFULL = 200
 
     # Python 3.10 Switch case
     if(int(statusCode) == 400):
-        NetworkLog.info("400: Database operation FAILED")
-    ifelse(int(statusCode == 418)):
+        NetworkLog.info("400: Database operation FAILED")            
+    elif(int(statusCode == 418)):
         NetworkLog.info("418: https://en.wikipedia.org/wiki/HTTP_418")  
     else: 
         NetworkLog.info("200: Database operation was SUCCESFULLY")
 
-    
+    return statusCode
+
+
 if __name__ == "__main__":
 
     # Create Loggers for the 4 major subsystsems

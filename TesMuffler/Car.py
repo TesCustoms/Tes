@@ -38,7 +38,7 @@ class Car:
         jeffsCar = Car(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
         print(jeffsCar.make)
 
-    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GC.WHITE):
+    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GC.WHITE, vin="TODO"):
         """ TODO
 
         Code has been tested for 2019 and newer but older Telsa will get support
@@ -57,6 +57,8 @@ class Car:
         self.currentRPM = 0
         self.topDigitalGear = GC.TOP_GEAR
         self.maxDigitalRPM = GC.MAX_RPM
+
+        self.vin = vin
 
         if(make == GC.TESLA):
             self.gearShiftVelocity = [0, 15, 30, 50, 75]
