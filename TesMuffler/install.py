@@ -177,6 +177,7 @@ if __name__ == "__main__":
 	print("\n\nRUN 'source TesMufflerDevEnv/bin/activate' command please...")
 
 	#TODO COOL EXTRAS
+    #pip install energyusage
 	#https://www.builtinafrica.io/blog-post/vuyisile-ndlovu-pypi
 	#https://docs.python.org/3/library/pathlib.html
 
