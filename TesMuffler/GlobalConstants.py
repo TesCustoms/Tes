@@ -74,11 +74,12 @@ CENTIMETER_UNITS = 'cm'
 # Datatbase Table Name CONSTANTS
 VALID_TABLE_NAMES = ["Users", "Cars", "EngineSounds", ]
 
-# OBD-2 wiring CONSTANTS 
-BROWN_WIRE = 
-YELLOW_WIRE = 
-RED_WIRE = "12V"
-BLACK_WIRE = "GND"
+# OBD-2 wiring CONSTANTS with pin number on ODB-2 connector, pin name, and color of wire
+# MD = Manufacturer's Discretion https://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector
+PIN1_MD = "RED_WIRE"
+PIN2_SAE_J1850_Line_Bus_PLUS = "WHITE_WIRE"
+RED_WIRE = "TODO"
+BLACK_WIRE = "TODO"
 
 
 class GlobalConstants:
