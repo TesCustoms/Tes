@@ -74,6 +74,13 @@ CENTIMETER_UNITS = 'cm'
 # Datatbase Table Name CONSTANTS
 VALID_TABLE_NAMES = ["Users", "Cars", "EngineSounds", ]
 
+# OBD-2 wiring CONSTANTS 
+BROWN_WIRE = 
+YELLOW_WIRE = 
+RED_WIRE = "12V"
+BLACK_WIRE = "GND"
+
+
 class GlobalConstants:
 
     def unitTest():
