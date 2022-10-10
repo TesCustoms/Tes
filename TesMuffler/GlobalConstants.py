@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-01"
+__date__    = "Late Updated: 2022-10-10"
 __doc__     = "Useful global constants for the entire TesCustoms TesMuffler library"
 """
 TODO = -1
@@ -33,7 +33,7 @@ SURYA = 'SURYA'  # TODO once model name is public
 R1T = 'R1T'
 R1S = 'R1S'
 
-F150_LIGHTNING = 'F-150L'
+F150_LIGHTNING = 'F-150 LIGHTNING'
 MACH_E = 'MACH-E'
 
 EV6 = 'EV6'
@@ -50,15 +50,15 @@ GREY = 7
 WHITE = 8
 
 # Moving hardware CONTSTANTS
-GO_PEDAL = 0                    # Pedal furthest right
-GO_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
+GO_PEDAL = 0                    # Pedal furthest right in the UK and USA
+GO_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]    #TODO
 MAX_GO_PEDAL_TRAVEL = TODO      # Units are in millimeters
 TOP_GEAR = 5
 MAX_RPM = 10_000
 
-BRAKE_PEDAL = 1                 # 2nd pedal from center of the car
-BRAKE_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]  # TODO
-MAX_BRAKE_PEDAL_TRAVEL = 69     # Units are in millimeters
+BRAKE_PEDAL = 1                 # Pedal furthest left in automatic transmissions in UK and USA
+BRAKE_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]  #TODO
+MAX_BRAKE_PEDAL_TRAVEL = TODO     # Units are in millimeters
 
 # User Interface CONSTANTS
 UI_TERMINAL_DELAY = 0.1         # Units are seconds
@@ -72,37 +72,29 @@ MILLIMETER_UNITS = 'mm'
 CENTIMETER_UNITS = 'cm'
 
 # Datatbase Table Name CONSTANTS
-VALID_TABLE_NAMES = ["Users", "Cars", "EngineSounds", ]
+VALID_SUPABASE_TABLE_NAMES = ["Users", "Cars", "EngineSounds", "TODO"]
 
 # OBD-2 wiring CONSTANTS with pin number on ODB-2 connector, pin name, and color of wire
 # MD = Manufacturer's Discretion https://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector
-PIN1_MD = "RED_WIRE"
-PIN2_SAE_J1850_Line_Bus_PLUS = "WHITE_WIRE"
-RED_WIRE = "TODO"
-BLACK_WIRE = "TODO"
-
+PIN01_MD = "RED_WIRE"
+PIN02_SAE_J1850_LINE_BUS_PLUS = "WHITE_WIRE"
+PIN03_MD = "ORANGE_WIRE"
+PIN04_CHASSIS_GND = "BLUE_WIRE"
+PIN05_SIGNAL_GND = "GREEN_WIRE"
+PIN06_SAE_J2284_CAN_HIGH = "YELLOW_WIRE"
+PIN07_K_LINE_ISO_9141_2__ISO_DIS_4230 = "BLACK_WIRE"
+PIN08_MD = "PURPLE_WIRE"
+PIN09_MD = "RED_BLACK_WIRE"
+PIN10_SAE_J1850_LINE_BUS_MINUS = "WHITE_BLACK_WIRE"
+PIN11_MD = "ORANGE_BLACK_WIRE"
+PIN12_MD = "BLUE_BLACK_WIRE"
+PIN13_MD = "GREEN_BLACK_WIRE"
+PIN14_SAE_J2284_CAN_LOW = "YELLOW_BLACK_WIRE"
+PIN15_L_LINE_ISO_9141_2__ISO_DIS_4230_4 = "BROWN_BLACK_WIRE"
+PIN16_UNSWITCHED_VEHICLE_BATTERY_POSITIVE = "PURPLE_BLACK_WIRE"
 
 class GlobalConstants:
 
-    def unitTest():
-        assert UI_TERMINAL_DELAY < 0.5
-
-        assert MAX_GO_PEDAL_TRAVEL == TODO
-        assert MAX_BRAKE_PEDAL_TRAVEL < 256
-
-        command = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-        assert command == GO_PEDAL_POSITION_ID
-
-        assert RED == 0
-
-        assert MODEL_S == 'S'
-        assert MODEL_S == "S"
-
-        assert TESLA != FORD
-
-        assert MODEL_S == '3', "Unit Test failed successfully"
-
-
-if __name__ == "__main__":
-    print("Starting GlobalConstants.py unitTest() for TesMuffler library")
-    GlobalConstants.unitTest()
+    if __name__ == "__main__":
+        print("Open GlobalConstants.py to see CONSTANTS used in the TesCustoms TesKuffler library")
+ 
