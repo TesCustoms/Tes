@@ -51,20 +51,32 @@ WHITE = 8
 
 # Moving hardware CONTSTANTS
 GO_PEDAL = 0                    # Pedal furthest right in the UK and USA
-GO_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]    #TODO
+GO_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
 MAX_GO_PEDAL_TRAVEL = TODO      # Units are in millimeters
+
+BRAKE_PEDAL = 1                 # Pedal furthest left in automatic transmissions in UK and USA
+BRAKE_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+MAX_BRAKE_PEDAL_TRAVEL = TODO     # Units are in millimeters
+
+# Digital simulation of hardware CONSTANTS
 TOP_GEAR = 5
 MAX_RPM = 10_000
 
-BRAKE_PEDAL = 1                 # Pedal furthest left in automatic transmissions in UK and USA
-BRAKE_PEDAL_POSITION_ID = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]  #TODO
-MAX_BRAKE_PEDAL_TRAVEL = TODO     # Units are in millimeters
+# Tesla API CONSTANTS
+VELOCITY_SENSOR_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+ENGINE_LOAD_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+RPM_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+
+ODDOMETER_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+HYBRID_BATTERY_REMAINING_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
 
 # User Interface CONSTANTS
 UI_TERMINAL_DELAY = 0.1         # Units are seconds
 MAX_UI_DEALY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
+
+
 
 # Dimensional unit CONSTANTS
 PERCENTAGE_UNITS = '%'
@@ -93,8 +105,8 @@ PIN14_SAE_J2284_CAN_LOW = "YELLOW_BLACK_WIRE"
 PIN15_L_LINE_ISO_9141_2__ISO_DIS_4230_4 = "BROWN_BLACK_WIRE"
 PIN16_UNSWITCHED_VEHICLE_BATTERY_POSITIVE = "PURPLE_BLACK_WIRE"
 
+
 class GlobalConstants:
 
     if __name__ == "__main__":
-        print("Open GlobalConstants.py to see CONSTANTS used in the TesCustoms TesKuffler library")
- 
+        print("Open GlobalConstants.py to see CONSTANTS used in the TesCustoms TesMuffler library")
