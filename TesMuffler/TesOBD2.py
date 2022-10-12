@@ -53,48 +53,54 @@ class TesOBD2:
 
         print(GC.CENTIMETER_UNITS)
 
-<<<<<<< HEAD
-    def __init__(self, device):
-        self.logger = "TODO" #obd.logger()
+    def getRpmPint(self):
+        """
 
-        if(device == GC.MAC):
-            self.connection = obd.OBD("/dev/ttyUSB0")
-        elif(device == GC.PC):
-        elif(device == GC.PI_ZERO_W2 or GC.PI_4):
-            HAT_FD
-        elif(device == GC.KUKSA_CANOPI):
-=======
-    def getRPM(self):
+        https://python-obd.readthedocs.io/en/latest/Responses/
         """
-        """
-        OBDResponseObject = self.connection.query(obd.commands.RPM, )
+        OBDResponseObject = self.connection.query(obd.commands.RPM)   # or obd.commands[1][12] # mode 1, PID 12 (RPM)
 
         if(OBDResponseObject.is_null()):
-            pass #TODO self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
+            self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
+        else: 
+            self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
+            return OBDResponseObject.value
 
+    def getEngineLoadPint(self):
+        """
 
-    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA):
-        self.logger = "TODO" #obd.logger()
+        https://python-obd.readthedocs.io/en/latest/Responses/
+        """
+        OBDResponseObject = self.connection.query(obd.commands.ENGINE_LOAD)  
+
+        if(OBDResponseObject.is_null()):
+            self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
+        else: 
+            self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
+            return OBDResponseObject.value
+
+    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel=GC.DEBUG):
+        self.logger = obd.logger.setLevel(obd.logging.loggingLevel) # enables all debug information
+        self.logger = obd.logger()
 
         try:
             ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus 
-            self.connection = obd.OBD(ports[0], GC.DEFAULT,TODO, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST
-            pass #TODO self.logger.info(f"Using *** {ports[0]} *** UNIX device")
+            self.connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
+            self.logger.info(f"Using *** {ports[0]} *** UNIX device")
 
         except IndexError:
-            pass #TODO self.logger.debug("No UNIX device files available for use as with OBD-2 port / adapter")
+            self.logger.debug("No UNIX device files available for use as with OBD-2 port / adapter")
 
         # https://python-obd.readthedocs.io/en/latest/Connections/
         obdStatus = self.connection.status()
         if(obdStatus == OBDStatus.CAR_CONNECTED):
-            pass #TODO self.logger.info
+            pass #TODO self.logger.info    (“CAR_CONNECTED”) if the overall connection phase is successful, this status means that the serial communication is valid
         elif(obdStatus == OBDStatus.ELM_CONNECTED):
-            pass #TODO self.logger.debug
+            pass #TODO self.logger.debug   (“ELM_CONNECTED”) means that the ELM327 processor is reached but the OBDII socket is not connected to the car.
         elif(obdStatus == OBDStatus.OBD_CONNECTED):
-            pass #TODO self.logger.debug
+            pass #TODO self.logger.debug   (“OBD_CONNECTED”) is returned when the OBDII socket is connected and the ignition is off,
         elif(obdStatus == OBDStatus.NOT_CONNECTED):
             pass #TODO self.logger.info
->>>>>>> 39ab22fd58d420cc0e491fe5bc1e94943227de7a
 
 
 if __name__ == "__main__":
@@ -104,3 +110,4 @@ if __name__ == "__main__":
 
     # ODB-2 commands to use ENGINE_LOAD, RPM, SPEED, DISTANCE_W_MIL, ACCELERATOR_POS_?D?
     # https://python-obd.readthedocs.io/en/latest/Command%20Tables/
+    # https://python-obd.readthedocs.io/en/latest/Troubleshooting/
