@@ -76,7 +76,14 @@ MAX_UI_DEALY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
 
+<<<<<<< HEAD
 
+=======
+# CAN Bus baudrate CONSTANTS
+FAST = 1_000_000  # 1 Mbit/sec (Mbps)
+DEFAULT = 50_000  # 500 kbits/sec (kbps)
+SLOW = 20_000     # 20 kbits/sec (kbps)
+>>>>>>> 39ab22fd58d420cc0e491fe5bc1e94943227de7a
 
 # Dimensional unit CONSTANTS
 PERCENTAGE_UNITS = '%'
@@ -109,4 +116,9 @@ PIN16_UNSWITCHED_VEHICLE_BATTERY_POSITIVE = "PURPLE_BLACK_WIRE"
 class GlobalConstants:
 
     if __name__ == "__main__":
+<<<<<<< HEAD
         print("Open GlobalConstants.py to see CONSTANTS used in the TesCustoms TesMuffler library")
+=======
+        print("Open GlobalConstants.py to see CONSTANTS used in the TesCustoms TesKuffler library")
+ 
+>>>>>>> 39ab22fd58d420cc0e491fe5bc1e94943227de7a
