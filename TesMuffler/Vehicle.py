@@ -4,7 +4,7 @@ __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
 __date__    = "Late Updated: 2022-04-19"
-__doc__     = "Realtime description of a Car objects state including RPM, gear, make, model, year, and color"
+__doc__     = "Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color"
 """
 
 try:  # importing internally developed libraries
@@ -22,22 +22,22 @@ try:  # importing internally developed libraries
 
 except ImportError:
     print("GlobalConstants.py didn't import correctly")
-    print("Please verify that file(s) are in same directory as the Car.py")
+    print("Please verify that file(s) are in same directory as the Vehicle.py")
 
 
-class Car:
+class Vehicle:
 
     def unitTest():
-        blazesCar = Car(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY)
+        blazesCar = Vehicle(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY)
         print(blazesCar.color)
         assert blazesCar.currentGear == 1
 
-        elonsCar = Car(GC.TESLA, GC.MODEL_S, 2020, GC.BLUE)
+        elonsCar = Vehicle(GC.TESLA, GC.MODEL_S, 2020, GC.BLUE)
         print(elonsCar.model)
         assert elonsCar.currentRPM == 0
         assert elonsCar.maxRPM == 0
 
-        jeffsCar = Car(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
+        jeffsCar = Vehicle(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
         print(jeffsCar.make)
 
     def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GC.WHITE, vin="TODO"):
@@ -80,7 +80,7 @@ class Car:
         """_summary_
         """
 
-        # Simialar to OLD bad automatic transmission select gear based on ONLY car velocity on the road (not )
+        # Simialar to OLD bad automatic transmission select gear based on ONLY vehicle velocity on the road (not )
         # TODO Select gear based on road angle and https://docs.python.org/3.10/whatsnew/3.10.html#pep-634-structural-pattern-matching
         if(0 <= self.currentVelocity < self.gearShiftVelocity[1]):
             nextGear = 1
@@ -113,4 +113,4 @@ class Car:
 
 
 if __name__ == "__main__":
-    Car.unitTest()
+    Vehicle.unitTest()

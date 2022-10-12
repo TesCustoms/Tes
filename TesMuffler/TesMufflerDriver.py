@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-01"
+__date__    = "Late Updated: 2022-10-12"
 __doc__     = "TesMuffler project code starts running here"
 """
 
@@ -16,28 +16,42 @@ import argparse
 import os
 import sys
 
-# Open source plaform for NoSQL databases, authentication, file storage, and auto-generated APIs
-# https://github.com/supabase-community/supabase-py
-from supabase import create_client, Client
-
-try:  # importing internally developed libraries
-    # Create pitch varying audio of a library of cars in real-time on low processing power CPUs
-    from EngineSoundGenerator import *
-
-    # Realtime description of a Car objects state including RPM, gear, make, model, year, and color
-    from Car import *
-
-    # Useful global constants for the entire TesCustoms TesMuffler library
-    import GlobalConstants as GC
-
-except ImportError:  #TODO
-    print("EngineSoundGenerator.py, car.py, OR  GlobalConstants.py didn't import correctly")
-    print("Please verify that those files are in same directory as the TesMufflerDriver.py")
+# TODO Decode / parse database responses 
+# TODO
+import json
 
 # Flexible event logging system for DEBUGGING, ERRORS, and INFO
 # https://docs.python.org/3/library/logging.html
 import logging
 
+# Allow BASH commands to be run inside python code like this file
+# https://docs.python.org/3/library/subprocess.html
+#TODO REMOVE? from subprocess import Popen, PIPE
+from subprocess import check_call
+
+try:  # Importing externally developed libraries
+
+    # Open source plaform for NoSQL databases, authentication, file storage, and auto-generated APIs
+    # https://github.com/supabase-community/supabase-py
+    from supabase import create_client, Client
+
+except ImportError:  #TODO
+    print("The supabase module didn't import correctly!")
+    executeInstalls = input("Would you like me to *** pip3 install supabase *** for you (Y/N)?")
+    if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
+        check_call("pip3 install supabase", shell=True)
+    else:
+        print("You didn't type Y or YES :)")
+        print("Follow supabase manual install instructions at https://pypi.org/project/supabase/")
+
+# Create pitch varying audio of a library of vahicles in real-time on low processing power CPUs
+from EngineSoundGenerator import *
+
+# Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color
+from Vehicle import *
+
+# Useful global constants for the entire TesCustoms TesMuffler library
+import GlobalConstants as GC
 
 # https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
 def insertEntryToTable(supabase, tableName, key, value):
@@ -46,7 +60,7 @@ def insertEntryToTable(supabase, tableName, key, value):
         tableName (string): 
     """
     
-    safeList = TesMufflerDriver.santizeDatabaseInput(tableName, key, value)
+    safeList = santizeDatabaseInput(tableName, key, value)
     
     safeValue = str(safeList[1]) + ":" + str(safeList[2]) #TODO Support data = [1, 2, 3, 4]?
     
@@ -54,7 +68,7 @@ def insertEntryToTable(supabase, tableName, key, value):
 
     dataJSON = json.loads(data.json())
         
-    statusCode = TesMufflerDriver.logStatusCode(dataJSON['status'])
+    statusCode = logStatusCode(dataJSON['status'])
     data_entries = dataJSON['data']
 
     return statusCode
@@ -135,17 +149,17 @@ if __name__ == "__main__":
     
     digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
 
-    carMake = getEntryFromTable(supabase, "CarSpec")
-    carModel = GC.MODEL_3    #TODO = supabase.__getattribute__(model)
-    carYear = 2022           #TODO = supabase.__getattribute__(year)
-    carColor = GC.WHITE      #TODO = supabase.__getattribute__(color)
-    digitalCar = Car(carMake, carModel, carYear, carColor)
+    vehicleMake = getEntryFromTable(supabase, "VehicleSpec")
+    vehicleModel = GC.MODEL_3    #TODO = supabase.__getattribute__(model)
+    vehicleYear = 2022           #TODO = supabase.__getattribute__(year)
+    vehicleColor = GC.WHITE      #TODO = supabase.__getattribute__(color)
+    digitalVehicle = Vehicle(vehicleMake, vehicleModel, vehicleYear, vehicleColor)
 
     while(True):
         #TODO if supabase.__getattribute__(changeBit)
         
         try:
-            digitalCar.update()
+            digitalvehicle.update()
             digitalEngine.startAudioLoop()
 
         except KeyboardInterrupt:
