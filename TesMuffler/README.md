@@ -1,3 +1,5 @@
+License: GNU General Public License V2
+
 Hardware Required: <br>
 1) ESP-32 Dev Kit [Supplier P/N WROOM](https://acrobotic.com/products/acr-00024/) <br>
 2) AM Radio IC [Manufacture P/N TODO](https://www.petervis.com/Radios/ta7642/ta7642-am-radio-ic.html)
