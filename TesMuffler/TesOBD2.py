@@ -53,8 +53,15 @@ class TesOBD2:
 
         print(GC.CENTIMETER_UNITS)
 
-    def __init__(self):
+    def __init__(self, device):
         self.logger = "TODO" #obd.logger()
+
+        if(device == GC.MAC):
+            self.connection = obd.OBD("/dev/ttyUSB0")
+        elif(device == GC.PC):
+        elif(device == GC.PI_ZERO_W2 or GC.PI_4):
+            HAT_FD
+        elif(device == GC.KUKSA_CANOPI):
 
 
 if __name__ == "__main__":
