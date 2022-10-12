@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-10"
+__date__    = "Late Updated: 2022-10-11"
 __doc__     = "General purpose TesCustoms OBD-2 driver"
 """
 
@@ -53,11 +53,42 @@ class TesOBD2:
 
         print(GC.CENTIMETER_UNITS)
 
-    def __init__(self):
+    def getRPM(self):
+        """
+        """
+        OBDResponseObject = self.connection.query(obd.commands.RPM, )
+
+        if(OBDResponseObject.is_null()):
+            pass #TODO self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
+
+
+    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA):
         self.logger = "TODO" #obd.logger()
+
+        try:
+            ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus 
+            self.connection = obd.OBD(ports[0], GC.DEFAULT,TODO, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST
+            pass #TODO self.logger.info(f"Using *** {ports[0]} *** UNIX device")
+
+        except IndexError:
+            pass #TODO self.logger.debug("No UNIX device files available for use as with OBD-2 port / adapter")
+
+        # https://python-obd.readthedocs.io/en/latest/Connections/
+        obdStatus = self.connection.status()
+        if(obdStatus == OBDStatus.CAR_CONNECTED):
+            pass #TODO self.logger.info
+        elif(obdStatus == OBDStatus.ELM_CONNECTED):
+            pass #TODO self.logger.debug
+        elif(obdStatus == OBDStatus.OBD_CONNECTED):
+            pass #TODO self.logger.debug
+        elif(obdStatus == OBDStatus.NOT_CONNECTED):
+            pass #TODO self.logger.info
 
 
 if __name__ == "__main__":
 
     UnitTestObject = TesOBD2()
     UnitTestObject.unitTest()
+
+    # ODB-2 commands to use ENGINE_LOAD, RPM, SPEED, DISTANCE_W_MIL, ACCELERATOR_POS_?D?
+    # https://python-obd.readthedocs.io/en/latest/Command%20Tables/

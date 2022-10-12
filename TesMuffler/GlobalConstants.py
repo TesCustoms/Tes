@@ -66,6 +66,11 @@ MAX_UI_DEALY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
 
+# CAN Bus baudrate CONSTANTS
+FAST = 1_000_000  # 1 Mbit/sec (Mbps)
+DEFAULT = 50_000  # 500 kbits/sec (kbps)
+SLOW = 20_000     # 20 kbits/sec (kbps)
+
 # Dimensional unit CONSTANTS
 PERCENTAGE_UNITS = '%'
 MILLIMETER_UNITS = 'mm'
