@@ -1,44 +1,55 @@
 #!/usr/bin/env python3
 """
 __author__  = "Blaze Sanders"
-__email__   = "blaze.d.a.sanders@gmail.com"
+__email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-01"
+__date__    = "Late Updated: 2022-10-14"
 __doc__     = "Create pitch varying audio of a library of cars in real-time on low processing power CPUs"
 """
-
-# Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
-# Often apt install libasound2-dev == yum install alsa-lib-devel is still needed
-# https://simpleaudio.readthedocs.io/en/latest/
-import simpleaudio as sa
-
-#TODO IF simpleaudio DONOT WORK
-# Allow for high-quality sample rate conversion
-# https://pypi.org/project/samplerate/
-#import samplerate
-
-#TODO IF BOTH simpleaudio and samplerate DONT WORK
-# Allow for playback of .mp3 audio on Linux, MacOS, & Windows
-# import  pyaudio
-# http://www.mega-nerd.com/SRC/
 
 # Allow the control of the space-time fabric :)
 # https://docs.python.org/3/library/time.html
 import time
 
-# Flexible event logging system for DEBUGGING, ERRORS, and INFO 
+# Flexible event logging system for DEBUGGING, ERRORS, and INFO
 # https://docs.python.org/3/library/logging.html
 import logging
 
-try:
+# Allow BASH commands to be run inside python code like this file
+# https://docs.python.org/3/library/subprocess.html
+#TODO REMOVE? from subprocess import Popen, PIPE
+from subprocess import check_call
+
+try:  # Importing externally developed libraries
+
+    # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
+    # Often apt install libasound2-dev == yum install alsa-lib-devel is still needed
+    # https://simpleaudio.readthedocs.io/en/latest/
+    import simpleaudio as sa
+
+    #TODO IF simpleaudio DONOT WORK
+    # Allow for high-quality sample rate conversion
+    # https://pypi.org/project/samplerate/
+    #import samplerate
+
+    #TODO IF BOTH simpleaudio and samplerate DONT WORK
+    # Allow for playback of .mp3 audio on Linux, MacOS, & Windows
+    # import  pyaudio
+    # http://www.mega-nerd.com/SRC/
+
     # Custom mp3 editting library base off Marco Arments Smart Speed
     # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
-    from mp3edit import *
-    #TODO
+    # TODO from mp3edit import *
 
-except ImportError:
-    print("mp3edit.py didn't import correctly")
-    print("Please verify that those files are in same directory as the EngineSoundGenerator.py")
+except ImportError:  #TODO
+    print("ERROR: The simpleaudio python module didn't import correctly!")
+    executeInstalls = input("Would you like me to *** pip3 install simpleaudio *** for you (Y/N)? ")
+    if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
+        check_call("pip install simpleaudio", shell=True)
+        check_call("sudo apt install libasound2-dev", shell=True)
+    else:
+        print("You didn't type Y or YES :)")
+        print("Follow supabase manual install instructions at https://pypi.org/project/supabase/")
 
 
 class EngineSoundGenerator:
