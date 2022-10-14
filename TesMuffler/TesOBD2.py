@@ -3,13 +3,15 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-11"
+__date__    = "Late Updated: 2022-10-14"
 __doc__     = "General purpose TesCustoms OBD-2 driver"
 """
 
 # Allow BASH commands to be run inside python code like this file
 # https://docs.python.org/3/library/subprocess.html
 #TODO REMOVE? from subprocess import Popen, PIPE
+import subprocess
+from subprocess import Popen, PIPE
 from subprocess import check_call
 
 try:  # Importing externally developed libraries
@@ -19,10 +21,10 @@ try:  # Importing externally developed libraries
     import obd
 
 except ImportError:  #TODO
-    print("The python-obd module didn't import correctly!")
-    executeInstalls = input("Would you like to *** pip3 install python-obd *** and  *** apt install bluetooth bluez-utils blueman *** for you (Y/N)?")
+    print("The obd module didn't import correctly!")
+    executeInstalls = input("Would you like to *** pip3 install python-obd *** and  *** apt install bluetooth bluez-utils blueman *** for you (Y/N)?  ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
-        check_call("pip3 install python-obd", shell=True)
+        check_call("pip install python-obd", shell=False)
         check_call("sudo apt-get install bluetooth bluez-utils blueman", shell=True)
     else:
         print("You didn't type Y or YES :)")
@@ -36,6 +38,10 @@ import GlobalConstants as GC
 class TesOBD2:
 
     def unitTest(self):
+        """ Create basic OBD-2 object, get SPEED, and print value in MPH
+
+        https://python-obd.readthedocs.io/en/latest/#basic-usage
+        """
         connection = obd.OBD()
 
         cmd = obd.commands.SPEED            # Select an OBD command (sensor)
@@ -48,21 +54,24 @@ class TesOBD2:
             print(response.value.to("mph"))     # User-friendly unit conversions
 
         except AttributeError:
-            print(f"Reponse to *** {cmd} *** OBD-2 command was not valid")
-            #self.logger.info(f"Reponse to *** {cmd} *** OBD-2 command was not valid")
-
-        print(GC.CENTIMETER_UNITS)
+            self.logger.info(f"Reponse to *** {cmd} *** OBD-2 command was not valid")
 
     def getRpmPint(self):
-        """
-
+        """ Get RPM of default wheels, which are the FRONT wheels in a Tesla
         https://python-obd.readthedocs.io/en/latest/Responses/
+
+        Args:
+            NONE
+
+        Return:
+            OBDResponse (Pint): Python Object containing INT & STRING
+
         """
         OBDResponseObject = self.connection.query(obd.commands.RPM)   # or obd.commands[1][12] # mode 1, PID 12 (RPM)
 
         if(OBDResponseObject.is_null()):
             self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
-        else: 
+        else:
             self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
             return OBDResponseObject.value
 
@@ -71,20 +80,20 @@ class TesOBD2:
 
         https://python-obd.readthedocs.io/en/latest/Responses/
         """
-        OBDResponseObject = self.connection.query(obd.commands.ENGINE_LOAD)  
+        OBDResponseObject = self.connection.query(obd.commands.ENGINE_LOAD)
 
         if(OBDResponseObject.is_null()):
             self.logger.debug("OBD-2 command was unable to retrieve data from the vehicle")
-        else: 
+        else:
             self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
             return OBDResponseObject.value
 
-    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel=GC.DEBUG):
-        self.logger = obd.logger.setLevel(obd.logging.loggingLevel) # enables all debug information
+    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel="DEBUG"):
+        self.logger = obd.logger.setLevel(loggingLevel)  #(obd.logging.loggingLevel) # enables all debug information
         self.logger = obd.logger()
 
         try:
-            ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus 
+            ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
             self.connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
             self.logger.info(f"Using *** {ports[0]} *** UNIX device")
 
