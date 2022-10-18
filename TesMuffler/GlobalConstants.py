@@ -29,7 +29,7 @@ ROADSTER_V2 = 'TESLA-ROADSTER-V2'
 SEMI_TRUCK = 'SEMI'
 ALL_TESLAS = 'S3XY-CARS'   # https://www.quora.com/Why-do-the-Tesla-models-spell-out-S3XY
 
-SURYA = 'SURYA'  # TODO once model name is public
+MODEL_ = 'SURYA'  # TODO once model name is public
 
 R1T = 'R1T'
 R1S = 'R1S'
