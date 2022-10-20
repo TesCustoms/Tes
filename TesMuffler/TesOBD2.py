@@ -14,6 +14,8 @@ import subprocess
 from subprocess import Popen, PIPE
 from subprocess import check_call
 
+import logging
+
 try:  # Importing externally developed libraries
 
     # Library for handling data from a car's On-Board Diagnostics port (OBD-II)
@@ -88,20 +90,21 @@ class TesOBD2:
             self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
             return OBDResponseObject.value
 
-    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel="DEBUG"):
-        self.logger = obd.logger.setLevel(loggingLevel)  #(obd.logging.loggingLevel) # enables all debug information
-        self.logger = obd.logger()
+    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel=logging.DEBUG):
+        logging.basicConfig(level=loggingLevel)   #self.TesOBD2logger
 
+        ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
         try:
-            ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
-            self.connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
-            self.logger.info(f"Using *** {ports[0]} *** UNIX device")
+            connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
+
+        #try:
+            logging.info(f"Using *** {ports[0]} *** UNIX device")
 
         except IndexError:
-            self.logger.debug("No UNIX device files available for use as with OBD-2 port / adapter")
+            logging.debug("No UNIX device files available for use as with OBD-2 port / adapter")
 
         # https://python-obd.readthedocs.io/en/latest/Connections/
-        obdStatus = self.connection.status()
+        obdStatus = connection.status()
         if(obdStatus == OBDStatus.CAR_CONNECTED):
             pass #TODO self.logger.info    (“CAR_CONNECTED”) if the overall connection phase is successful, this status means that the serial communication is valid
         elif(obdStatus == OBDStatus.ELM_CONNECTED):
