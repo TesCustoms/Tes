@@ -79,6 +79,7 @@ UI_TERMINAL_DELAY = 0.1         # Units are seconds
 MAX_UI_DEALY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
+STANDARD_POLLING_RATE = 0.5     # Units are Hertz (0.5 Hz == 33.3 ms)
 
 # Dimensional unit CONSTANTS
 PERCENTAGE_UNITS = '%'

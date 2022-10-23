@@ -40,8 +40,9 @@ class Vehicle:
         jeffsCar = Vehicle(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
         print(jeffsCar.make)
 
-    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2019, color=GC.WHITE, vin="TODO"):
-        """ TODO
+    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="TODO"):
+        """Constructor to initialize an Vehicle object
+         Defaults to a 2022 Tesla Model 
 
         Code has been tested for 2019 and newer but older Telsa will get support
 
@@ -54,19 +55,29 @@ class Vehicle:
         self.year = year
         self.color = color
 
+        self.updatePollingRate = GC.STANDARD_POLLING_RATE
         self.currentGear = 1
         self.currentVelocity = 0
         self.currentRPM = 0
         self.topDigitalGear = GC.TOP_GEAR
         self.maxDigitalRPM = GC.MAX_RPM
 
+        self.gearShiftVelocity = [0]
+
         self.vin = vin
 
         if(make == GC.TESLA):
-            self.gearShiftVelocity = [0, 15, 30, 50, 75]
-            self.canBus = TesOBD2.TesOBD2(year, model, make)          # NOQA F405
+            self.gearShiftVelocity.append(15) 
+            self.gearShiftVelocity.append(30)
+            self.gearShiftVelocity.append(50)
+            self.gearShiftVelocity.append(75)
+            self.canBus = TesOBD2.TesOBD2(year, model, make)    # NOQA F405
         elif(make == GC.APTERA):
-            pass
+            self.topDigitalGear = 4                             # Aptera model uses a non-standard 4 gear digital gear box
+            self.gearShiftVelocity.append(20) 
+            self.gearShiftVelocity.append(40)
+            self.gearShiftVelocity.append(80)
+            self.canBus = TesOBD2.TesOBD2(year, model, make)    # NOQA F405
         elif(make == GC.RIVIAN):
             pass
         elif(make == GC.FORD):
@@ -77,10 +88,16 @@ class Vehicle:
             pass
 
     def update(self):
-        """_summary_
+        """ Polling loop to read state of CAN Bus and stare values into Vehicle instance variables at rate of GC.STANDARD_POLLING_RATE
+
+        Arg(s):
+            NONE
+
+        Returns:
+            NOTHING
         """
 
-        # Simialar to OLD bad automatic transmission select gear based on ONLY vehicle velocity on the road (not )
+        # Simialar to OLD bad automatic transmission select gear based on ONLY vehicle velocity on the road (not RPM or hill angle)
         # TODO Select gear based on road angle and https://docs.python.org/3.10/whatsnew/3.10.html#pep-634-structural-pattern-matching
         if(0 <= self.currentVelocity < self.gearShiftVelocity[1]):
             nextGear = 1
@@ -104,12 +121,41 @@ class Vehicle:
         self.currentGear = nextGear
 
     def getGear(self):
-        """_summary_
+        """Get the last gear state (1 to GC.MAX_RPM) stored during update() polling function loop
+
+        Arg(s):
+            NONE
 
         Returns:
-            _type_: _description_
+            self.currentGear (integer)
         """
         return self.currentGear
+    
+    def getRPM(self):
+        """Get the last RPM of digital enginer (1 to GC.TOP_GEAR) stored during update() polling function loop
+
+        Arg(s):
+            NONE
+
+        Returns:
+            self.currentRPM (integer)
+        """
+        return self.currentRPM
+   
+    def getVelocity(self):
+        """Get the last velocity stored during update() polling function loop
+
+        Estimate delay from real life velicoty is expected to be 33.3 ms (0.5 Hz)
+
+        Arg(s):
+            NONE
+
+        Returns:
+            self.currentVelocity (float)
+        """
+        return self.currentVelocity
+
+
 
 
 if __name__ == "__main__":
