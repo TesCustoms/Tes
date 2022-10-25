@@ -133,6 +133,8 @@ class EngineSoundGenerator:
             self.engineSoundID = self.EngineSoundsDict[baseAudioFilename]
             print(self.engineSoundID)
             pathEnding = "./Sounds/" + baseAudioFilename
+
+            # https://stackoverflow.com/questions/25672289/failed-to-open-file-file-wav-as-a-wav-due-to-file-does-not-start-with-riff-id
             self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(pathEnding)
             EngineSoundLog.debug("Engine sound found in dictionary")
         except KeyError:
