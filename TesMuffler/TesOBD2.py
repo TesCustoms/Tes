@@ -24,10 +24,10 @@ try:  # Importing externally developed libraries
 
 except ImportError:  #TODO
     print("The obd module didn't import correctly!")
-    executeInstalls = input("Would you like to *** pip3 install python-obd *** and  *** apt install bluetooth bluez-utils blueman *** for you (Y/N)?  ")
+    executeInstalls = input("Would you like to *** pip install obd *** and  *** apt install bluetooth bluez-utils blueman *** for you (Y/N)?  ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
-        check_call("pip install python-obd", shell=False)
-        check_call("sudo apt-get install bluetooth bluez-utils blueman", shell=True)
+        check_call("pip install obd", shell=True)
+        check_call("sudo apt-get install bluetooth bluez", shell=True) #check_call("sudo apt-get install bluetooth bluez-utils blueman", shell=True)
     else:
         print("You didn't type Y or YES :)")
         print("Follow python-obd manual install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
