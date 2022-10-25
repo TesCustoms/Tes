@@ -40,9 +40,16 @@ import GlobalConstants as GC
 class TesOBD2:
 
     def unitTest(self):
-        """ Create basic OBD-2 object, get SPEED, and print value in MPH
+        """Create basic OBD-2 object, get SPEED, and print value in MPH
 
         https://python-obd.readthedocs.io/en/latest/#basic-usage
+        https://www.csselectronics.com/pages/can-bus-simple-intro-tutorial
+
+        Arg(s):
+            NONE
+
+        Returns:
+            NOTHING
         """
         connection = obd.OBD()
 
@@ -56,18 +63,18 @@ class TesOBD2:
             print(response.value.to("mph"))     # User-friendly unit conversions
 
         except AttributeError:
-            self.logger.info(f"Reponse to *** {cmd} *** OBD-2 command was not valid")
+            logging.info(f"Reponse to *** {cmd} *** OBD-2 command was not valid")
 
     def getRpmPint(self):
-        """ Get RPM of default wheels, which are the FRONT wheels in a Tesla
+        """Get RPM of default wheels (TesMuffler library assumes REAR wheel drive)
+
         https://python-obd.readthedocs.io/en/latest/Responses/
 
         Args:
             NONE
 
         Return:
-            OBDResponse (Pint): Python Object containing INT & STRING
-
+            OBDResponse (Pint): Python Object containing Interger (TODO Float 0.25 to ???) and String
         """
         OBDResponseObject = self.connection.query(obd.commands.RPM)   # or obd.commands[1][12] # mode 1, PID 12 (RPM)
 
@@ -78,9 +85,16 @@ class TesOBD2:
             return OBDResponseObject.value
 
     def getEngineLoadPint(self):
-        """
+        """Get Engine Load percentage out of 100% for the default electric motors (TesMuffler library assumes REAR wheel drive)
 
         https://python-obd.readthedocs.io/en/latest/Responses/
+
+        Args:
+            NONE
+
+        Return:
+            OBDResponse (Pint): Python Object containing Float (0.01 to 1.00) & String
+
         """
         OBDResponseObject = self.connection.query(obd.commands.ENGINE_LOAD)
 
@@ -90,29 +104,40 @@ class TesOBD2:
             self.logger.info(f"Raw *** {OBDResponseObject.command} *** command response was *** {OBDResponseObject.message} *** at time = {OBDResponseObject.time} ")
             return OBDResponseObject.value
 
-    def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel=logging.DEBUG):
+    def __init__(self, year=2022, model=GC.MODEL_S, make=GC.TESLA, loggingLevel=logging.DEBUG):
+        """ Constructor to initialize a TesOBD2 Object with DEBUG level turned on
+        Defaults to a 2022 Tesla Model S
+
+        Arg(s):
+            year (integer): TODO
+            model (String CONSTANT): TODO
+            make (String CONSTANT): TODO
+            loggingLevel (import logging instance variable): TODO
+
+        Returns:
+            New TesOBD2() Object
+        """
         logging.basicConfig(level=loggingLevel)   #self.TesOBD2logger
 
-        ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
         try:
-            connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
+           ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
+           connection = obd.OBD(ports[0], GC.DEFAULT, GC.SAE_J1850PWM, False, GC.MAX_UI_DELAY, True)  #TODO obd.OBD("/dev/ttyUSB0") CHANGE TO GC.FAST   is protocol_id() == 1 or 2 = SAE J1850 PWM or SAE J1850 VPW
+           logging.info(f"Using *** {ports[0]} *** UNIX device")
 
-        #try:
-            logging.info(f"Using *** {ports[0]} *** UNIX device")
+           # https://python-obd.readthedocs.io/en/latest/Connections/
+           obdStatus = connection.status()
+           if(obdStatus == OBDStatus.CAR_CONNECTED):
+               pass #TODO self.logger.info    (“CAR_CONNECTED”) if the overall connection phase is successful, this status means that the serial communication is valid
+           elif(obdStatus == OBDStatus.ELM_CONNECTED):
+               pass #TODO self.logger.debug   (“ELM_CONNECTED”) means that the ELM327 processor is reached but the OBDII socket is not connected to the car.
+           elif(obdStatus == OBDStatus.OBD_CONNECTED):
+               pass #TODO self.logger.debug   (“OBD_CONNECTED”) is returned when the OBDII socket is connected and the ignition is off,
+           elif(obdStatus == OBDStatus.NOT_CONNECTED):
+               pass #TODO self.logger.info
 
         except IndexError:
             logging.debug("No UNIX device files available for use as with OBD-2 port / adapter")
 
-        # https://python-obd.readthedocs.io/en/latest/Connections/
-        obdStatus = connection.status()
-        if(obdStatus == OBDStatus.CAR_CONNECTED):
-            pass #TODO self.logger.info    (“CAR_CONNECTED”) if the overall connection phase is successful, this status means that the serial communication is valid
-        elif(obdStatus == OBDStatus.ELM_CONNECTED):
-            pass #TODO self.logger.debug   (“ELM_CONNECTED”) means that the ELM327 processor is reached but the OBDII socket is not connected to the car.
-        elif(obdStatus == OBDStatus.OBD_CONNECTED):
-            pass #TODO self.logger.debug   (“OBD_CONNECTED”) is returned when the OBDII socket is connected and the ignition is off,
-        elif(obdStatus == OBDStatus.NOT_CONNECTED):
-            pass #TODO self.logger.info
 
 
 if __name__ == "__main__":
