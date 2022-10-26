@@ -14,11 +14,11 @@ try:  # importing internally developed libraries
     # Useful global constants used across all TesMuffler code
     import GlobalConstants as GC
 
-    from TeslaCanBus import *
-    # TODO import ApteraCanBus
-    # TODO import RivianCanBus
-    # TODO import FordCanBus
-    # TODO import KiaCanBus
+    # TODO REMOVE? from TeslaCanBus import *
+    # TODO REMOVE? import ApteraCanBus
+    # TODO REMOVE? import RivianCanBus
+    # TODO REMOVE? import FordCanBus
+    # TODO REMOVE? import KiaCanBus
 
 except ImportError:
     print("GlobalConstants.py didn't import correctly")
@@ -28,26 +28,48 @@ except ImportError:
 class Vehicle:
 
     def unitTest():
-        blazesCar = Vehicle(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY)
-        print(blazesCar.color)
+        blazesCar = Vehicle(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY, "1FALP42X9HF111111")
+        print(f"Blaze's truck is a", blazesCar.model)
+        assert blazesCar.updatePollingRate == 0.5
         assert blazesCar.currentGear == 1
+        assert blazesCar.topDigitalGear == 5
+        assert blazesCar.gearShiftVelocity[0] == 0
+        assert blazesCar.gearShiftVelocity[GC.TOP_GEAR-1] == 75
 
-        elonsCar = Vehicle(GC.TESLA, GC.MODEL_S, 2020, GC.BLUE)
-        print(elonsCar.model)
+
+        elonsCar = Vehicle(GC.APTERA, GC.MODEL_, 2020, GC.BLUE, "1FTFW1R6XBFB08616")
+        print(f"Elon's car is a", elonsCar.model)
+        assert elonsCar.currentVelocity == 0
         assert elonsCar.currentRPM == 0
-        assert elonsCar.maxRPM == 0
+        assert elonsCar.maxDigitalRPM == 10000
+        assert elonsCar.vin == "1FTFW1R6XBFB08616"
+        assert elonsCar.gearShiftVelocity[elonsCar.topDigitalGear-1] == 80
 
-        jeffsCar = Vehicle(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
-        print(jeffsCar.make)
 
-    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="TODO"):
+        jeffsCar = Vehicle(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN, "1G1YY26U0651XXXXX")
+        print(f"2023 ==", jeffsCar.year)
+        print(f"Jeff's USA truck VIN is", len(jeffsCar.vin), "characters long")
+        assert jeffsCar.gearShiftVelocity[0] == 0
+
+
+
+    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="12345678901234567"):
         """Constructor to initialize an Vehicle object
-         Defaults to a 2022 Tesla Model 
+
+        Defaults to a white 2022 Tesla Model, to make Casey Liss from ATP.fm podcast happy :)
 
         Code has been tested for 2019 and newer but older Telsa will get support
 
         Arg(s):
-            make = (int, CONSTANT)
+            make  (Interger CONSTANT):
+            model   (String CONSTANT):
+            year           (Interger):
+            color (Interger CONSTANT):
+            vin              (String):
+
+
+        Returns:
+            New Vehicle() Object
 
         """
         self.make = make
@@ -67,14 +89,14 @@ class Vehicle:
         self.vin = vin
 
         if(make == GC.TESLA):
-            self.gearShiftVelocity.append(15) 
+            self.gearShiftVelocity.append(15)
             self.gearShiftVelocity.append(30)
             self.gearShiftVelocity.append(50)
             self.gearShiftVelocity.append(75)
             self.canBus = TesOBD2.TesOBD2(year, model, make)    # NOQA F405
         elif(make == GC.APTERA):
             self.topDigitalGear = 4                             # Aptera model uses a non-standard 4 gear digital gear box
-            self.gearShiftVelocity.append(20) 
+            self.gearShiftVelocity.append(20)
             self.gearShiftVelocity.append(40)
             self.gearShiftVelocity.append(80)
             self.canBus = TesOBD2.TesOBD2(year, model, make)    # NOQA F405
@@ -88,7 +110,7 @@ class Vehicle:
             pass
 
     def update(self):
-        """ Polling loop to read state of CAN Bus and stare values into Vehicle instance variables at rate of GC.STANDARD_POLLING_RATE
+        """Polling loop to read state of CAN Bus and stare values into Vehicle instance variables at rate of GC.STANDARD_POLLING_RATE
 
         Arg(s):
             NONE
@@ -130,7 +152,7 @@ class Vehicle:
             self.currentGear (integer)
         """
         return self.currentGear
-    
+
     def getRPM(self):
         """Get the last RPM of digital enginer (1 to GC.TOP_GEAR) stored during update() polling function loop
 
@@ -141,7 +163,7 @@ class Vehicle:
             self.currentRPM (integer)
         """
         return self.currentRPM
-   
+
     def getVelocity(self):
         """Get the last velocity stored during update() polling function loop
 
@@ -154,8 +176,6 @@ class Vehicle:
             self.currentVelocity (float)
         """
         return self.currentVelocity
-
-
 
 
 if __name__ == "__main__":
