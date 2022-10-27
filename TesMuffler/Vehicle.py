@@ -40,15 +40,25 @@ class Vehicle:
         jeffsCar = Vehicle(GC.FORD, GC.F150_LIGHTNING, 2023, GC.GREEN)
         print(jeffsCar.make)
 
-    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="TODO"):
-        """Constructor to initialize an Vehicle object
-         Defaults to a 2022 Tesla Model 
+    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="NULLVIN"):
+        """Constructor to initialize an Vehicle Object
+         Defaults to a white 2022 Tesla Model S with "NULLVIN" as VIN since that is the best EV in 2022
 
-        Code has been tested for 2019 and newer but older Telsa will get support
+        Code has been tested for 2019 and newer Tesla's, but older Telsa's will get support starting in 2024
+
+        https://en.wikipedia.org/wiki/Vehicle_identification_number
 
         Arg(s):
-            make = (int, CONSTANT)
+            make  (String CONSTANT): Make / Manufacture of a vehicle (Ford, GM, Tesla, & BMW etc)
+            model (String CONSTANT): Model from a manufacture that is define by the USA Department of Motor Vehicles (DMV)
+            year  (interger): Model year, this is not always the same as the year vehicle was phyiscally built
+            color (String CONSTANT): TODO
+            vin   (String): Unique Vehicle Identification Number for every vehicle in the USA
 
+            SEMA in Las Vegas Car show
+
+        Returns:
+           New Vehicle() object
         """
         self.make = make
         self.model = model
