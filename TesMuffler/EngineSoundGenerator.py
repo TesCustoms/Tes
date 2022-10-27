@@ -45,8 +45,8 @@ except ImportError:  #TODO
     print("ERROR: The simpleaudio python module didn't import correctly!")
     executeInstalls = input("Would you like me to *** pip3 install simpleaudio *** for you (Y/N)? ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
-        check_call("pip install simpleaudio", shell=True)
         check_call("sudo apt install libasound2-dev", shell=True)
+        check_call("pip install simpleaudio", shell=True)
     else:
         print("You didn't type Y or YES :)")
         print("Follow supabase manual install instructions at https://pypi.org/project/supabase/")
@@ -133,6 +133,8 @@ class EngineSoundGenerator:
             self.engineSoundID = self.EngineSoundsDict[baseAudioFilename]
             print(self.engineSoundID)
             pathEnding = "./Sounds/" + baseAudioFilename
+
+            # https://stackoverflow.com/questions/25672289/failed-to-open-file-file-wav-as-a-wav-due-to-file-does-not-start-with-riff-id
             self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(pathEnding)
             EngineSoundLog.debug("Engine sound found in dictionary")
         except KeyError:

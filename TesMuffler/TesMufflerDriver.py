@@ -144,9 +144,10 @@ if __name__ == "__main__":
     API_KEY = os.environ.get('TESMUFFLER_SUPABASE_API_KEY')
     supabase : Client = create_client(API_URL, API_KEY)
 
-    guestEmail = "admin"
+    guestEmail = "info@tescustoms.com"
     guestPassword = "password"
-    guestUser = supabase.auth.signin(guestEmail, guestPassword)
+    guestUser = supabase.auth.sign_up(email=guestEmail, password=guestPassword)
+    guestUser = supabase.auth.sign_in(email=guestEmail, password=guestPassword)
 
     digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
 

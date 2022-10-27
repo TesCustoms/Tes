@@ -1,0 +1,1 @@
+https://github.com/supabase/supabase/issues/3944  to fix weird error after clicking link in email after sign up fix supabase  {{ .ConfirmationURL }}
