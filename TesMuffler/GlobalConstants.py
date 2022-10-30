@@ -3,11 +3,10 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-12"
+__date__    = "Late Updated: 2022-10-30"
 __doc__     = "Useful global constants for the entire TesCustoms TesMuffler library"
 """
-TODO = -1
-
+# Global print() statement toggle for entire TesMuffler library
 DEBUG_STATEMENTS_ON = True
 
 # Vehicle make name CONTSTANTS - Yes these are sorted best to worst :)
@@ -19,28 +18,28 @@ KIA = 4
 VINFAST = 5
 
 # Vehicle model name CONTSTANTS for vehicle makes above
-MODEL_S = 'S'
-MODEL_3 = '3'
-MODEL_X = 'X'
-MODEL_Y = 'Y'
-CYBER_TRUCK = 'C'
-ATV = 'TESLA_ATV'
-ROADSTER_V2 = 'TESLA-ROADSTER-V2'
-SEMI_TRUCK = 'SEMI'
-ALL_TESLAS = 'S3XY-CARS'   # https://www.quora.com/Why-do-the-Tesla-models-spell-out-S3XY
+MODEL_S = "S"
+MODEL_3 = "3"
+MODEL_X = "X"
+MODEL_Y = "Y"
+CYBER_TRUCK = "C"
+ATV = "TESLA_ATV"
+ROADSTER_V2 = "TESLA-ROADSTER-V2"
+SEMI_TRUCK = "SEMI"
+ALL_TESLAS = "S3XY-CARS"    # https://www.quora.com/Why-do-the-Tesla-models-spell-out-S3XY
 
-MODEL_ = 'SURYA'  # TODO once model name is public
+MODEL_ = "SURYA"            #TODO Once model name is made public by Aptera Motors
 
-R1T = 'R1T'
-R1S = 'R1S'
+R1T = "R1T"
+R1S = "R1S"
 
-F150_LIGHTNING = 'F-150 LIGHTNING'
-MACH_E = 'MACH-E'
+F150_LIGHTNING = "F-150 LIGHTNING"
+MACH_E = "MACH-E"
 
-EV6 = 'EV6'
+EV6 = "EV6"
 
-VF6 = 'VF6'
-VF8 = 'VF8'
+VF6 = "VF6"
+VF8 = "VF8"
 
 # Vehicle color CONTSTANTS - ROY G BIV + others
 RED = 0
@@ -55,28 +54,26 @@ WHITE = 8
 
 # Moving hardware CONTSTANTS
 GO_PEDAL = 0                    # Pedal furthest right in the UK and USA
-GO_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
-MAX_GO_PEDAL_TRAVEL = TODO      # Units are in millimeters
+GO_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]           #TODO or 29bit?
 
 BRAKE_PEDAL = 1                 # Pedal furthest left in automatic transmissions in UK and USA
-BRAKE_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
-MAX_BRAKE_PEDAL_TRAVEL = TODO     # Units are in millimeters
+BRAKE_PEDAL_POSITION_CAN_BUS_IDENTIFIER = [0b11_111_111_111]        #TODO or 29bit?
 
 # Digital simulation of hardware CONSTANTS
 TOP_GEAR = 5
 MAX_RPM = 10_000
 
-# Tesla API CONSTANTS
-VELOCITY_SENSOR_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
-ENGINE_LOAD_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
-RPM_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+# Tesla CAN Bus CONSTANTS
+VELOCITY_SENSOR_CAN_BUS_IDENTIFIER = [0b111_1111_1111]             #TODO or 29bit?
+ENGINE_LOAD_CAN_BUS_IDENTIFIER = [0b111_1111_1111]                 #TODO or 29bit?
+RPM_CAN_BUS_IDENTIFIER = [0b111_1111_1111]                         #TODO or 29bit?
 
-ODDOMETER_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
-HYBRID_BATTERY_REMAINING_CAN_BUS_IDENTIFIER = [0b11_111_111_111]    #TODO or 29bit?
+ODDOMETER_CAN_BUS_IDENTIFIER = [0b111_1111_1111]                   #TODO or 29bit?
+HYBRID_BATTERY_REMAINING_CAN_BUS_IDENTIFIER = [0b111_1111_1111]    #TODO or 29bit?
 
 # User Interface CONSTANTS
 UI_TERMINAL_DELAY = 0.1         # Units are seconds
-MAX_UI_DEALY = 2.0              # Units are seconds
+MAX_UI_DELAY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
 STANDARD_POLLING_RATE = 0.5     # Units are Hertz (0.5 Hz == 33.3 ms)
@@ -87,7 +84,7 @@ MILLIMETER_UNITS = 'mm'
 CENTIMETER_UNITS = 'cm'
 
 # Datatbase Table Name CONSTANTS
-VALID_SUPABASE_TABLE_NAMES = ["Users", "Cars", "EngineSounds", "TODO"]
+VALID_SUPABASE_TABLE_NAMES = ["Users", "Vehicles", "EngineSounds", "TODO"]      #TODO
 
 # OBD-2 wiring CONSTANTS with pin number on ODB-2 connector, pin name, and color of wire
 # MD = Manufacturer's Discretion https://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector
@@ -111,6 +108,7 @@ PIN16_UNSWITCHED_VEHICLE_BATTERY_POSITIVE = "RED_WIRE"              # 4
 # ODB-2 python-odb protocol_name() and protocol_id()
 SAE_J1850_PWM = 1
 SAE_J1850_VPW = 2
+
 
 class GlobalConstants:
 
