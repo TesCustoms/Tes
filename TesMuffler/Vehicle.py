@@ -51,7 +51,7 @@ class Vehicle:
         assert jeffsCar.gearShiftVelocity[0] == 0
 
 
-    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="12345678901234567"):
+    def __init__(self, make=GC.TESLA, model=GC.MODEL_S, year=2022, color=GC.WHITE, vin="12345678901234567", gearShiftVelocity=[0, 15, 30, 50, 75]):
         """Constructor to initialize an Vehicle object
 
         Defaults to a white 2022 Tesla Model, to make Casey Liss from ATP.fm podcast happy :)
@@ -66,8 +66,6 @@ class Vehicle:
             year  (interger): Model year, this is not always the same as the year vehicle was phyiscally built
             color (String CONSTANT): TODO
             vin   (String): Unique Vehicle Identification Number for every vehicle in the USA
-
-            SEMA in Las Vegas Car show
 
         Returns:
            New Vehicle() object
@@ -84,10 +82,10 @@ class Vehicle:
         self.topDigitalGear = GC.TOP_GEAR
         self.maxDigitalRPM = GC.MAX_RPM
 
-        self.gearShiftVelocity = [0]
-
         self.vin = vin
 
+        self.gearShiftVelocity = [0]
+        
         if(make == GC.TESLA):
             self.gearShiftVelocity.append(15)
             self.gearShiftVelocity.append(30)
