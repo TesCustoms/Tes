@@ -3,8 +3,8 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-14"
-__doc__     = "TesMuffler embedded linux code starts running here"
+__date__    = "Late Updated: 2022-10-30"
+__doc__     = "TesMuffler embedded linux backend code starts running here"
 """
 
 # Allow CLI to pass parameters into this driver for testing
@@ -35,7 +35,7 @@ try:  # Importing externally developed libraries
     # https://github.com/supabase-community/supabase-py
     from supabase import create_client, Client
 
-except ImportError:  #TODO
+except ImportError:
     print("ERROR: The supabase python module didn't import correctly!")
     executeInstalls = input("Would you like me to *** pip3 install supabase *** for you (Y/N)? ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
@@ -53,13 +53,21 @@ from Vehicle import *
 # Useful global constants for the entire TesCustoms TesMuffler library
 import GlobalConstants as GC
 
-# https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
-def insertEntryToTable(supabase, tableName, key, value):
-    """
-    Args:
-        tableName (string): 
-        key (string):
-        value (string): 
+
+def insertValueIntoTable(supabase, tableName, key, value):
+    """Insert value object into unique key in NoSQL table called "tableName"
+
+    https://hazelcast.com/glossary/key-value-store/
+    https://supabase.com/blog/loading-data-supabase-python
+    https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
+
+    Arg(s):
+        tableName (String): See GC.VALID_SUPABASE_TABLE_NAMES for valid table names
+        key (String): Unique search key to index data on TODO
+        value (String): Arbitrary large data field to insert to TODO ???END?? of table  
+    
+    Returns:
+        HTTP Status Code of database API call
     """
 
     safeList = santizeDatabaseInput(tableName, key, value)
@@ -74,6 +82,7 @@ def insertEntryToTable(supabase, tableName, key, value):
     data_entries = dataJSON['data']
 
     return statusCode
+
 
 def getEntryFromTable(supabase, tableName, key):
 
@@ -122,13 +131,19 @@ def logStatusCode(statusCode):
 
 if __name__ == "__main__":
 
+    # Create a command line parser
+    parser = argparse.ArgumentParser(prog="TesMuffler v2022.0", description=__doc__, add_help=True)
+    parser.add_argument("-d", "--DebugPrintStatementsOn", type=int, default=0, help="Global print() statement toggle for entire TesMuffler library")  # NOQA E501
+    #TODO parser.add_argument("-u", "--unit", type=str, default=FIELD_MODE, choices=[TESTING_MODE, FIELD_MODE, PRODUCT_MODE], help="Select boot up mode for BARISTO kiosk.")
+    args = parser.parse_args()
+
     # Create Loggers for the 4 major subsystsems
     CanBusLog = logging.getLogger("CanBus.log")
     NetworkLog = logging.getLogger("Network.log")
     EngineSoundLog = logging.getLogger("EngineSound.log")
     QRCodeLog = logging.getLogger("QRCode.log")
 
-    if(GC.DEBUG_STATEMENTS_ON):
+    if(GC.DEBUG_STATEMENTS_ON or args.DebugPrintStatementsOn):
         print("Debugging print statments are on for ALL Loggers")
         logging.basicConfig(level=logging.DEBUG)
 
@@ -142,7 +157,7 @@ if __name__ == "__main__":
 
     API_URL = os.environ.get('TESMUFFLER_SUPABASE_API_URL')
     API_KEY = os.environ.get('TESMUFFLER_SUPABASE_API_KEY')
-    supabase : Client = create_client(API_URL, API_KEY)
+    supabase: Client = create_client(API_URL, API_KEY)
 
     guestEmail = "info@tescustoms.com"
     guestPassword = "password"
