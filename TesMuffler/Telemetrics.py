@@ -3,10 +3,9 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-15"
+__date__    = "Late Updated: 2022-11-02"
 __doc__     = "Collect vehicle data to transmit to a central server, hardware switch can turn this off"
 """
-
 
 try:  # Importing externally developed libraries
 
@@ -18,6 +17,9 @@ try:  # Importing externally developed libraries
     # https://github.com/supabase-community/supabase-py
     from supabase import create_client, Client
 
+    # MySQL
+    import mysql-connector-python
+
 except ImportError:  #TODO
     print("The obd module didn't import correctly!")
     executeInstalls = input("Would you like to *** pip3 install python-obd *** and  *** sudo apt install python3-gpiozero *** (Y/N)? ")
@@ -25,6 +27,8 @@ except ImportError:  #TODO
         check_call("pip install python-obd", shell=False)
         check_call("sudo apt-get install bluetooth bluez-utils blueman", shell=True)
         check_call("sudo apt install python3-gpiozero", shell=True)
+        check_call("pip install mysql-connector-python", shell=True)
+
     else:
         print("You didn't type Y or YES :)")
         print("Follow python-obd manual install instructions at https://python-obd.readthedocs.io/en/latest/#installation")

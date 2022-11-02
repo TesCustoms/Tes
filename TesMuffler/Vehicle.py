@@ -63,7 +63,7 @@ class Vehicle:
         Arg(s):
             make  (String CONSTANT): Make / Manufacture of a vehicle (Ford, GM, Tesla, & BMW etc)
             model (String CONSTANT): Model from a manufacture that is define by the USA Department of Motor Vehicles (DMV)
-            year  (interger): Model year, this is not always the same as the year vehicle was phyiscally built
+            year  (interger): Model year, this is not always the same as the year vehicle was physically built
             color (String CONSTANT): TODO
             vin   (String): Unique Vehicle Identification Number for every vehicle in the USA
 

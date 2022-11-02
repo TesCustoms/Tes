@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-30"
+__date__    = "Late Updated: 2022-11-01"
 __doc__     = "TesMuffler embedded linux backend code starts running here"
 """
 
@@ -39,6 +39,7 @@ except ImportError:
     print("ERROR: The supabase python module didn't import correctly!")
     executeInstalls = input("Would you like me to *** pip3 install supabase *** for you (Y/N)? ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
+        check_call("sudo apt install python3-pip", shell=True)
         check_call("pip3 install supabase", shell=True)
     else:
         print("You didn't type Y or YES :)")
