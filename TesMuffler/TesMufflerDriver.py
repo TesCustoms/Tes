@@ -45,11 +45,8 @@ except ImportError:
         print("You didn't type Y or YES :)")
         print("Follow supabase manual install instructions at https://pypi.org/project/supabase/")
 
-# Create pitch varying audio of a library of vahicles in real-time on low processing power CPUs
-from EngineSoundGenerator import *
-
 # Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color
-from Vehicle import *
+from Vehicle import Vehicle
 
 # Useful global constants for the entire TesCustoms TesMuffler library
 import GlobalConstants as GC
@@ -57,7 +54,7 @@ import GlobalConstants as GC
 
 def insertValueIntoTable(supabase, tableName, key, value):
     """Insert value object into unique key in NoSQL table called "tableName"
-
+    
     https://hazelcast.com/glossary/key-value-store/
     https://supabase.com/blog/loading-data-supabase-python
     https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
@@ -100,13 +97,14 @@ def getEntryFromTable(supabase, tableName, key):
 
     return statusCode
 
+
 def santizeDatabaseInput(tableName, key, value):
     # CHECK FOR SQL INJECTION, ACCEPT "NULL" INPUTS, VALID TABLE NAMES, VALID KEYS, & CONVERT VALUE (LIST or NON-LIST) INTO VALID STRING
     # https://supabase.com/blog/loading-data-supabase-python
     safeList = []
 
-    for i in GC.VALID_TABLE_NAMES:
-        if(VALID_TABLE_NAMES[i] == tableName.trim()):
+    for i in GC.VALID_SUPABASE_TABLE_NAMES:
+        if(GC.VALID_SUPABASE_TABLE_NAMES[i] == tableName.trim()):
             key = key.trim()
             value = value.trim()
 
@@ -115,6 +113,7 @@ def santizeDatabaseInput(tableName, key, value):
             safeList.append(value)
 
     return safeList
+
 
 def logStatusCode(statusCode):
     #TODO GC.DATABASE_OPERATION_FAILED = 400, GC.DATABASE_OPERATION_SUCCESFULL = 200
@@ -165,20 +164,19 @@ if __name__ == "__main__":
     guestUser = supabase.auth.sign_up(email=guestEmail, password=guestPassword)
     guestUser = supabase.auth.sign_in(email=guestEmail, password=guestPassword)
 
-    digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
+    #TODO move to Vehicle.py digitalEngine = EngineSoundGenerator(EngineSoundGenerator.MC_LAREN_F1)  # NOQA F405
 
-    vehicleMake = getEntryFromTable(supabase, "VehicleSpec")
-    vehicleModel = GC.MODEL_3    #TODO = supabase.__getattribute__(model)
-    vehicleYear = 2022           #TODO = supabase.__getattribute__(year)
-    vehicleColor = GC.WHITE      #TODO = supabase.__getattribute__(color)
-    digitalVehicle = Vehicle(vehicleMake, vehicleModel, vehicleYear, vehicleColor)
+    # Initial default Vehicle on first app and backend run with user VIN 
+    digitalVehicle = Vehicle(vin=getEntryFromTable(supabase, GC.VALID_SUPABASE_TABLE_NAMES[0], "vin"))
+    statusCode = insertValueIntoTable(supabase, GC.VALID_SUPABASE_TABLE_NAMES[1], vin, digitalVehicle)
 
+    digitalVehicle.startAudioLoop()
     while(True):
         #TODO if supabase.__getattribute__(changeBit)
 
         try:
-            digitalvehicle.update()
-            digitalEngine.startAudioLoop()
+            digitalVehicle.update()
+            digitalVehicle.startAudioLoop()
 
         except KeyboardInterrupt:
             print(f"\nEXITTING PROGRAM")

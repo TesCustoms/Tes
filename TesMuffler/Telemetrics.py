@@ -13,6 +13,10 @@ from subprocess import check_call
 
 try:  # Importing externally developed libraries
 
+    # Read which Operating System Python code is running on
+    # https://docs.python.org/3/library/platform.html
+    import platform
+
     # Read and Write state of the General Purpose Input / Output pins
     # https://gpiozero.readthedocs.io/en/stable/index.html
     from gpiozero import Button
@@ -37,7 +41,11 @@ except ImportError:
     print("The gpio, obd, supabase, and/or MySQL module(s) didn't import correctly!")
     executeInstalls = input("Would you like to *** pip3 install obd *** and  *** sudo apt install python3-gpiozero *** (Y/N)? ")
     if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
-        check_call("sudo apt install python3-gpiozero", shell=True)
+        if platform.platform()[0:5] == "PI ARM":  
+            check_call("sudo apt install python3-gpiozero", shell=True)
+        else:  #Code is running of Windows () or MacOS (Darwin Kernal)
+            #MacOS Kernal in called Darwin  
+            print(platform.platform)
         check_call("pip install obd", shell=True)
         check_call("pip3 install supabase", shell=True)
         check_call("pip install mysql-connector-python", shell=True)
@@ -75,7 +83,8 @@ class Telemetrics:
         """Read state of GC.SECURITY_TOGGLE_PIN
         https://gpiozero.readthedocs.io/en/stable/recipes.html#button
         """
-        toggle = Button(GC.SECURITY_TOGGLE_PIN)    #GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
+        toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)    
+#GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
 
         if toggle.is_pressed:
             state = True

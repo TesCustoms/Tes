@@ -3,26 +3,36 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-04-19"
+__date__    = "Late Updated: 2022-10-30"
 __doc__     = "Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color"
 """
 
-try:  # importing internally developed libraries
+try:  # Importing externally developed libraries
 
-    import TesOBD2
+    pass 
 
-    # Useful global constants used across all TesMuffler code
-    import GlobalConstants as GC
+except ImportError:
+    print("The obd module didn't import correctly!")
+    executeInstalls = input("Would you like to *** pip install obd *** and  *** apt install bluetooth bluez-utils blueman *** for you (Y/N)?  ")
+    if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
+        check_call("pip install obd", shell=True)
+        check_call("sudo apt-get install bluetooth bluez", shell=True) #check_call("sudo apt-get install bluetooth bluez-utils blueman", shell=True)
+    else:
+        print("You didn't type Y or YES :)")
+        print("Follow python-obd manual install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
+
+import TesOBD2
+
+from EngineSoundGenerator import EngineSoundGenerator
+
+# Useful global constants used across all TesMuffler code
+import GlobalConstants as GC
 
     # TODO REMOVE? from TeslaCanBus import *
     # TODO REMOVE? import ApteraCanBus
     # TODO REMOVE? import RivianCanBus
     # TODO REMOVE? import FordCanBus
     # TODO REMOVE? import KiaCanBus
-
-except ImportError:
-    print("GlobalConstants.py didn't import correctly")
-    print("Please verify that file(s) are in same directory as the Vehicle.py")
 
 
 class Vehicle:
@@ -139,7 +149,11 @@ class Vehicle:
             self.currentRPM = 4000
 
         self.currentGear = nextGear
-
+    def startAudioLoop():
+        """_summary_
+        """
+        
+        
     def getGear(self):
         """Get the last gear state (1 to GC.MAX_RPM) stored during update() polling function loop
 
