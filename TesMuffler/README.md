@@ -1,28 +1,18 @@
 License: GNU General Public License V2
 
-https://aka.ms/gcm/credstores
-export GCM_CREDENTIAL_STORE=secretservice
+Commmands to use after recently GitHub repo move:
+git config --get remote.origin.url
+git remote set-url origin https://github.com/TesCustoms/Tes.git
+
+Two options for setting up Git on command line
+1) Using offical gh CLI - https://cli.github.com/
+2) Create one time personal token - https://aka.ms/gcm/credstores and key command to run export GCM_CREDENTIAL_STORE=secretservice
 
 Hardware Required: <br>
-1) ESP-32 Dev Kit [Supplier P/N WROOM](https://acrobotic.com/products/acr-00024/) <br>
-2) AM Radio IC [Manufacture P/N TODO](https://www.petervis.com/Radios/ta7642/ta7642-am-radio-ic.html)
-3) Custom PCBA [P/N 100-0001-A](https://www.upverter.com)
-4) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?) <br>
-5) Parallax LASER rangefinder [SKU 28041](https://www.parallax.com/product/laserping-2m-rangefinder/) <br>
-6) Custom 3D CAD file [TesMufflerCADv1.stl](https://github.com/OpenSourceIronman/Tes/blob/master/TesMuffler/TesMufflerCADv1.stl) 3D printed muffler with magnets <br>
+1) Hardware Dongle from CANOPi [TesCustoms P/N 100-0001-A](https://github.com/TesCustoms/TesMufflerDongle) <br>
+2) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?) <br>
+3) Custom 3D CAD file [TesMufflerCADv1.stl](https://github.com/OpenSourceIronman/Tes/blob/master/TesMuffler/TesMufflerCADv1.stl) 3D printed muffler with magnets <br>
 <br>
-
-Setting up and building the TesMuffler ESP-32 project: <br>
-Make sure your USB cable works by running “lsusb” command in terminal: (I didnt waste 1 hour on this...) <br>
-Something like "Bus 002 Device 001: ID 10c4:ea60 Silicon Laboratories, Inc. CP2104 USB to UART Bridge Controller  Serial: 020911PT" should display in terminal <br>
-<br>
-
-Commands: <br>
-1) Run TODO "cd esp-rainmaker/TesMuffler/" to navigate to project code directory <br>
-2) Run "idf.py monitor" on a 2nd terminal tab or click the computer monitor button along bottom of window inside VS Code to get serial debugging interface <br>
-3) Run "idf.py menuconfig" on your 1st terminal tab to provision ESP and connect to internet https://rainmaker.espressif.com/docs/claiming.html <br>
-4) Run "idf.py build" on your 1st terminal tab to complie the binary on your local PC / Mac
-5) Run "idf.py -p /dev/cu.usbserial-020911PT flash" to push firmware to ESP-32 EEPROM <br>
 
 Python APIs project is exploring: <br>
 1) Tesla API is a community of developers who are reverse engineering Tesla's API: https://teslaapi.dev/ <br> 
@@ -46,27 +36,13 @@ Download the following sounds using "youtube-dl --extract-audio --audio-format m
 8) OTHER SUGGESTIONS? Tweet me @BlazeDSanders or submit GitHub issue <br>
 <br>
 
-Competition: <br>
-1) https://madnessautoworks.com/tesla-model-3-active-exhaust-sound-controller-milltek-single-sound-generator-115036 <br>
-<br>
-2) https://www.amazon.com/gp/product/B0876QCYF4/ref=ox_sc_act_title_1?smid=A1H95AF7GCEQR&psc=1 <br>
-3) https://www.amainhobbies.com/team-associated-sense-innovations-essone-2017-engine-sound-simulator-system-asc29262/p-qtaetquqyzzxactz <br>
-<br>
-
 Why?: <br>
 1) https://www.nhtsa.gov/sites/nhtsa.gov/files/documents/812347-minimumsoundrequirements.pdf <br>
 2) https://www.cnbc.com/2017/10/12/tesla-ceo-elon-musk-reveals-he-owns-two-gasoline-cars.html <br>
 <br>
 
-Feature requests: TODO Make Github Issue
-1) https://twitter.com/u110110/status/1414227401521967104?s=21 <br>
-<br>
 
 TODO: 
-Purchase LOGO: https://www.shutterstock.com/image-vector/tc-initial-letters-looping-linked-circle-1724747953
 Display for PiPico https://www.hackster.io/news/miroslav-nemecek-s-picovga-brings-high-res-video-to-the-raspberry-pi-pico-just-add-resistors-88dd144e7d1c
 FIND URLS I DELETED FROM TOP OF EngineSoundGenerator.py FILE https://whimsical.com/tesmuffler-64NBDWF5cd3stpZDvkubzw
-
-
-
-
+AM Radio IC [Manufacture P/N TODO](https://www.petervis.com/Radios/ta7642/ta7642-am-radio-ic.html)
