@@ -1,10 +1,17 @@
 https://github.com/supabase/supabase/issues/3944  to fix weird error after clicking link in email after sign up fix supabase  {{ .ConfirmationURL }}
 
-Controller Area Network (CAN) is main bus
+Controller Area Network (CAN) is main bus - ISO11898
+> Twisted Pair at upto 1 Mbps
+> Dominant "0" less then 0.5 V Recessive "1" greater then 0.9V
 Local Interconnect Newtork (LIN) extends CAN down into sub system off main loop
+> Single ended one wire at upto 20 kbps - Single master wiiiiiiiiiiiiiiith upto 16 slaves 
+> V_BAT level signal with wave shaping 
+> Dominant "0" less then 0.4 V Recessive "1" greater then 0.6V
 
 CAN Register Map: https://grouper.ieee.org/groups/msc/upamd/pub_docs/CAN.pdf
 
+
+TX + RX = TRX (Transceiver)
 120 Ohmn termanators on both ends with spilt configuration being better for signal intergery 
 60 / 60 spilt with 10 nF capaticator for spilt configuration
 
