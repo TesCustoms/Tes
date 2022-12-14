@@ -1,1 +1,30 @@
 https://github.com/supabase/supabase/issues/3944  to fix weird error after clicking link in email after sign up fix supabase  {{ .ConfirmationURL }}
+
+Controller Area Network (CAN) is main bus
+Local Interconnect Newtork (LIN) extends CAN down into sub system off main loop
+
+CAN Register Map: https://grouper.ieee.org/groups/msc/upamd/pub_docs/CAN.pdf
+
+120 Ohmn termanators on both ends with spilt configuration being better for signal intergery 
+60 / 60 spilt with 10 nF capaticator for spilt configuration
+
+Most CAN Transceivers are 8 pin IC's but 14 pin IC's add low power mode, fault detection
+
+Loop Time in CAN depends on:
+1) CAN Controller IO (TXD/RXD) - VERY SMALL
+2) CAN Transceiver Driver and REceiver Delay (Loop Delay or T_Loop)
+3) Cable lnegth (5 ns/m and max of 40 m at 1 Mbps)
+4) Series components like isolators
+
+Round Trip Delay = 2 x (Cable Length Delay + Isolator Delay + Transceiver Delay + Controler IO Delay)
+
+6 bits of the same type 111_111 or 000_000 are considered an error on a CAN Bus
+
+TXD is data from microcontroller  you want sent to CAN Bus in serial format with is converted to CANH and CANL signals through an op amp
+
+RXD is data coming from CAN bus that has been converted in serial format for microcontroller to parse and make decisions on
+> RXD need pull up resistor for high data rates
+
+
+Can Flexible Data (FD) Rate is faster upto 2+ Mbps
+Arbitration occurs at normal CAN data rate but Data Field Length can be upto 64 bytes (8x larger) and faster!!
