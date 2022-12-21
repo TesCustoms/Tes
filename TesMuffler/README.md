@@ -5,7 +5,7 @@ git config --get remote.origin.url
 git remote set-url origin https://github.com/TesCustoms/Tes.git
 
 Two options for setting up Git on command line
-1) Using offical gh CLI - https://cli.github.com/
+1) Using offical gh CLI (HIGHLY RECOMMENDED) - https://cli.github.com/ and for Raspberry Pi see https://github.com/cli/cli/blob/trunk/docs/install_linux.md also
 2) Create one time personal token - https://aka.ms/gcm/credstores and key command to run export GCM_CREDENTIAL_STORE=secretservice
 
 Hardware Required: <br>
