@@ -4,9 +4,10 @@ Commmands to use after recently GitHub repo move:
 git config --get remote.origin.url
 git remote set-url origin https://github.com/TesCustoms/Tes.git
 
-Two options for setting up Git on command line
-1) Using offical gh CLI (HIGHLY RECOMMENDED) - https://cli.github.com/ and for Raspberry Pi see https://github.com/cli/cli/blob/trunk/docs/install_linux.md also
-2) Create one time personal token - https://aka.ms/gcm/credstores and key command to run export GCM_CREDENTIAL_STORE=secretservice
+Two options for setting up Git on command line: <br>
+1) Using offical gh CLI (HIGHLY RECOMMENDED) - https://cli.github.com/ and for Raspberry Pi see https://github.com/cli/cli/blob/trunk/docs/install_linux.md also <br>
+2) Create one time personal token - https://aka.ms/gcm/credstores and key command to run export GCM_CREDENTIAL_STORE=secretservice <br>
+<br>
 
 Hardware Required: <br>
 1) Hardware Dongle from CANOPi [TesCustoms P/N 100-0001-A](https://github.com/TesCustoms/TesMufflerDongle) <br>
