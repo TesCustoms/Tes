@@ -11,6 +11,10 @@ __doc__     = "TesMuffler embedded linux backend code starts running here"
 # https://docs.python.org/3/library/argparse.html
 import argparse
 
+# Python interactive source code debugger to set breakpoints
+# https://docs.python.org/3/library/pdb.html
+import pdb
+
 # Allow program to exit safety and use enviroment variables for passwords and API keys
 # https://docs.python.org/3/library/os.html
 import os

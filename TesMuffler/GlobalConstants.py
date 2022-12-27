@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-10-30"
+__date__    = "Late Updated: 2022-12-27"
 __doc__     = "Useful global constants for the entire TesCustoms TesMuffler library"
 """
 # Global print() statement toggle for entire TesMuffler library
@@ -12,9 +12,9 @@ DEBUG_STATEMENTS_ON = True
 # Vehicle make name CONTSTANTS - Yes these are sorted best to worst :)
 TESLA = 0
 APTERA = 1
-RIVIAN = 2
-FORD = 3
-KIA = 4
+KIA = 2
+RIVIAN = 3
+FORD = 4
 VINFAST = 5
 
 # Vehicle model name CONTSTANTS for vehicle makes above
