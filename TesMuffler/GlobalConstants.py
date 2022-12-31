@@ -77,8 +77,15 @@ MAX_UI_DELAY = 2.0              # Units are seconds
 FUNCTION_DELAY = 0.005          # Units are seconds
 MIN_CAN_BUS_TIMESTEP = 0.001    # Units are seconds
 STANDARD_POLLING_RATE = 0.5     # Units are Hertz (0.5 Hz == 33.3 ms)
-COLLECTING_DATA = False
-SECURITY_TOGGLE_PIN = 4         #TODO
+COLLECTING_DATA = False         # Software database flag to protect user data
+SECURITY_TOGGLE_PIN = 4         # Hardware GPIO pin number to protect user data at hardware level TODO
+
+# Text to Voice Audio CONSTANTS
+FEMALE_ENGLISH_1 = "TODO"               # Used in VoiceGenerator http://www.festvox.org/flite/packed/flite-2.0/voices/
+MALE_ENGLISH_1 = "TODO"                 # Used in VoiceGenerator http://www.festvox.org/flite/packed/flite-2.0/voices/
+DIPHONE_MODEL_TECHNIQUE = "TODO"        # Most robotic sounding model, see https://github.com/MycroftAI/mimic1#notes
+CLUSTER_GEN_MODEL_TECHNIQUE = "TODO"    # Most human sounding model with large file sizes and high CPU usage
+HTS_MODEL_TECHNIQUE = "TODO"            # Semi-human sounding model with reduced files sizes
 
 # Dimensional unit CONSTANTS
 PERCENTAGE_UNITS = '%'
