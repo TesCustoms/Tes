@@ -37,7 +37,7 @@ try:  # Importing externally developed libraries
 
     # Open source plaform for NoSQL databases, authentication, file storage, and auto-generated APIs
     # https://github.com/supabase-community/supabase-py
-    from supabase import create_client, Client
+    from supabase import create_client, Client   #TODO REMOVE?, execute
 
 except ImportError:
     print("ERROR: The supabase python module didn't import correctly!")
@@ -90,7 +90,12 @@ def getEntryFromTable(supabase, tableName, key):
 
     safeList = santizeDatabaseInput(tableName, "NULL", "NULL")
 
-    data = supabase.table(safeList[0]).select("*").excute()
+    data = supabase.table(safeList[0]).select("*").execute()
+
+    # Select a single row from the 'users' table
+    #result = supabase.execute('SELECT * FROM users WHERE id = $1', (1,))
+    #print(result['rows'][0])
+
 
     dataJSON = json.loads(data.json())
 
@@ -107,10 +112,10 @@ def santizeDatabaseInput(tableName, key, value):
     # https://supabase.com/blog/loading-data-supabase-python
     safeList = []
 
-    for i in GC.VALID_SUPABASE_TABLE_NAMES:
-        if(GC.VALID_SUPABASE_TABLE_NAMES[i] == tableName.trim()):
-            key = key.trim()
-            value = value.trim()
+    for i in range(len(GC.VALID_SUPABASE_TABLE_NAMES)):
+        if(GC.VALID_SUPABASE_TABLE_NAMES[i] == tableName.strip()):
+            key = key.strip()
+            value = value.strip()
 
         if(key == "NULL"):
             value = {}
