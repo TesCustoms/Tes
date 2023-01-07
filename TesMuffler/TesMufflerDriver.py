@@ -3,7 +3,7 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-11-01"
+__date__    = "Late Updated: 2023-01-06"
 __doc__     = "TesMuffler embedded linux backend code starts running here"
 """
 
@@ -58,7 +58,7 @@ import GlobalConstants as GC
 
 def insertValueIntoTable(supabase, tableName, key, value):
     """Insert value object into unique key in NoSQL table called "tableName"
-    
+
     https://hazelcast.com/glossary/key-value-store/
     https://supabase.com/blog/loading-data-supabase-python
     https://supabase.com/blog/loading-data-supabase-python#more-python-and-supabase-resources
@@ -66,8 +66,8 @@ def insertValueIntoTable(supabase, tableName, key, value):
     Arg(s):
         tableName (String): See GC.VALID_SUPABASE_TABLE_NAMES for valid table names
         key (String): Unique search key to index data on TODO
-        value (String): Arbitrary large data field to insert to TODO ???END?? of table  
-    
+        value (String): Arbitrary large data field to insert into TODO ???END?? of table
+
     Returns:
         HTTP Status Code of database API call
     """
@@ -120,15 +120,16 @@ def santizeDatabaseInput(tableName, key, value):
 
 
 def logStatusCode(statusCode):
-    #TODO GC.DATABASE_OPERATION_FAILED = 400, GC.DATABASE_OPERATION_SUCCESFULL = 200
 
     # Python 3.10 Switch case
-    if(int(statusCode) == 400):
+    if(int(statusCode) == GC.DATABASE_OPERATION_FAILED):
         NetworkLog.info("400: Database operation FAILED")
     elif(int(statusCode == 418)):
         NetworkLog.info("418: https://en.wikipedia.org/wiki/HTTP_418")
-    else: 
+    elif(int(statusCode == GC.DATABASE_OPERATION_SUCCESFULL)):
         NetworkLog.info("200: Database operation was SUCCESFULLY")
+    else:
+        NetworkLog.info("TODO: Unknown HTTP ERROR CODE!")
 
     return statusCode
 
@@ -146,6 +147,9 @@ if __name__ == "__main__":
     NetworkLog = logging.getLogger("Network.log")
     EngineSoundLog = logging.getLogger("EngineSound.log")
     QRCodeLog = logging.getLogger("QRCode.log")
+
+    # Make LOCAL non-git version controlled enviroment variables are set for supabase API URL &  KEY
+    #TODO check_call("source .bashrc", shell=False)
 
     if(GC.DEBUG_STATEMENTS_ON or args.DebugPrintStatementsOn):
         print("Debugging print statments are on for ALL Loggers")

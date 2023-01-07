@@ -6,3 +6,6 @@ __pycache__/**
 
 # MacOS Directory Metadata https://en.wikipedia.org/wiki/.DS_Store
 .DS_Store
+
+# Make sure LOCAL enviroment variables for API URL's & API KEY's are not put on git server
+.bashrc
