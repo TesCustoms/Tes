@@ -11,8 +11,10 @@ Two options for setting up Git on command line: <br>
 
 Hardware Required: <br>
 1) Hardware Dongle from CANOPi [TesCustoms P/N 100-0001-A](https://github.com/TesCustoms/TesMufflerDongle) <br>
-2) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?) <br>
-3) Custom 3D CAD file [TesMufflerCADv1.stl](https://github.com/OpenSourceIronman/Tes/blob/master/TesMuffler/TesMufflerCADv1.stl) 3D printed muffler with magnets <br>
+2) Raspberry Pi Compute Module 4 [Pi Foundation P/N CM4](https://www.raspberrypi.com/products/compute-module-4)
+3) SeeddStudio Dual Gigabit Carrier Board CM4 Carrier Board [SeedStudio SKU 102110497](https://wiki.seeedstudio.com/Dual-Gigabit-Ethernet-Carrier-Board-for-Raspberry-Pi-CM4/#fpc-interface)
+4) OHP OBD2 Adapter Harness [Manufacture P/N 10246](www.amazon.com/dp/B08DXY5KVX/ref=cm_sw_r_cp_api_glt_fabc_M5VV59NMV6AZKJVCRG4D?) <br>
+5) Custom 3D CAD file [TesMufflerCADv1.stl](https://github.com/OpenSourceIronman/Tes/blob/master/TesMuffler/TesMufflerCADv1.stl) 3D printed muffler with magnets <br>
 <br>
 
 Python APIs project is exploring: <br>
