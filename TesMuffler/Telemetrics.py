@@ -3,9 +3,13 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development
-__date__    = "Late Updated: 2022-11-08"
+__date__    = "Late Updated: 2023-01-13"
 __doc__     = "Collect vehicle data to transmit to a central server, hardware switch can turn this off"
 """
+
+# Allow program to exit safety and open system files in /sys/class/thermal
+# https://docs.python.org/3/library/os.html
+import os
 
 # Allow BASH commands to be run inside Python
 # https://docs.python.org/3/library/subprocess.html
@@ -75,6 +79,8 @@ class Telemetrics:
         BlazeCar = Vehicle(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY, "12345678901234567")
         TestObject1 = Telemetrics(BlazeCar)
 
+        print('Current CPU temperature is {:.2f} degrees Celsius.'.format(get_cpu_temp()))
+
         assert TestObject1.isHardwareSecurityEnabled() == GC.COLLECTING_DATA
         assert TestObject1.collectDataSnapShot == [0x00] * GC.SNAPSHOT_SIZE
         assert TestObject1.sendDataSnapShot == GC.DATABASE_OPERATION_SUCCESFULL
@@ -92,6 +98,26 @@ class Telemetrics:
             state = False
 
         return state
+
+    def get_cpu_temp():
+        """
+        Obtains the current value of the CPU temperature.
+        :returns: Current value of the CPU temperature if successful, zero value otherwise.
+        :rtype: float
+        """
+        # Initialize the result.
+        result = 0.0
+        # The first line in this file holds the CPU temperature as an integer times 1000.
+        # Read the first line and remove the newline character at the end of the string.
+        if os.path.isfile('/sys/class/thermal/thermal_zone0/temp'):
+            with open('/sys/class/thermal/thermal_zone0/temp') as f:
+                line = f.readline().strip()
+            # Test if the string is an integer as expected.
+            if line.isdigit():
+                # Convert the string with the CPU temperature to a float in degrees Celsius.
+                result = float(line) / 1000
+        # Give the result back to the caller.
+        return result
 
     def collectDataSnapShot():
         """
