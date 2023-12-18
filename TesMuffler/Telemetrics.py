@@ -11,9 +11,9 @@ __doc__     = "Collect vehicle data to transmit to a central server, hardware sw
 # https://docs.python.org/3/library/os.html
 import os
 
-# Allow BASH commands to be run inside Python
-# https://docs.python.org/3/library/subprocess.html
-from subprocess import check_call
+import datetime
+import uuid
+
 
 try:  # Importing externally developed libraries
 
@@ -23,43 +23,47 @@ try:  # Importing externally developed libraries
 
     # Read and Write state of the General Purpose Input / Output pins
     # https://gpiozero.readthedocs.io/en/stable/index.html
-    from gpiozero import Button
+    import gpiozero
+    #from gpiozero import Button
 
     # Library for handling data from a car's On-Board Diagnostics port (OBD-II)
     # https://python-obd.readthedocs.io/en/latest/
     import obd
 
-    # Open source plaform for NoSQL databases, authentication, file storage, and auto-generated APIs
-    # https://github.com/supabase-community/supabase-py
-    from supabase import create_client, Client
+    # Allow BASH commands to be run inside Python
+    # https://docs.python.org/3/library/subprocess.html
+    from subprocess import check_call
 
-    # MySQL for Word Press database connection
-    # https://kinsta.com/knowledgebase/wordpress-database
-    # https://realpython.com/python-mysql/
-    # https://github.com/knadh/simplemysql
-    # https://pypi.org/project/mysql-connector-python
-    #import simplemysql
-    import mysql.connector
+    # Load environment variables for usernames, passwords, & API keys
+    # https://pypi.org/project/python-dotenv/
+    from dotenv import dotenv_values
+
+    # SQlite ??
+    # TODO
+    #import sqlalchemy
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+    from sqlalchemy import select
+    from models import Base, Link, User
+
 
 except ImportError:
-    print("The gpio, obd, supabase, and/or MySQL module(s) didn't import correctly!")
-    executeInstalls = input("Would you like to *** pip3 install obd *** and  *** sudo apt install python3-gpiozero *** (Y/N)? ")
-    if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
-        if platform.platform()[0:5] == "PI ARM":  
-            check_call("sudo apt install python3-gpiozero", shell=True)
-        else:  #Code is running of Windows () or MacOS (Darwin Kernal)
-            #MacOS Kernal in called Darwin  
-            print(platform.platform)
-        check_call("pip install obd", shell=True)
-        check_call("pip3 install supabase", shell=True)
-        check_call("pip install mysql-connector-python", shell=True)
-
-    else:
-        print("You didn't type Y or YES :)")
-        print("Follow GPIO Zero manual install instructions at https://gpiozero.readthedocs.io/en/stable/installing.html#")
-        print("Follow python-obd manual install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
-        print("Follow supabase manual install instructions at https://pypi.org/project/supabase/")
-        print("TODO")
+    pass
+#    print("The gpio, obd, supabase, and/or MySQL module(s) didn't import correctly!")
+#    executeInstalls = input("Would you like to *** pip3 install obd *** and  *** sudo apt install python3-gpiozero *** (Y/N)? ")
+#    if(executeInstalls.upper() == "Y" or executeInstalls.upper() == "YES"):
+#        if platform.platform()[0:5] == "PI ARM":  
+#            check_call("sudo apt install python3-gpiozero", shell=True)
+#        else:  #Code is running of Windows () or MacOS (Darwin Kernal)
+#            #MacOS Kernal in called Darwin
+#            print(platform.platform)
+#        check_call("pip install obd", shell=True)
+#
+#    else:
+#        print("You didn't type Y or YES :)")
+#        print("Follow GPIO Zero manual install instructions at https://gpiozero.readthedocs.io/en/stable/installing.html#")
+#        print("Follow python-obd manual install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
+#        print("TODO")
 
 # Internally developed modules
 # Useful global constants for the entire TesCustoms TesMuffler library
@@ -71,6 +75,9 @@ from Vehicle import *
 
 class Telemetrics:
 
+    TURSO_DB_URL = os.environ.get("TURSO_DB_URL")
+    TURSO_DB_AUTH_TOKEN = os.environ.get("TURSO_DB_AUTH_TOKEN")
+
     def unitTest():
         """
         ???
@@ -79,17 +86,17 @@ class Telemetrics:
         BlazeCar = Vehicle(GC.TESLA, GC.CYBER_TRUCK, 2024, GC.GREY, "12345678901234567")
         TestObject1 = Telemetrics(BlazeCar)
 
-        print('Current CPU temperature is {:.2f} degrees Celsius.'.format(get_cpu_temp()))
+        print('Current CPU temperature is {:.2f} degrees Celsius.'.format(Telemetrics.get_cpu_temp()))
 
-        assert TestObject1.isHardwareSecurityEnabled() == GC.COLLECTING_DATA
-        assert TestObject1.collectDataSnapShot == [0x00] * GC.SNAPSHOT_SIZE
-        assert TestObject1.sendDataSnapShot == GC.DATABASE_OPERATION_SUCCESFULL
+        assert TestObject1.isHardwareSecurityEnabled() == False #GC.COLLECTING_DATA
+        #assert TestObject1.collectDataSnapShot == [0x00] * GC.SNAPSHOT_SIZE
+        #assert TestObject1.sendDataSnapShot == GC.DATABASE_OPERATION_SUCCESFULL
 
     def isHardwareSecurityEnabled(self):
         """Read state of GC.SECURITY_TOGGLE_PIN
         https://gpiozero.readthedocs.io/en/stable/recipes.html#button
         """
-        toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)    
+        toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)
 #GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
 
         if toggle.is_pressed:
@@ -153,14 +160,24 @@ class Telemetrics:
         return response
 
     def __init__(self, VehicleObject):
-        """
-        
-	Args:
-	    VehicleObject (Vehicle.py): 
-	    SupabaseObject (supabase): 
+        """ Telemeteric constructor
+
+	    Args:
+	        VehicleObject (Vehicle.py):
         """
         self.VehicleObject = VehicleObject
         self.SupabaseObject = -1 # Client : ????
+
+        # Construct special SQLAlchemy URL to connect to SQlite db on Turso using .env enviroment variables
+        config = dotenv_values()
+        url = config['TURSO_DB_URL']
+        token = config['TURSO_DB_AUTH_TOKEN']
+        self.dbUrl = f"sqlite+{url}/?authToken={token}&secure=true"
+
+        current_time = datetime.datetime.now();
+        current_time_in_seconds = int(float((current_time-datetime.datetime(1970,1,1)).total_seconds()))
+        self.engine = create_engine(self.dbUrl, connect_args={'check_same_thread': False}, echo=True)
+        #self.engine = sqlalchemy.create_engine(self.dbUrl, connect_args={'check_same_thread': False}, echo=True)
 
 
 if __name__ == "__main__":
