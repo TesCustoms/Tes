@@ -18,10 +18,10 @@ import time
 # Access internally developed libraries
 try:
     # Generate a timestamped .txt data logging file and custom terminal debugging output
-    import Debug
+    from Debug import *
 
     # Useful global constants used across all TesMuffler code
-    import GlobalConstant as GC
+    import GlobalConstants as GC
 
     # TODO High
     import Car
@@ -62,24 +62,31 @@ class TeslaCalibration:
     def __init__(self, car, gasPedalMax=69, gasPedalMin=0, 
                  brakePedalMax=69, brakePedalMin=0,
                  speakerVolume=42):
-        """Constructor to initialize a TeslaCalibration object, to recalibrate zero point of hardware and sensors that MIGHT change over time from wear & tear
+        """Constructor to initialize a TeslaCalibration object, to recalibrate the zero point of 
+           hardware and sensors that MIGHT change over time from wear & tear  # NOQA: 
 
         Args:
-            gasPedalMax (int, optional): Physical location of the gas pedal when a driver pushes the gas pedal to absolute BOTTOM as reported by Tesla internal software over the CAN bus. Defaults to 69.
-            gasPedalMin (int, optional): Physical location of the gas pedal when a driver does NOTHING to the gas pedal as reported by Tesla internal software over the CAN bus. Defaults to 69.
-            brakePedalMax (int, optional): [description]. Defaults to 69.
-            brakePedalMin (int, optional): [description]. Defaults to 0.
-            speakerVolume (int, optional): [description]. Defaults to 42.
+            gasPedalMax (int, optional): Physical location of the GAS pedal when a driver pushes the pedal to the 
+                                         absolute BOTTOM as reported by Tesla internal software over the CAN bus. 
+                                         Defaults to 69 millimeters.
+            gasPedalMin (int, optional): Physical location of the GAS pedal when a driver does NOTHING to the pedal 
+                                         as reported by Tesla internal software over the CAN bus. Defaults to 0.
+            brakePedalMax (int, optional): Physical location of the BRAKE pedal when a driver pushes the pedal to the 
+                                           absolute BOTTOM as reported by Tesla internal software over the CAN bus. 
+                                           Defaults to 69 millimeters.
+            brakePedalMin (int, optional): Physical location of the BRAKE pedal when a driver does NOTHING to the pedal 
+                                           as reported by Tesla internal software over the CAN bus. Defaults to 0.
+            speakerVolume (int, optional): Volume level from 0 to 11 ("These go to 11"Nigel Tufnel Spinal Tap). Defaults to 6.
         """
 
         thisCodesFilename = os.path.basename(__file__)
         self.DebugObject = Debug(TeslaCalibration.DEBUG_STATEMENTS_ON, thisCodesFilename)
         
         # TODO Determine these using Twitter and Barklee's and Joe's Tesla's
-        self.gasPedalMax = gasPedalMax
-        self.gasPedalMin = gasPedalMin
-        self.brakePedalMax = brakePedalMax
-        self.brakePedalMin = brakePedalMin
+        self.goPedalMax = 69 #gasPedalMax
+        self.goPedalMax = 69 #gasPedalMin
+        self.brakePedalMax = 69 #brakePedalMax
+        self.brakePedalMin = 69 #brakePedalMin
         
         self.speakerVolume = speakerVolume
     

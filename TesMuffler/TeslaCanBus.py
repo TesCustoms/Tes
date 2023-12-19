@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """
 __author__  = "Blaze Sanders"
-__email__   = "blaze.d.a.sanders@gmail.com"
+__email__   = "dev@blazesanders.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2021-08-18"
-__doc__     = "Read only class for the OBD-II Tesla CAN Bus"
+__date__    = "Late Updated: 2022-09-30"
+__doc__     = "Read only class for the OBD-II Tesla socketCAN Bus"
 """
+TODO = -1
 
 # Interface with Tesla CAN bus via a ODB-II port adapter
 # https://python-can.readthedocs.io/en/2.1.0/index.html#
 # https://teslatap.com/modifications/extracting-internal-vehicle-data/
 # https://www.obdlink.com/products/obdlink-mxp/
-import can
+import can as canBus
+#import can-isotp as canBus https://github.com/pylessard/python-can-isotp
 
 # Allow program to extract filename of the current file
 # https://docs.python.org/3/library/os.html
@@ -27,7 +29,7 @@ try:
     from Debug import *
 
     # Useful global constants used across all TesMuffler code
-    import GlobalConstant as GC
+    import GlobalConstants as GC
 
     # Calibrate hardware and sensors that MIGHT change over time from wear & tear
     from TeslaCalibration import *
@@ -40,33 +42,33 @@ except ImportError:
 
 
 class TeslaCanBus:
-    TODO = -1
     
     # Debugging CONSTANTS
     DEBUG_STATEMENTS_ON = True
 
-    FAST = 1000000  # 1 Mbit/sec (Mbps)
-    SLOW = 20000    # 20 kbits/sec (kbps)
+    FAST = 1_000_000  # 1 Mbit/sec (Mbps)
+    DEFAULT = 50_000  # 500 kbits/sec (kbps)
+    SLOW = 20_000     # 20 kbits/sec (kbps)
 
     def unitTest():
-        calibrationObject = TeslaCalibration()
+        calibrationObject = TeslaCalibration(GC.MODEL_S)
         
-        model_S_Default = TeslaCanBus()
-        assert model_S_Default.redGasPedalPosition()
+        model_S_Default = TeslaCanBus(calibrationObject)
+        assert model_S_Default.readGoPedalPosition()
         
-        model_S_Fast1 = TeslaCanBus(1, GC.MODEL_S, TeslaCanBus.FAST)
+        model_S_Fast1 = TeslaCanBus(1, GC.MODEL_S, TeslaCanBus.FAST, calibrationObject)
         # TODO
         
-        model_S_Slow2 = TeslaCanBus(2, TeslaCanBus.SLOW)
+        model_S_Slow2 = TeslaCanBus(2, TeslaCanBus.SLOW, calibrationObject)
         #TODO 
         
         model_3_BAD = TeslaCanBus()
-        assert model_3_BAD.readGasPedalPosition(), "Failed successfully! Unit Test tried to initialize a Model 3 as a Tesla Model S"
+        assert model_3_BAD.readGoPedalPosition(), "Failed successfully! Unit Test tried to initialize a Model 3 as a Tesla Model S"
         
-        model_3_Default = TeslaCanBus(0, GC.MODEL_3)
-        #TODO
+        model_3_Default = TeslaCanBus()
+        assert TeslaCanBus.readGoPedalPosition(), "Default software initalization of Model S CAN bus, failed on Model 3 hardware"   # NOQA: E501                                 # THIS SHOULD FAIL 3 != S
         
-        model_3_Fast1 = TeslaCanBus(1, GC.MODEL_3)
+        model_3_Fast1 = TeslaCanBus(1, GC.MODEL_3, TeslaCanBus.FAST)
         #TODO
         
         model_3_Slow1 = TeslaCanBus(2, GC.MODEL_3, TeslaCanBus.SLOW)
@@ -75,93 +77,99 @@ class TeslaCanBus:
         model_3_Slow0 = TeslaCanBus(0, GC.MODEL_3, TeslaCanBus.SLOW)
         # TODO 
     
-        model_Y_Default = TeslaCanBus(0, GS.MODEL_Y, TeslaCanBus.FAST, calibrationObject)
+        model_Y_Default = TeslaCanBus(0, GS.MODEL_Y, TeslaCanBus.DEFAULT, calibrationObject)
         # TODO
         
         # TODO model_y, cyberTruck, ATV, Roadster (IN THAT ORDER)
 
-    def __init__(self, carModel=GC.MODEL_S, channel=0, bitrate=TeslaCanBus.FAST,
-                 calibrationObject=GC.DEFAULT_MAX_GAS_PEDAL_TRAVEL):
 
-        thisCodesFilename = os.path.basename(__file__)
-        self.DebugObject = Debug(TeslaCanBus.DEBUG_STATEMENTS_ON, thisCodesFilename)
+    def __init__(self, year=2019, carModel=GC.MODEL_S, channel=0, bitrate=DEFAULT):
 
-        self.CalibratedMaxGasPedalTravel = calibrationObject.gasPedalMax()
-        self.CalibratedMaxBrakePedalTravel = calibrationObject.brakePedalMax()
-
-        # TODO Test if each model and year has a different interface. Starting with pcan
-        if(carModel == GC.MODEL_S):
-            self.bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', bitrate=TeslaCanBus.SLOW)
-        elif(carModel == GC.MODEL_3):
-            print("TODO")
-        elif(carModel == GC.MODEL_X):
-            print("TODO")
-        elif(carModel == GC.MODEL_Y):
-            print("TODO")
+        #TODO self.bus = canBus.interface.Bus(bustype='socketCAN')
         
-        
-        
+        #TODO Check years supported for each model
+        if(carModel == GC.MODEL_S and year >= 2020):  
+            pass
+        elif(carModel == GC.MODEL_3 and year >= 2019):
+            pass
+        elif(carModel == GC.MODEL_X and year >= 2020):  
+            pass
+        elif(carModel == GC.MODEL_Y and year >= 2020): 
+            pass
+        elif(carModel == GC.CYBER_TRUCK and year >= 2022):
+            pass
+        elif(carModel == GC.ATV and year >= 2022):
+            pass
+        elif(carModel == GC.ROADSTER_V2 and year >= 2022):
+            pass
+        elif(carModel == GC.SEMI_TRUCK and year >= 2023):
+            pass
+        else:
+            Debug.Lprint("ERROR: This EV's CAN bus is not support by this software. Please buy a Tesla :)")
 
-    def readGasPedalPosition(self, units):
+    def readGoPedalPosition(self, units=GC.PERCENTAGE_UNITS):
+        """
+        Get the current READ-ONLY position of the accelerator/gas pedal  
+
+        Decoder ID's and TODO in Perl
+        https://github.com/openvehicles/CAN-RE-Tool/blob/master/rules/teslamodels
+
+        Args:
+            units: (A string CONSTANT from GlobalConstant.py) Defaults to percentage 
+
+        Returns:
+            Percentage from 0% to 100% inclusivly OR Distance in mm from 0 to MAX_GAS_PEDAL_TRAVEL 
+        """
+
         # Command to request from CAN bus the current pedal position
         command = TODO [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-        
-        return canBusPedalSubroutine(GAS_PEDAL, command, units)
 
-    def readGasPedalVelocity(self):
+        return TeslaCanBus.canBusPedalSubroutine(GC.Go_PEDAL, command, units)
+
+    def readGoPedalVelocity(self, units=GC.PERCENTAGE_UNITS):
         
-        position1 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS)
+        position1 = TeslaCanBus.readGoPedalPosition(units)
         time.sleep(GC.MIN_CAN_BUS_TIMESTEP)
-        position2 = readGasPedalPosition(GAS_PEDAL, GC.GAS_PEDAL_POSITION, GC.MILLIMETERS)
+        position2 = TeslaCanBus.readGoPedalPosition(units)
     
-        velocity = abs(position2 - position1)/GC.MIN_CAN_BUS_TIMESTEP
-        # Command to request from CAN bus the current pedal position
-        command = TODO
-        
-        data = canBusPedalSubroutine(GAS_PEDAL, command, GC.MILLIMETERS)
-        
-        velocity = data * TODO
-        
-        return velocity
+        return (position2 - position1)/GC.MIN_CAN_BUS_TIMESTEP
 
-    def readGasPedalVAcceleration():
-        # command to request CAN bus to return pedal position
-        command = TODO
+
+    def readGoPedalAcceleration(self, units):
         
-        data = canBusPedalSubroutine(GAS_PEDAL, command, units)
+        velocity1 = TeslaCanBus.readGoPedalVelocity(units)
+        time.sleep(GC.MIN_CAN_BUS_TIMESTEP)
+        velocity2 = TeslaCanBus.readGoPedalVelocity(units)
         
-        mmPerSecPerSec = data * TODO
-        
-        return mmPerSecPerSec
+        return (velocity2 - velocity1)/GC.MIN_CAN_BUS_TIMESTEP        
 
     
-    def canBusPedalSubroutine(pedalType, command=GC.GAS_PEDAL_POSITION, units=GC.PERCENTAGE):
-        msg = can.Message(arbitration_id=0x7df, command=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
+    def canBusPedalSubroutine(self, pedalType=GC.GO_PEDAL, command=GC.GO_PEDAL_POSITION_ID, units=GC.PERCENTAGE_UNITS):
+        msg = canBus.Message(arbitration_id=0x7df, command=[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], extended_id=False)
         rawValue = sendMessage(msg)
 
-        if(pedalType == GAS_PEDAL):
-            percentOfMax = rawValue/GC.MAX_GAS_PEDAL_VALUE
-            if(units == GS.PERCENTAGE):
+        if(pedalType == GC.GO_PEDAL):
+            percentOfMax = rawValue/GC.MAX_GO_PEDAL_TRAVEL
+            if(units == GC.PERCENTAGE_UNITS):
                 value = percentOfMax
-            elif(units == GS.MILLIMETERS):
-                value = percentOfMax * self.CalibratedMaxGasPedalTravel       
-            elif(units == GS.CENTIMETERS):
-                value = percentOfMax * (self.CalibratedMaxGasPedalTravel/10)
+            elif(units == GC.MILLIMETER_UNITS):
+                value = percentOfMax * self.CalibratedMaxGoPedalTravel       
+            elif(units == GC.CENTIMETER_UNITS):
+                value = percentOfMax * (self.CalibratedMaxGoPedalTravel/10)
                 
-        elif(pedalType == BRAKE_PEDAL):
-            percentOfMax = rawValue/GC.MAX_BRAKE_PEDAL_VALUE
-            if(units == GS.PERCENTAGE):
+        elif(pedalType == GC.BRAKE_PEDAL):
+            percentOfMax = rawValue/GC.MAX_BRAKE_PEDAL_TRAVEL
+            if(units == GC.PERCENTAGE_UNITS):
                 value = percentOfMax
-            elif(units == GS.MILLIMETERS):
+            elif(units == GC.MILLIMETER_UNITS):
                 value = percentOfMax * self.CalibratedMaxBrakePedalTravel       
-            elif(units == GS.CENTIMETERS):
+            elif(units == GC.CENTIMETER_UNITS):
                 value = percentOfMax * (self.CalibratedMaxBrakePedalTravel/10)
         
         else:
             self.DebugObject.Lprint("ERROR: Invalid pedal type was passed to a TeslaCanBus.py function")
         
         return value
-    
     
     def sendMessage(self, msg):
         try:
@@ -172,5 +180,4 @@ class TeslaCanBus:
 
 
 if __name__ == "__main__":
-
-    unitTest()
+    TeslaCanBus.unitTest()

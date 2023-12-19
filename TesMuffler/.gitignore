@@ -1,6 +1,20 @@
+<<<<<<< HEAD
 # MacOS Diretory Meta Data
 .DS_STORE
 
 #CPython compiled files
 .pyc
 __pycache__
+=======
+# Python cache files
+.pyc
+.py.swp
+.py.save
+__pycache__/**
+
+# MacOS Directory Metadata https://en.wikipedia.org/wiki/.DS_Store
+.DS_Store
+
+# Make sure LOCAL enviroment variables for API URL's & API KEY's are not put on git server
+.bashrc
+>>>>>>> b15dd0a69ddf2ae0e3525153edcd12ecbc42638b

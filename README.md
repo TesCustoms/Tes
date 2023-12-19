@@ -1,21 +1,9 @@
 # TesCustoms
 
-Car modifications projects for varying [Tesla Motor](http://www.tesla.com) vehicles 
+Car modifications projects for varying [Tesla Motor](https://www.tesla.com), [Aptera](https://www.aptera.shop), [Kia](https://www.kia.com/us/en/ev) and [Ford](https://shop.ford.com/showroom/?gnav=header-electrified-all-vehicles#/) vehicles 
 
-Author: Blaze Sanders - Twitter @BlazeDSanders
+Author: Blaze Sanders - Twitter @BlazeDSanders - Email: dev@blazesanders.com <br> <br>
 
-TesMuffler: Bluetooth stream custom muffler sounds into the [premium sound system of a Model 3 or Model Y](http://www.youtube.com/watch?v=LWKiNA-KT6Y)
+TesMuffler: Bluetooth stream premium custom muffler sounds into any hybrid or electric vehicle
 
-TesWeight: Steering wheel weight for long highway road trips with [Autopilot](http://www.tesla.com/autopilot)
-
-TesHouse: Quick disconnect tiny home add-on for the [Tesla CyberTruck](http://www.tesla.com/cybertruck)
-
-Purchase LOGO: https://www.shutterstock.com/image-vector/tc-initial-letters-looping-linked-circle-1724747953
-
-Official Tesla API: https://teslaapi.dev 
-
-Display for PiPico https://www.hackster.io/news/miroslav-nemecek-s-picovga-brings-high-res-video-to-the-raspberry-pi-pico-just-add-resistors-88dd144e7d1c
-
-
-FIND URLS I DELETED FROM TOP OF EngineSoundGenerator.py FILE
-https://whimsical.com/tesmuffler-64NBDWF5cd3stpZDvkubzw
+https://www.reddit.com/r/Python/comments/105g879/introducing_pypi_maker_simplifying_python_package/?utm_source=share&utm_medium=ios_app&utm_name=iossmf

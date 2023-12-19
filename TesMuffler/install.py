@@ -88,9 +88,10 @@ if __name__ == "__main__":
 	print("\n\nIf you would like to TURN OFF the TesMuffler Virtual Enviroment (BAD IDEA) run the 'deactivate' command\n\n")
 	time.sleep(7)
 
+    check_call("pip3 install can-isotp", shell=True)
 	# Flask is the GUI frontend to that runs in parallel with python backend controling pumps
 	# Remember to run flask with "python3" NOT "python" command, or you will get weird errors :)
-	# https://aryaboudaie.com/python/technical/educational/web/flask/2018/10/17/flask.html
+	# https://aryaboudaie.com/python/technical/educational/web/flask/2018/10/17/flask.html	
 	check_call("pip3 install flask", shell=True)
 
 	# Tool For Style Guide Enforcement
@@ -176,6 +177,7 @@ if __name__ == "__main__":
 	print("\n\nRUN 'source TesMufflerDevEnv/bin/activate' command please...")
 
 	#TODO COOL EXTRAS
+    #pip install energyusage
 	#https://www.builtinafrica.io/blog-post/vuyisile-ndlovu-pypi
 	#https://docs.python.org/3/library/pathlib.html
 
