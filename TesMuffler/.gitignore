@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MacOS Diretory Meta Data
 .DS_STORE
 
@@ -17,4 +16,6 @@ __pycache__/**
 
 # Make sure LOCAL enviroment variables for API URL's & API KEY's are not put on git server
 .bashrc
->>>>>>> b15dd0a69ddf2ae0e3525153edcd12ecbc42638b
+
+# Ignore passwords and tokens
+.env
