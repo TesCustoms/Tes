@@ -96,7 +96,7 @@ CENTIMETER_UNITS = 'cm'
 VALID_SUPABASE_TABLE_NAMES = ["Users", "Vehicles", "EngineSounds", "TODO"]      #TODO
 DATABASE_OPERATION_FAILED = 400
 DATABASE_OPERATION_SUCCESFULL = 200
-
+SNAPSHOT_SIZE = 1000                    # OTA Update payload size [0x00] * 1000
 
 # OBD-2 wiring CONSTANTS with pin number on ODB-2 connector, pin name, and color of wire
 # MD = Manufacturer's Discretion https://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector

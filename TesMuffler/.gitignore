@@ -1,3 +1,10 @@
+# MacOS Diretory Meta Data
+.DS_STORE
+
+#CPython compiled files
+.pyc
+__pycache__
+=======
 # Python cache files
 .pyc
 .py.swp
@@ -10,4 +17,9 @@ __pycache__/**
 # Make sure LOCAL enviroment variables for API URL's & API KEY's are not put on git server
 .bashrc
 
+<<<<<<< HEAD
 .venv
+=======
+# Ignore passwords and tokens
+.env
+>>>>>>> 8f2ace61f77f3005ef4cc0653dde943c2930f57e
