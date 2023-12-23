@@ -2,13 +2,8 @@
 """
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
-<<<<<<< HEAD
 __status__  = "Development"
 __date__    = "Late Updated: 2023-01-13"
-=======
-__status__  = "Development
-__date__    = "Late Updated: 2023-12-19"
->>>>>>> 8f2ace61f77f3005ef4cc0653dde943c2930f57e
 __doc__     = "Collect vehicle data to transmit to a central server, hardware switch can turn this off"
 """
 
@@ -35,21 +30,10 @@ try:  # Importing externally developed libraries
     # https://pypi.org/project/python-dotenv/
     from dotenv import dotenv_values
 
-<<<<<<< HEAD
     # SQlite connection using turso
     # libsql://tesmuffler-db-opensourceironman.turso.io
     # eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTEyLTE2VDAwOjAxOjM5LjE4NTk4ODc0N1oiLCJpZCI6ImRjMGY1MWU1LTliYTUtMTFlZS1iNTk2LTEyYWIwZGY3MGIxZiJ9.JuKGftAamn3a6-RxA0VnLM1aaEIZIBf78aaAqzUNH0HsZThUzlOCGanHZYwHwQS9EG1tKEoilUuRs36cNa8UCQ
 
-=======
-    # Manage a SQlite database locally and online 
-    # https://github.com/tursodatabase/libsql
-    import libsql
-    #import sqlalchemy
-    #from sqlalchemy import create_engine
-    #from sqlalchemy.orm import Session
-    #from sqlalchemy import select
-    #from models import Base, Link, User
->>>>>>> 8f2ace61f77f3005ef4cc0653dde943c2930f57e
 
 except ImportError:
     print("The gpio, obd, dotenv and/or libsql module(s) didn't import correctly!")
@@ -95,11 +79,7 @@ class Telemetrics:
         https://gpiozero.readthedocs.io/en/stable/recipes.html#button
         """
         toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)
-<<<<<<< HEAD
         #GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
-=======
-#GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
->>>>>>> 8f2ace61f77f3005ef4cc0653dde943c2930f57e
 
         if toggle.is_pressed:
             state = True
