@@ -9,3 +9,5 @@ __pycache__/**
 
 # Make sure LOCAL enviroment variables for API URL's & API KEY's are not put on git server
 .bashrc
+
+.venv

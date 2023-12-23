@@ -2,7 +2,7 @@
 """
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
-__status__  = "Development
+__status__  = "Development"
 __date__    = "Late Updated: 2023-01-13"
 __doc__     = "Collect vehicle data to transmit to a central server, hardware switch can turn this off"
 """
@@ -33,13 +33,10 @@ try:  # Importing externally developed libraries
     # https://github.com/supabase-community/supabase-py
     from supabase import create_client, Client
 
-    # MySQL for Word Press database connection
-    # https://kinsta.com/knowledgebase/wordpress-database
-    # https://realpython.com/python-mysql/
-    # https://github.com/knadh/simplemysql
-    # https://pypi.org/project/mysql-connector-python
-    #import simplemysql
-    import mysql.connector
+    # SQlite connection using turso
+    # libsql://tesmuffler-db-opensourceironman.turso.io
+    # eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIzLTEyLTE2VDAwOjAxOjM5LjE4NTk4ODc0N1oiLCJpZCI6ImRjMGY1MWU1LTliYTUtMTFlZS1iNTk2LTEyYWIwZGY3MGIxZiJ9.JuKGftAamn3a6-RxA0VnLM1aaEIZIBf78aaAqzUNH0HsZThUzlOCGanHZYwHwQS9EG1tKEoilUuRs36cNa8UCQ
+
 
 except ImportError:
     print("The gpio, obd, supabase, and/or MySQL module(s) didn't import correctly!")
@@ -85,12 +82,12 @@ class Telemetrics:
         assert TestObject1.collectDataSnapShot == [0x00] * GC.SNAPSHOT_SIZE
         assert TestObject1.sendDataSnapShot == GC.DATABASE_OPERATION_SUCCESFULL
 
-    def isHardwareSecurityEnabled(self):
+    def is_hardware_security_enabled(self):
         """Read state of GC.SECURITY_TOGGLE_PIN
         https://gpiozero.readthedocs.io/en/stable/recipes.html#button
         """
-        toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)    
-#GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
+        toggle = gpiozero.Button(GC.SECURITY_TOGGLE_PIN)
+        #GC.SECURITY_TOOGLE_PIN = GPIOX  = X in GC
 
         if toggle.is_pressed:
             state = True
