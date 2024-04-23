@@ -64,7 +64,7 @@ class Vehicle:
 
         if(make == GC.TESLA):
             self.gearShiftVelocity = [0, 15, 30, 50, 75]
-            self.canBus = TesOBD2.TesOBD2(year, model, make)          # NOQA F405
+            #TODO self.canBus = TesOBD2.TesOBD2(year, model, make)          # NOQA F405
         elif(make == GC.APTERA):
             pass
         elif(make == GC.RIVIAN):

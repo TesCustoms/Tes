@@ -9,6 +9,12 @@ __doc__     = "Useful global constants for the entire TesCustoms TesMuffler libr
 TODO = -1
 
 DEBUG_STATEMENTS_ON = True
+DESKTOP_LINUX = 0
+EMBEDDED_LINUX = 1
+MAC_OS = 2
+
+SECURITY_TOGGLE_PIN = 14
+DATA_COLLECTION_OFF = True
 
 # Vehicle make name CONTSTANTS - Yes these are sorted best to worst :)
 TESLA = 0
@@ -82,7 +88,7 @@ MILLIMETER_UNITS = 'mm'
 CENTIMETER_UNITS = 'cm'
 
 # Datatbase Table Name CONSTANTS
-VALID_SUPABASE_TABLE_NAMES = ["Users", "Cars", "EngineSounds", "TODO"]
+VALID_TURSO_TABLE_NAMES = ["Users", "Cars", "EngineSounds", "TODO"]
 
 # OBD-2 wiring CONSTANTS with pin number on ODB-2 connector, pin name, and color of wire
 # MD = Manufacturer's Discretion https://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector

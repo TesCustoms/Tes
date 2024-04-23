@@ -90,7 +90,7 @@ class TesOBD2:
 
     def __init__(self, year=GC.TESLA, model=GC.MODEL_3, make=GC.TESLA, loggingLevel="DEBUG"):
         self.logger = obd.logger.setLevel(loggingLevel)  #(obd.logging.loggingLevel) # enables all debug information
-        self.logger = obd.logger()
+        #TODO REMOVE? self.logger = obd.logger()
 
         try:
             ports = obd.scan_serial()            # Auto scan for available ports to use for CAN Bus
