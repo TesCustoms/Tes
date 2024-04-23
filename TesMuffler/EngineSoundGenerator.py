@@ -3,13 +3,36 @@
 __author__  = "Blaze Sanders"
 __email__   = "dev@blazesanders.com"
 __status__  = "Development"
-<<<<<<< HEAD
-__date__    = "Late Updated: 2021-08-22"
-__doc__     = "Create pitch varying audio real-time on low processing power CPUs"
+__date__    = "Late Updated: 2022-10-14"
+__doc__     = "Create pitch varying audio of a library of cars in real-time on low processing power CPUs"
 """
 
 try:
     # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
+    # https://simpleaudio.readthedocs.io/en/latest/
+    import simpleaudio as sa
+
+
+
+# Allow the control of the space-time fabric :)
+# https://docs.python.org/3/library/time.html
+import time
+
+# Flexible event logging system for DEBUGGING, ERRORS, and INFO
+# https://docs.python.org/3/library/logging.html
+import logging
+
+# Allow BASH commands to be run inside python code like this file
+# https://docs.python.org/3/library/subprocess.html
+import subprocess
+from subprocess import Popen, PIPE
+from subprocess import check_call
+
+
+try:  # Importing externally developed libraries
+
+    # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
+    # Often apt install libasound2-dev == yum install alsa-lib-devel is still needed
     # https://simpleaudio.readthedocs.io/en/latest/
     import simpleaudio as sa
 
@@ -26,60 +49,20 @@ except ModuleNotFoundError:
     print("Audio process library (simpleaudio or TODO) was not pip installed  correctly")
     print("Please verify that the virutalenv 'TeslaDevEnv' is running using the source command")
     print("OR if easier for you run the command 'pip install simpleaudio' or TODO")
-    #TODO
 
-=======
-__date__    = "Late Updated: 2022-10-14"
-__doc__     = "Create pitch varying audio of a library of cars in real-time on low processing power CPUs"
-"""
 
->>>>>>> b15dd0a69ddf2ae0e3525153edcd12ecbc42638b
-# Allow the control of the space-time fabric :)
-# https://docs.python.org/3/library/time.html
-import time
-
-# Flexible event logging system for DEBUGGING, ERRORS, and INFO
-# https://docs.python.org/3/library/logging.html
-import logging
-
-# Allow BASH commands to be run inside python code like this file
-# https://docs.python.org/3/library/subprocess.html
-#TODO REMOVE? from subprocess import Popen, PIPE
-from subprocess import check_call
-
-try:  # Importing externally developed libraries
-
-    # Allow 'dependency-free' playback of .wav audio on Linux, MacOS, & Windows
-    # Often apt install libasound2-dev == yum install alsa-lib-devel is still needed
-    # https://simpleaudio.readthedocs.io/en/latest/
-    import simpleaudio as sa
-
-    #TODO IF simpleaudio DONOT WORK
-    # Allow for high-quality sample rate conversion
-    # https://pypi.org/project/samplerate/
-    #import samplerate
-
-<<<<<<< HEAD
-# Allow BASH commands to be run inside python code like this file
-# https://docs.python.org/3/library/subprocess.html
-import subprocess
-from subprocess import Popen, PIPE
-from subprocess import check_call
-
-# TODO INTERNAL LIBRARIES
 try:
     # Generate a timestamped .txt data logging file and custom terminal debugging output
     from Debug import *
-=======
     #TODO IF BOTH simpleaudio and samplerate DONT WORK
     # Allow for playback of .mp3 audio on Linux, MacOS, & Windows
     # import  pyaudio
     # http://www.mega-nerd.com/SRC/
->>>>>>> b15dd0a69ddf2ae0e3525153edcd12ecbc42638b
 
     # Custom mp3 editting library base off Marco Arments Smart Speed
     # http://mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm
     # TODO from mp3edit import *
+
 
 except ImportError:  #TODO
     print("ERROR: The simpleaudio python module didn't import correctly!")
@@ -93,7 +76,7 @@ except ImportError:  #TODO
 
 
 class EngineSoundGenerator:
-    """ Acronymn list: 
+    """ Acronymn list:
         ESG = EngineSoundGenerator
     """
 
@@ -106,12 +89,10 @@ class EngineSoundGenerator:
     FORD_MODEL_T = "FordModelT.wav"
     FORD_MUSTANG_GT350 = "FordMustangGT350.wav"
 
-<<<<<<< HEAD
     # Debugging CONSTANTS
     DEBUG_STATEMENTS_ON = True
 
-=======
->>>>>>> b15dd0a69ddf2ae0e3525153edcd12ecbc42638b
+
     def unitTest():
         print("STARTING EngineSoundGenerator.py Unit Test")
 

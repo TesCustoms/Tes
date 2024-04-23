@@ -16,23 +16,18 @@ import os
 import time
 
 # Access internally developed libraries
-try:
-    # Generate a timestamped .txt data logging file and custom terminal debugging output
-    from Debug import *
 
-    # Useful global constants used across all TesMuffler code
-    import GlobalConstants as GC
+# Generate a timestamped .txt data logging file and custom terminal debugging output
+#from Debug import *
 
-    # TODO High
-    import Car
+# Useful global constants used across all TesMuffler code
+import GlobalConstants as GC
 
-    # TODO CIRCULAR IMPORT????
-    import TeslaCanBus
+# TODO High
+import Vehicle
 
-except ImportError:
-    print("TeslaCanBus.py, Debug.py, or GlobalConstant.py didn't import correctly")
-    print("Please verify that those files are in same directory as the TeslaCanBus.py")
-    #TODO
+# TODO CIRCULAR IMPORT????
+#import TeslaCanBus
 
 
 class TeslaCalibration:
@@ -42,16 +37,16 @@ class TeslaCalibration:
 
     def unitTest():
         """ Run test using ALL publicly released Tesla model
-        
+
         See __date__ at top of this file to determine valid models
-        
-        Args:
+
+        Arg(s):
             NONE
-        
+
         Returns:
             Assert ??? if any test faile, NOTHING otherwise
         """
-        TeslaModelS = Car(GC.MODEL_S)
+        TeslaModelS = Vehicle(GC.MODEL_S)
         testObject1 = TeslaModelS.TeslaCalibration()
         testObject1.runCalibration()
 
