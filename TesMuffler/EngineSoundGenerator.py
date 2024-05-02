@@ -138,7 +138,8 @@ class EngineSoundGenerator:
         except KeyError:
             EngineSoundLog.info("CONSTRUCTOR WARNING: You selected an invalid engine sound, defaulting to the McLaren F1")
             self.engineSoundID = EngineSoundGenerator.MC_LAREN_F1
-            pathEnding = "./Sounds/McLarenF1.wav"
+            #pathEnding = "./Sounds/McLarenF1.wav"
+            pathEnding = "./Sounds/Forza Horizon 4 - McLaren F1 Sound Comparison - Before and After October 23 Update-MmtdhnXsMqE.wav"
             self.EngineSoundWaveObject = sa.WaveObject.from_wave_file(pathEnding)
 
     def startAudioLoop(self):

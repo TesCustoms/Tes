@@ -3,26 +3,20 @@
 __author__  = "Blaze Sanders"
 __email__   = "blaze.d.a.sanders@gmail.com"
 __status__  = "Development"
-__date__    = "Late Updated: 2022-04-19"
-__doc__     = "Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color"
 """
+# Realtime description of a Vehicle objects state including RPM, gear, make, model, year, and color
 
-try:  # importing internally developed libraries
+## Importing internally developed libraries
+import TesOBD2
 
-    import TesOBD2
+# Useful global constants used across all TesMuffler code
+import GlobalConstants as GC
 
-    # Useful global constants used across all TesMuffler code
-    import GlobalConstants as GC
-
-    from TeslaCanBus import *
-    # TODO import ApteraCanBus
-    # TODO import RivianCanBus
-    # TODO import FordCanBus
-    # TODO import KiaCanBus
-
-except ImportError:
-    print("GlobalConstants.py didn't import correctly")
-    print("Please verify that file(s) are in same directory as the Vehicle.py")
+# TODO from TeslaCanBus import *
+# TODO import ApteraCanBus
+# TODO import RivianCanBus
+# TODO import FordCanBus
+# TODO import KiaCanBus
 
 
 class Vehicle:

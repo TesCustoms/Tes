@@ -8,7 +8,7 @@ __doc__     = "Useful global constants for the entire TesCustoms TesMuffler libr
 """
 TODO = -1
 
-DEBUG_STATEMENTS_ON = True
+DEBUG_STATEMENTS_ON = False
 DESKTOP_LINUX = 0
 EMBEDDED_LINUX = 1
 MAC_OS = 2

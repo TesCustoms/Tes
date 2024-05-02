@@ -14,6 +14,12 @@ import os
 import datetime
 import uuid
 
+## Internally developed mocules
+# Useful global constants for the entire TesCustoms TesMuffler library
+import GlobalConstants as GC
+
+# Realtime description of a Car objects state including RPM, gear, make, model, year, and color
+from Vehicle import *
 
 ## Importing externally developed libraries
 try:
@@ -37,19 +43,15 @@ try:
 
 except ImportError:
     print("The gpio, obd, dotenv and/or libsql module(s) didn't import correctly!")
-    print("Follow the GPIO Zero install instructions at https://gpiozero.readthedocs.io/en/stable/installing.html#")
-    print("Follow the python-obd install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
-    print("Follow the dotenv install instructions at https://pypi.org/project/python-dotenv/")
-    print("Follow the libsql install instructions at https://github.com/tursodatabase/libsq")
+
+    if GC.DEBUG_STATEMENTS_ON:
+        print("Follow the GPIO Zero install instructions at https://gpiozero.readthedocs.io/en/stable/installing.html#")
+        print("Follow the python-obd install instructions at https://python-obd.readthedocs.io/en/latest/#installation")
+        print("Follow the dotenv install instructions at https://pypi.org/project/python-dotenv/")
+        print("Follow the libsql install instructions at https://github.com/tursodatabase/libsq")
 
 
 
-## Internally developed mocules
-# Useful global constants for the entire TesCustoms TesMuffler library
-import GlobalConstants as GC
-
-# Realtime description of a Car objects state including RPM, gear, make, model, year, and color
-from Vehicle import *
 
 
 class Telemetrics:
